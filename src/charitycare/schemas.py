@@ -676,6 +676,17 @@ class OpenFapSchemaGenerator(GenerateJsonSchema):
         name = re.sub(r"_+", "_", super().normalize_name(name)).strip("_")
         return name
 
+    def decimal_schema(self, schema: Any) -> dict[str, Any]:
+        """Pin the Decimal string pattern, which pydantic 2.14 stopped emitting, so the export is version-stable."""
+        out = super().decimal_schema(schema)
+        for branch in out.get("anyOf", []):
+            if branch.get("type") == "string":
+                branch["pattern"] = _DECIMAL_STRING_PATTERN
+        return out
+
+
+_DECIMAL_STRING_PATTERN = r"^(?!^[-+.]*$)[+-]?0*\d*\.?\d*$"
+
 
 def open_fap_schema() -> dict[str, Any]:
     """Build the Open FAP Schema document (JSON Schema 2020-12)."""
