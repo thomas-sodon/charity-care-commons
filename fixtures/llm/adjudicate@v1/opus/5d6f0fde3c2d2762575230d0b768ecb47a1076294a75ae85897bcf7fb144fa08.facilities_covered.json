@@ -1,0 +1,33 @@
+{
+  "key": {
+    "doc_sha256": "5d6f0fde3c2d2762575230d0b768ecb47a1076294a75ae85897bcf7fb144fa08",
+    "model_tier": "opus",
+    "prompt_version": "adjudicate@v1",
+    "variant": "facilities_covered"
+  },
+  "model": "claude-opus-5-5",
+  "notes": "Synthetic adjudication derived from the deterministic draft. Deliberate error: schedule_h_quote_not_exact.",
+  "output": {
+    "confidence": 0.8,
+    "policy_evidence": {
+      "char_end": 254,
+      "char_start": 55,
+      "doc_sha256": "5d6f0fde3c2d2762575230d0b768ecb47a1076294a75ae85897bcf7fb144fa08",
+      "page": 7,
+      "quote": "The following hospital facilities of the System are covered by this Policy: Lone Star Example Medical Center Dallas; Lone Star Example Medical Center Plano; Lone Star Example Medical Center Mesquite.",
+      "section_label": "Addendum A"
+    },
+    "rationale": "The policy text and the Schedule H answer are consistent.",
+    "recommended_result": "agree",
+    "schedule_h_quote": "Schedule H lists the same three hospitals as one group",
+    "subject": "facilities_covered"
+  },
+  "recorded_at": null,
+  "synthetic": true,
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 25000,
+    "output_tokens": 2000
+  }
+}

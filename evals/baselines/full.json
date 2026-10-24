@@ -1,0 +1,24 @@
+{
+  "dataset_version": "demo-2026.10+70a269d61e21",
+  "git_sha": null,
+  "metrics": {
+    "calibration_ece": 0.064766,
+    "categorical_macro_f1": 1.0,
+    "citation_validity": 1.0,
+    "commons_free_cutoff_accuracy": 0.8,
+    "compile_error_rate": 0.0,
+    "correct_abstention_rate": 1.0,
+    "cost_per_hospital_usd": 0.12832,
+    "crosscheck_expected_match": 0.95,
+    "disagreement_triage_rate": 1.0,
+    "field_precision": 1.0,
+    "field_recall": 0.972727,
+    "list_item_f1": 0.974359,
+    "numeric_threshold_exact": 1.0,
+    "schedule_h_free_pct_agreement": 1.0,
+    "threshold_abstention_rate": 0.133333
+  },
+  "mode": "replay",
+  "source_run": "full-20261024T182855Z-77ea8e93",
+  "suite": "full"
+}

@@ -1,0 +1,3102 @@
+{
+  "$defs": {
+    "ApplicationWindow": {
+      "additionalProperties": false,
+      "properties": {
+        "anchor": {
+          "default": "unspecified",
+          "enum": [
+            "first_post_discharge_statement",
+            "date_of_service",
+            "discharge",
+            "unspecified"
+          ],
+          "title": "Anchor",
+          "type": "string"
+        },
+        "days": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Days the application stays open",
+          "title": "Days"
+        }
+      },
+      "title": "ApplicationWindow",
+      "type": "object"
+    },
+    "AssetTest": {
+      "additionalProperties": false,
+      "properties": {
+        "applies": {
+          "title": "Applies",
+          "type": "boolean"
+        },
+        "applies_to_tiers": {
+          "default": "all",
+          "enum": [
+            "all",
+            "free_only",
+            "discount_only"
+          ],
+          "title": "Applies To Tiers",
+          "type": "string"
+        },
+        "counted_assets": {
+          "description": "e.g. \"checking\", \"savings\", \"stocks\"",
+          "items": {
+            "type": "string"
+          },
+          "title": "Counted Assets",
+          "type": "array"
+        },
+        "exclusions": {
+          "description": "e.g. \"primary residence\", \"retirement accounts\"",
+          "items": {
+            "type": "string"
+          },
+          "title": "Exclusions",
+          "type": "array"
+        },
+        "threshold_usd": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Assets above this amount disqualify or reduce aid",
+          "title": "Threshold Usd"
+        }
+      },
+      "required": [
+        "applies"
+      ],
+      "title": "AssetTest",
+      "type": "object"
+    },
+    "ChangeEvent": {
+      "additionalProperties": false,
+      "properties": {
+        "diff_summary": {
+          "title": "Diff Summary",
+          "type": "string"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "policy_version_id": {
+          "title": "Policy Version Id",
+          "type": "string"
+        },
+        "prev_version_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Prev Version Id"
+        },
+        "published_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Published At"
+        },
+        "triage": {
+          "enum": [
+            "substantive",
+            "cosmetic",
+            "date_only"
+          ],
+          "title": "Triage",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "policy_version_id",
+        "triage",
+        "diff_summary"
+      ],
+      "title": "ChangeEvent",
+      "type": "object"
+    },
+    "Channel": {
+      "additionalProperties": false,
+      "properties": {
+        "detail": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Address, number, e-mail or URL as printed",
+          "title": "Detail"
+        },
+        "kind": {
+          "enum": [
+            "mail",
+            "fax",
+            "email",
+            "portal",
+            "in_person",
+            "phone"
+          ],
+          "title": "Kind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind"
+      ],
+      "title": "Channel",
+      "type": "object"
+    },
+    "CompiledPolicy": {
+      "additionalProperties": false,
+      "description": "The executable rule program compiled from one FAP bundle (section 8).",
+      "properties": {
+        "agb_method": {
+          "$ref": "#/$defs/Field_AGBMethod"
+        },
+        "agb_pct": {
+          "$ref": "#/$defs/Field_float"
+        },
+        "application_window": {
+          "$ref": "#/$defs/Field_ApplicationWindow"
+        },
+        "asset_test": {
+          "$ref": "#/$defs/Field_AssetTest"
+        },
+        "award_period_months": {
+          "$ref": "#/$defs/Field_int"
+        },
+        "determination_notice": {
+          "$ref": "#/$defs/Field_bool"
+        },
+        "effective_or_revision_date": {
+          "$ref": "#/$defs/Field_date"
+        },
+        "excluded_services": {
+          "$ref": "#/$defs/Field_list_str"
+        },
+        "facilities_covered": {
+          "$ref": "#/$defs/Field_list_str"
+        },
+        "fpg_tiers": {
+          "$ref": "#/$defs/Field_list_FPGTier"
+        },
+        "fpg_year_rule": {
+          "$ref": "#/$defs/Field_FPGYearRule"
+        },
+        "household_definition": {
+          "$ref": "#/$defs/Field_str"
+        },
+        "income_definition": {
+          "$ref": "#/$defs/Field_IncomeDefinition"
+        },
+        "insured_patients": {
+          "$ref": "#/$defs/Field_InsuredRule"
+        },
+        "medicaid_application_required_first": {
+          "$ref": "#/$defs/Field_bool"
+        },
+        "policy_title": {
+          "$ref": "#/$defs/Field_str"
+        },
+        "presumptive_eligibility": {
+          "$ref": "#/$defs/Field_Presumptive"
+        },
+        "provider_list_location": {
+          "$ref": "#/$defs/Field_str"
+        },
+        "refund_policy": {
+          "$ref": "#/$defs/Field_str"
+        },
+        "required_documents": {
+          "$ref": "#/$defs/Field_list_RequiredDoc"
+        },
+        "residency": {
+          "$ref": "#/$defs/Field_Residency"
+        },
+        "screening_timing": {
+          "$ref": "#/$defs/Field_ScreeningTiming"
+        },
+        "submission_channels": {
+          "$ref": "#/$defs/Field_list_Channel"
+        }
+      },
+      "required": [
+        "policy_title",
+        "effective_or_revision_date",
+        "facilities_covered",
+        "fpg_tiers",
+        "fpg_year_rule",
+        "income_definition",
+        "household_definition",
+        "asset_test",
+        "residency",
+        "insured_patients",
+        "medicaid_application_required_first",
+        "excluded_services",
+        "provider_list_location",
+        "agb_method",
+        "agb_pct",
+        "application_window",
+        "required_documents",
+        "submission_channels",
+        "presumptive_eligibility",
+        "screening_timing",
+        "refund_policy",
+        "determination_notice",
+        "award_period_months"
+      ],
+      "title": "CompiledPolicy",
+      "type": "object"
+    },
+    "CrossCheck": {
+      "additionalProperties": false,
+      "description": "Comparison of one compiled field with an external source.",
+      "properties": {
+        "external_ref": {
+          "description": "e.g. \"irs:202601234567890123|Part V line 13a|group A\"",
+          "title": "External Ref",
+          "type": "string"
+        },
+        "external_value": {
+          "default": null,
+          "title": "External Value"
+        },
+        "field_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Field Id"
+        },
+        "field_key": {
+          "title": "Field Key",
+          "type": "string"
+        },
+        "filing_period_end": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Filing Period End"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        },
+        "policy_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Policy Date"
+        },
+        "result": {
+          "$ref": "#/$defs/CrossCheckResult"
+        },
+        "source": {
+          "enum": [
+            "schedule_h",
+            "state_filing",
+            "benchmark"
+          ],
+          "title": "Source",
+          "type": "string"
+        }
+      },
+      "required": [
+        "field_key",
+        "source",
+        "external_ref",
+        "result"
+      ],
+      "title": "CrossCheck",
+      "type": "object"
+    },
+    "CrossCheckResult": {
+      "description": "Outcome of comparing a compiled value with an external source.",
+      "enum": [
+        "agree",
+        "disagree_policy_newer_than_filing",
+        "disagree_unexplained",
+        "disagree_filing_lag_possible",
+        "not_reported"
+      ],
+      "title": "CrossCheckResult",
+      "type": "string"
+    },
+    "Determination": {
+      "additionalProperties": false,
+      "description": "Deterministic, cited screening result. Produced by code, never by the LLM.",
+      "properties": {
+        "annual_income": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+              "type": "string"
+            }
+          ],
+          "title": "Annual Income"
+        },
+        "arithmetic": {
+          "default": "",
+          "description": "e.g. \"$49,700 / $27,320 = 181.9% FPL\"",
+          "title": "Arithmetic",
+          "type": "string"
+        },
+        "citations": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Citations",
+          "type": "array"
+        },
+        "disclaimer_version": {
+          "title": "Disclaimer Version",
+          "type": "string"
+        },
+        "facility_id": {
+          "title": "Facility Id",
+          "type": "string"
+        },
+        "federal_deadline": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Federal Deadline"
+        },
+        "fpg_year": {
+          "title": "Fpg Year",
+          "type": "integer"
+        },
+        "household_size": {
+          "title": "Household Size",
+          "type": "integer"
+        },
+        "matched_tier": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/FPGTier"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "notes": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Notes",
+          "type": "array"
+        },
+        "outcome": {
+          "enum": [
+            "likely_free",
+            "likely_discount",
+            "likely_not_eligible_on_income",
+            "preliminary_provisional_fields",
+            "insufficient_information"
+          ],
+          "title": "Outcome",
+          "type": "string"
+        },
+        "pct_fpl": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+              "type": "string"
+            }
+          ],
+          "title": "Pct Fpl"
+        },
+        "policy_deadline": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Policy Deadline"
+        },
+        "policy_version_id": {
+          "title": "Policy Version Id",
+          "type": "string"
+        },
+        "provisional_fields_used": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Provisional Fields Used",
+          "type": "array"
+        },
+        "unevaluated_conditions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Unevaluated Conditions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "facility_id",
+        "policy_version_id",
+        "fpg_year",
+        "household_size",
+        "annual_income",
+        "pct_fpl",
+        "outcome",
+        "disclaimer_version"
+      ],
+      "title": "Determination",
+      "type": "object"
+    },
+    "DocumentVersion": {
+      "additionalProperties": false,
+      "properties": {
+        "fetched_at": {
+          "format": "date-time",
+          "title": "Fetched At",
+          "type": "string"
+        },
+        "has_text_layer": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Has Text Layer"
+        },
+        "kind": {
+          "default": "other",
+          "enum": [
+            "fap",
+            "application",
+            "pls",
+            "billing_policy",
+            "other"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "language": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "BCP-47, e.g. \"en\", \"es\"",
+          "title": "Language"
+        },
+        "mime": {
+          "default": "application/pdf",
+          "title": "Mime",
+          "type": "string"
+        },
+        "ocr_used": {
+          "default": false,
+          "title": "Ocr Used",
+          "type": "boolean"
+        },
+        "pages": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pages"
+        },
+        "pdf_uri": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pdf Uri"
+        },
+        "sha256": {
+          "title": "Sha256",
+          "type": "string"
+        },
+        "source_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Id"
+        },
+        "text_uri": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Text Uri"
+        },
+        "wayback_uri": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Wayback Uri"
+        }
+      },
+      "required": [
+        "sha256",
+        "fetched_at"
+      ],
+      "title": "DocumentVersion",
+      "type": "object"
+    },
+    "Evidence": {
+      "additionalProperties": false,
+      "description": "A verbatim quote locating a value in a hashed source document.",
+      "properties": {
+        "char_end": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "End offset in the normalized page text (set by the verifier)",
+          "title": "Char End"
+        },
+        "char_start": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Start offset in the normalized page text (set by the verifier)",
+          "title": "Char Start"
+        },
+        "doc_sha256": {
+          "description": "sha256 hex digest of the source document bytes",
+          "title": "Doc Sha256",
+          "type": "string"
+        },
+        "page": {
+          "description": "1-indexed page number in the source document",
+          "minimum": 1,
+          "title": "Page",
+          "type": "integer"
+        },
+        "quote": {
+          "description": "Verbatim text copied from the page, <= 400 chars",
+          "maxLength": 400,
+          "title": "Quote",
+          "type": "string"
+        },
+        "section_label": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Section label as printed, e.g. \"4.2\"",
+          "title": "Section Label"
+        }
+      },
+      "required": [
+        "doc_sha256",
+        "page",
+        "quote"
+      ],
+      "title": "Evidence",
+      "type": "object"
+    },
+    "FPGTier": {
+      "additionalProperties": false,
+      "description": "One income band, in percent of the federal poverty guideline.",
+      "properties": {
+        "applies_to": {
+          "default": "all",
+          "enum": [
+            "uninsured",
+            "insured",
+            "all"
+          ],
+          "title": "Applies To",
+          "type": "string"
+        },
+        "benefit": {
+          "enum": [
+            "free",
+            "percent_discount",
+            "agb_cap",
+            "sliding_scale"
+          ],
+          "title": "Benefit",
+          "type": "string"
+        },
+        "discount_pct": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Discount off gross charges for percent_discount tiers",
+          "title": "Discount Pct"
+        },
+        "max_pct_inclusive": {
+          "description": "Upper bound, inclusive, e.g. 200 for 200% FPG",
+          "title": "Max Pct Inclusive",
+          "type": "number"
+        },
+        "min_pct_exclusive": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Lower bound, exclusive; None means 0",
+          "title": "Min Pct Exclusive"
+        }
+      },
+      "required": [
+        "max_pct_inclusive",
+        "benefit"
+      ],
+      "title": "FPGTier",
+      "type": "object"
+    },
+    "Facility": {
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Address"
+        },
+        "ccn": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ccn"
+        },
+        "city": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "City"
+        },
+        "county": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "County"
+        },
+        "ein": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ein"
+        },
+        "id": {
+          "description": "Stable id, \"tx-{ccn}\" when a CCN exists",
+          "title": "Id",
+          "type": "string"
+        },
+        "in_scope": {
+          "default": true,
+          "title": "In Scope",
+          "type": "boolean"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "ownership": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "CMS \"Hospital Ownership\"",
+          "title": "Ownership"
+        },
+        "schedule_h_group_letter": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Schedule H Group Letter"
+        },
+        "state": {
+          "default": "TX",
+          "title": "State",
+          "type": "string"
+        },
+        "tx_license_no": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tx License No"
+        },
+        "type": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "CMS \"Hospital Type\"",
+          "title": "Type"
+        },
+        "zip": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Zip"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ],
+      "title": "Facility",
+      "type": "object"
+    },
+    "FieldRecord": {
+      "additionalProperties": false,
+      "description": "The verification-carrying tuple of section 5, as stored in the registry.",
+      "properties": {
+        "as_of": {
+          "format": "date",
+          "title": "As Of",
+          "type": "string"
+        },
+        "crosschecks": {
+          "items": {
+            "$ref": "#/$defs/CrossCheck"
+          },
+          "title": "Crosschecks",
+          "type": "array"
+        },
+        "extractor_model_tier": {
+          "anyOf": [
+            {
+              "enum": [
+                "haiku",
+                "sonnet",
+                "opus"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Extractor Model Tier"
+        },
+        "field": {
+          "$ref": "#/$defs/Field_Any"
+        },
+        "id": {
+          "description": "\"{policy_version_id}:{key}\"",
+          "title": "Id",
+          "type": "string"
+        },
+        "key": {
+          "description": "A CompiledPolicy field name",
+          "title": "Key",
+          "type": "string"
+        },
+        "policy_version_id": {
+          "title": "Policy Version Id",
+          "type": "string"
+        },
+        "prompt_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Prompt Version"
+        },
+        "reviewed_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reviewed At"
+        },
+        "reviewer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reviewer"
+        },
+        "status": {
+          "$ref": "#/$defs/FieldStatus",
+          "default": "provisional"
+        }
+      },
+      "required": [
+        "id",
+        "policy_version_id",
+        "key",
+        "field",
+        "as_of"
+      ],
+      "title": "FieldRecord",
+      "type": "object"
+    },
+    "FieldStatus": {
+      "description": "Publication state of one compiled field.",
+      "enum": [
+        "provisional",
+        "verified",
+        "disputed",
+        "abstained"
+      ],
+      "title": "FieldStatus",
+      "type": "string"
+    },
+    "Field_AGBMethod": {
+      "additionalProperties": false,
+      "properties": {
+        "abstain_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_addressed",
+                "ambiguous_may_clause",
+                "conflicting_clauses",
+                "illegible",
+                "quote_unverified"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Abstain Reason"
+        },
+        "confidence": {
+          "default": 0.0,
+          "description": "Model self-report in [0,1]; calibrated in evals",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "evidence": {
+          "description": ">= 1 unless abstained",
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "enum": [
+                "lookback_medicare",
+                "lookback_medicare_private",
+                "lookback_medicaid",
+                "prospective"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        }
+      },
+      "title": "Field_AGBMethod",
+      "type": "object"
+    },
+    "Field_Any": {
+      "additionalProperties": false,
+      "properties": {
+        "abstain_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_addressed",
+                "ambiguous_may_clause",
+                "conflicting_clauses",
+                "illegible",
+                "quote_unverified"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Abstain Reason"
+        },
+        "confidence": {
+          "default": 0.0,
+          "description": "Model self-report in [0,1]; calibrated in evals",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "evidence": {
+          "description": ">= 1 unless abstained",
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "value": {
+          "default": null,
+          "title": "Value"
+        }
+      },
+      "title": "Field_Any",
+      "type": "object"
+    },
+    "Field_ApplicationWindow": {
+      "additionalProperties": false,
+      "properties": {
+        "abstain_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_addressed",
+                "ambiguous_may_clause",
+                "conflicting_clauses",
+                "illegible",
+                "quote_unverified"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Abstain Reason"
+        },
+        "confidence": {
+          "default": 0.0,
+          "description": "Model self-report in [0,1]; calibrated in evals",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "evidence": {
+          "description": ">= 1 unless abstained",
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ApplicationWindow"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "Field_ApplicationWindow",
+      "type": "object"
+    },
+    "Field_AssetTest": {
+      "additionalProperties": false,
+      "properties": {
+        "abstain_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_addressed",
+                "ambiguous_may_clause",
+                "conflicting_clauses",
+                "illegible",
+                "quote_unverified"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Abstain Reason"
+        },
+        "confidence": {
+          "default": 0.0,
+          "description": "Model self-report in [0,1]; calibrated in evals",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "evidence": {
+          "description": ">= 1 unless abstained",
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/AssetTest"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "Field_AssetTest",
+      "type": "object"
+    },
+    "Field_FPGYearRule": {
+      "additionalProperties": false,
+      "properties": {
+        "abstain_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_addressed",
+                "ambiguous_may_clause",
+                "conflicting_clauses",
+                "illegible",
+                "quote_unverified"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Abstain Reason"
+        },
+        "confidence": {
+          "default": 0.0,
+          "description": "Model self-report in [0,1]; calibrated in evals",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "evidence": {
+          "description": ">= 1 unless abstained",
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "enum": [
+                "current_at_application",
+                "current_at_service",
+                "stated_year",
+                "unspecified"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        }
+      },
+      "title": "Field_FPGYearRule",
+      "type": "object"
+    },
+    "Field_IncomeDefinition": {
+      "additionalProperties": false,
+      "properties": {
+        "abstain_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_addressed",
+                "ambiguous_may_clause",
+                "conflicting_clauses",
+                "illegible",
+                "quote_unverified"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Abstain Reason"
+        },
+        "confidence": {
+          "default": 0.0,
+          "description": "Model self-report in [0,1]; calibrated in evals",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "evidence": {
+          "description": ">= 1 unless abstained",
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "enum": [
+                "gross",
+                "net",
+                "adjusted_gross",
+                "unspecified"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        }
+      },
+      "title": "Field_IncomeDefinition",
+      "type": "object"
+    },
+    "Field_InsuredRule": {
+      "additionalProperties": false,
+      "properties": {
+        "abstain_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_addressed",
+                "ambiguous_may_clause",
+                "conflicting_clauses",
+                "illegible",
+                "quote_unverified"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Abstain Reason"
+        },
+        "confidence": {
+          "default": 0.0,
+          "description": "Model self-report in [0,1]; calibrated in evals",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "evidence": {
+          "description": ">= 1 unless abstained",
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/InsuredRule"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "Field_InsuredRule",
+      "type": "object"
+    },
+    "Field_Presumptive": {
+      "additionalProperties": false,
+      "properties": {
+        "abstain_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_addressed",
+                "ambiguous_may_clause",
+                "conflicting_clauses",
+                "illegible",
+                "quote_unverified"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Abstain Reason"
+        },
+        "confidence": {
+          "default": 0.0,
+          "description": "Model self-report in [0,1]; calibrated in evals",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "evidence": {
+          "description": ">= 1 unless abstained",
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Presumptive"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "Field_Presumptive",
+      "type": "object"
+    },
+    "Field_Residency": {
+      "additionalProperties": false,
+      "properties": {
+        "abstain_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_addressed",
+                "ambiguous_may_clause",
+                "conflicting_clauses",
+                "illegible",
+                "quote_unverified"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Abstain Reason"
+        },
+        "confidence": {
+          "default": 0.0,
+          "description": "Model self-report in [0,1]; calibrated in evals",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "evidence": {
+          "description": ">= 1 unless abstained",
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Residency"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "Field_Residency",
+      "type": "object"
+    },
+    "Field_ScreeningTiming": {
+      "additionalProperties": false,
+      "properties": {
+        "abstain_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_addressed",
+                "ambiguous_may_clause",
+                "conflicting_clauses",
+                "illegible",
+                "quote_unverified"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Abstain Reason"
+        },
+        "confidence": {
+          "default": 0.0,
+          "description": "Model self-report in [0,1]; calibrated in evals",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "evidence": {
+          "description": ">= 1 unless abstained",
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "enum": [
+                "before_billing",
+                "after_billing_before_collections",
+                "before_writeoff",
+                "unspecified"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        }
+      },
+      "title": "Field_ScreeningTiming",
+      "type": "object"
+    },
+    "Field_bool": {
+      "additionalProperties": false,
+      "properties": {
+        "abstain_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_addressed",
+                "ambiguous_may_clause",
+                "conflicting_clauses",
+                "illegible",
+                "quote_unverified"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Abstain Reason"
+        },
+        "confidence": {
+          "default": 0.0,
+          "description": "Model self-report in [0,1]; calibrated in evals",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "evidence": {
+          "description": ">= 1 unless abstained",
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        }
+      },
+      "title": "Field_bool",
+      "type": "object"
+    },
+    "Field_date": {
+      "additionalProperties": false,
+      "properties": {
+        "abstain_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_addressed",
+                "ambiguous_may_clause",
+                "conflicting_clauses",
+                "illegible",
+                "quote_unverified"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Abstain Reason"
+        },
+        "confidence": {
+          "default": 0.0,
+          "description": "Model self-report in [0,1]; calibrated in evals",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "evidence": {
+          "description": ">= 1 unless abstained",
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        }
+      },
+      "title": "Field_date",
+      "type": "object"
+    },
+    "Field_float": {
+      "additionalProperties": false,
+      "properties": {
+        "abstain_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_addressed",
+                "ambiguous_may_clause",
+                "conflicting_clauses",
+                "illegible",
+                "quote_unverified"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Abstain Reason"
+        },
+        "confidence": {
+          "default": 0.0,
+          "description": "Model self-report in [0,1]; calibrated in evals",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "evidence": {
+          "description": ">= 1 unless abstained",
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        }
+      },
+      "title": "Field_float",
+      "type": "object"
+    },
+    "Field_int": {
+      "additionalProperties": false,
+      "properties": {
+        "abstain_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_addressed",
+                "ambiguous_may_clause",
+                "conflicting_clauses",
+                "illegible",
+                "quote_unverified"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Abstain Reason"
+        },
+        "confidence": {
+          "default": 0.0,
+          "description": "Model self-report in [0,1]; calibrated in evals",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "evidence": {
+          "description": ">= 1 unless abstained",
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        }
+      },
+      "title": "Field_int",
+      "type": "object"
+    },
+    "Field_list_Channel": {
+      "additionalProperties": false,
+      "properties": {
+        "abstain_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_addressed",
+                "ambiguous_may_clause",
+                "conflicting_clauses",
+                "illegible",
+                "quote_unverified"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Abstain Reason"
+        },
+        "confidence": {
+          "default": 0.0,
+          "description": "Model self-report in [0,1]; calibrated in evals",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "evidence": {
+          "description": ">= 1 unless abstained",
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/$defs/Channel"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        }
+      },
+      "title": "Field_list_Channel",
+      "type": "object"
+    },
+    "Field_list_FPGTier": {
+      "additionalProperties": false,
+      "properties": {
+        "abstain_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_addressed",
+                "ambiguous_may_clause",
+                "conflicting_clauses",
+                "illegible",
+                "quote_unverified"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Abstain Reason"
+        },
+        "confidence": {
+          "default": 0.0,
+          "description": "Model self-report in [0,1]; calibrated in evals",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "evidence": {
+          "description": ">= 1 unless abstained",
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/$defs/FPGTier"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        }
+      },
+      "title": "Field_list_FPGTier",
+      "type": "object"
+    },
+    "Field_list_RequiredDoc": {
+      "additionalProperties": false,
+      "properties": {
+        "abstain_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_addressed",
+                "ambiguous_may_clause",
+                "conflicting_clauses",
+                "illegible",
+                "quote_unverified"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Abstain Reason"
+        },
+        "confidence": {
+          "default": 0.0,
+          "description": "Model self-report in [0,1]; calibrated in evals",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "evidence": {
+          "description": ">= 1 unless abstained",
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/$defs/RequiredDoc"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        }
+      },
+      "title": "Field_list_RequiredDoc",
+      "type": "object"
+    },
+    "Field_list_str": {
+      "additionalProperties": false,
+      "properties": {
+        "abstain_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_addressed",
+                "ambiguous_may_clause",
+                "conflicting_clauses",
+                "illegible",
+                "quote_unverified"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Abstain Reason"
+        },
+        "confidence": {
+          "default": 0.0,
+          "description": "Model self-report in [0,1]; calibrated in evals",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "evidence": {
+          "description": ">= 1 unless abstained",
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        }
+      },
+      "title": "Field_list_str",
+      "type": "object"
+    },
+    "Field_str": {
+      "additionalProperties": false,
+      "properties": {
+        "abstain_reason": {
+          "anyOf": [
+            {
+              "enum": [
+                "not_addressed",
+                "ambiguous_may_clause",
+                "conflicting_clauses",
+                "illegible",
+                "quote_unverified"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Abstain Reason"
+        },
+        "confidence": {
+          "default": 0.0,
+          "description": "Model self-report in [0,1]; calibrated in evals",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "evidence": {
+          "description": ">= 1 unless abstained",
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        }
+      },
+      "title": "Field_str",
+      "type": "object"
+    },
+    "FormFieldSpec": {
+      "additionalProperties": false,
+      "description": "Where one canonical value goes on a hospital's application form.",
+      "properties": {
+        "field_type": {
+          "default": "text",
+          "enum": [
+            "text",
+            "checkbox",
+            "date",
+            "money",
+            "signature"
+          ],
+          "title": "Field Type",
+          "type": "string"
+        },
+        "key": {
+          "description": "Canonical key, e.g. \"patient_name\", \"household_size\"",
+          "title": "Key",
+          "type": "string"
+        },
+        "label": {
+          "description": "Label as printed on the form",
+          "title": "Label",
+          "type": "string"
+        },
+        "page": {
+          "minimum": 1,
+          "title": "Page",
+          "type": "integer"
+        },
+        "rect": {
+          "description": "[x0, y0, x1, y1] in PDF points, top-left origin (PyMuPDF)",
+          "items": {
+            "type": "number"
+          },
+          "title": "Rect",
+          "type": "array"
+        },
+        "widget_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "AcroForm field name for fillable forms",
+          "title": "Widget Name"
+        },
+        "write_by_hand": {
+          "default": false,
+          "description": "Left blank on purpose (SSN, account no., signature)",
+          "title": "Write By Hand",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "key",
+        "label",
+        "page",
+        "rect"
+      ],
+      "title": "FormFieldSpec",
+      "type": "object"
+    },
+    "FormTemplate": {
+      "additionalProperties": false,
+      "properties": {
+        "doc_sha256": {
+          "title": "Doc Sha256",
+          "type": "string"
+        },
+        "field_map": {
+          "items": {
+            "$ref": "#/$defs/FormFieldSpec"
+          },
+          "title": "Field Map",
+          "type": "array"
+        },
+        "kind": {
+          "enum": [
+            "fillable",
+            "flat"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "language": {
+          "default": "en",
+          "title": "Language",
+          "type": "string"
+        },
+        "verified_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Verified At"
+        },
+        "verified_by": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Verified By"
+        }
+      },
+      "required": [
+        "doc_sha256",
+        "kind"
+      ],
+      "title": "FormTemplate",
+      "type": "object"
+    },
+    "Household": {
+      "additionalProperties": false,
+      "description": "Facts a navigator enters for screening. Held in memory only, never persisted.",
+      "properties": {
+        "annual_income": {
+          "anyOf": [
+            {
+              "maximum": 1000000000.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+              "type": "string"
+            }
+          ],
+          "title": "Annual Income"
+        },
+        "application_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Application Date"
+        },
+        "county": {
+          "anyOf": [
+            {
+              "maxLength": 80,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "County"
+        },
+        "emergency_care": {
+          "default": false,
+          "title": "Emergency Care",
+          "type": "boolean"
+        },
+        "first_statement_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "First Statement Date"
+        },
+        "household_size": {
+          "maximum": 50,
+          "minimum": 1,
+          "title": "Household Size",
+          "type": "integer"
+        },
+        "insured": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Insured"
+        },
+        "liquid_assets": {
+          "anyOf": [
+            {
+              "maximum": 1000000000.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Liquid Assets"
+        },
+        "out_of_pocket_medical_12m": {
+          "anyOf": [
+            {
+              "maximum": 1000000000.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Out Of Pocket Medical 12M"
+        },
+        "service_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Service Date"
+        },
+        "state": {
+          "default": "TX",
+          "maxLength": 2,
+          "title": "State",
+          "type": "string"
+        }
+      },
+      "required": [
+        "household_size",
+        "annual_income"
+      ],
+      "title": "Household",
+      "type": "object"
+    },
+    "InsuredRule": {
+      "additionalProperties": false,
+      "properties": {
+        "catastrophic_threshold_pct_income": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Out-of-pocket medical bills above this % of income qualify (medical indigency)",
+          "title": "Catastrophic Threshold Pct Income"
+        },
+        "insured_eligible": {
+          "title": "Insured Eligible",
+          "type": "boolean"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        }
+      },
+      "required": [
+        "insured_eligible"
+      ],
+      "title": "InsuredRule",
+      "type": "object"
+    },
+    "PolicyFacilityMap": {
+      "additionalProperties": false,
+      "properties": {
+        "confidence": {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "facility_id": {
+          "title": "Facility Id",
+          "type": "string"
+        },
+        "method": {
+          "enum": [
+            "named_in_policy",
+            "schedule_h_group",
+            "system_default",
+            "manual"
+          ],
+          "title": "Method",
+          "type": "string"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        },
+        "policy_version_id": {
+          "title": "Policy Version Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "policy_version_id",
+        "facility_id",
+        "method",
+        "confidence"
+      ],
+      "title": "PolicyFacilityMap",
+      "type": "object"
+    },
+    "PolicyVersion": {
+      "additionalProperties": false,
+      "properties": {
+        "as_of": {
+          "format": "date",
+          "title": "As Of",
+          "type": "string"
+        },
+        "doc_shas": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "kind -> sha256 (fap, application, pls, billing)",
+          "title": "Doc Shas",
+          "type": "object"
+        },
+        "effective_date": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Effective Date"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "organization_ein": {
+          "title": "Organization Ein",
+          "type": "string"
+        },
+        "status": {
+          "default": "current",
+          "enum": [
+            "current",
+            "superseded"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "supersedes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Supersedes"
+        },
+        "title": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Title"
+        }
+      },
+      "required": [
+        "id",
+        "organization_ein",
+        "as_of"
+      ],
+      "title": "PolicyVersion",
+      "type": "object"
+    },
+    "Presumptive": {
+      "additionalProperties": false,
+      "properties": {
+        "allowed": {
+          "title": "Allowed",
+          "type": "boolean"
+        },
+        "criteria": {
+          "description": "e.g. \"enrolled in SNAP\", \"homeless\"",
+          "items": {
+            "type": "string"
+          },
+          "title": "Criteria",
+          "type": "array"
+        },
+        "uses_credit_data": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Uses Credit Data"
+        }
+      },
+      "required": [
+        "allowed"
+      ],
+      "title": "Presumptive",
+      "type": "object"
+    },
+    "ReadbackField": {
+      "additionalProperties": false,
+      "properties": {
+        "intended": {
+          "title": "Intended",
+          "type": "string"
+        },
+        "key": {
+          "title": "Key",
+          "type": "string"
+        },
+        "match": {
+          "title": "Match",
+          "type": "boolean"
+        },
+        "read": {
+          "title": "Read",
+          "type": "string"
+        },
+        "write_by_hand": {
+          "default": false,
+          "title": "Write By Hand",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "key",
+        "intended",
+        "read",
+        "match"
+      ],
+      "title": "ReadbackField",
+      "type": "object"
+    },
+    "ReadbackResult": {
+      "additionalProperties": false,
+      "description": "Render-and-reread diff of a filled form. ``all_match`` is derived.",
+      "properties": {
+        "all_match": {
+          "default": false,
+          "title": "All Match",
+          "type": "boolean"
+        },
+        "fields": {
+          "items": {
+            "$ref": "#/$defs/ReadbackField"
+          },
+          "title": "Fields",
+          "type": "array"
+        },
+        "retries": {
+          "default": 0,
+          "title": "Retries",
+          "type": "integer"
+        },
+        "template_id": {
+          "title": "Template Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "template_id"
+      ],
+      "title": "ReadbackResult",
+      "type": "object"
+    },
+    "RequiredDoc": {
+      "additionalProperties": false,
+      "properties": {
+        "count": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "How many, e.g. 2 pay stubs",
+          "title": "Count"
+        },
+        "description": {
+          "description": "Short paraphrase of the requirement",
+          "title": "Description",
+          "type": "string"
+        },
+        "doc_type": {
+          "enum": [
+            "pay_stub",
+            "tax_return",
+            "w2",
+            "bank_statement",
+            "photo_id",
+            "proof_of_residency",
+            "medicaid_denial",
+            "unemployment_benefits",
+            "social_security_statement",
+            "letter_of_support",
+            "other"
+          ],
+          "title": "Doc Type",
+          "type": "string"
+        },
+        "period_months": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Covering this many months, e.g. 2 months of statements",
+          "title": "Period Months"
+        }
+      },
+      "required": [
+        "doc_type",
+        "description"
+      ],
+      "title": "RequiredDoc",
+      "type": "object"
+    },
+    "Residency": {
+      "additionalProperties": false,
+      "properties": {
+        "area_type": {
+          "default": "none",
+          "enum": [
+            "counties",
+            "state",
+            "service_area",
+            "none"
+          ],
+          "title": "Area Type",
+          "type": "string"
+        },
+        "counties": {
+          "description": "County names without the word County",
+          "items": {
+            "type": "string"
+          },
+          "title": "Counties",
+          "type": "array"
+        },
+        "emergency_exempt": {
+          "default": false,
+          "description": "Emergency care is covered regardless of residency",
+          "title": "Emergency Exempt",
+          "type": "boolean"
+        },
+        "required": {
+          "title": "Required",
+          "type": "boolean"
+        },
+        "states": {
+          "description": "Two-letter state codes",
+          "items": {
+            "type": "string"
+          },
+          "title": "States",
+          "type": "array"
+        }
+      },
+      "required": [
+        "required"
+      ],
+      "title": "Residency",
+      "type": "object"
+    },
+    "ScheduleHFacility": {
+      "additionalProperties": false,
+      "description": "One Schedule H Part V Section B block (a facility or a facility reporting group).",
+      "properties": {
+        "ein": {
+          "title": "Ein",
+          "type": "string"
+        },
+        "facility_names": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Facility Names",
+          "type": "array"
+        },
+        "facility_numbers": {
+          "items": {
+            "type": "integer"
+          },
+          "title": "Facility Numbers",
+          "type": "array"
+        },
+        "group_letter": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Group Letter"
+        },
+        "id": {
+          "description": "\"{object_id}:{group_letter or facility_num}\"",
+          "title": "Id",
+          "type": "string"
+        },
+        "line_13_criteria_explained": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Line 13 Criteria Explained"
+        },
+        "line_13a_discount_pct": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Line 13A Discount Pct"
+        },
+        "line_13a_fpg_used": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Line 13A Fpg Used"
+        },
+        "line_13a_free_pct": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Line 13A Free Pct"
+        },
+        "line_13b_income_level": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Line 13B Income Level"
+        },
+        "line_13c_asset_level": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Line 13C Asset Level"
+        },
+        "line_13d_medical_indigency": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Line 13D Medical Indigency"
+        },
+        "line_13e_insurance_status": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Line 13E Insurance Status"
+        },
+        "line_13f_underinsurance_status": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Line 13F Underinsurance Status"
+        },
+        "line_13g_residency": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Line 13G Residency"
+        },
+        "line_13h_other": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Line 13H Other"
+        },
+        "line_15a_described_info": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Line 15A Described Info"
+        },
+        "line_15b_described_docs": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Line 15B Described Docs"
+        },
+        "line_16a_fap_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Line 16A Fap Url"
+        },
+        "line_16b_app_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Line 16B App Url"
+        },
+        "line_16c_pls_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Line 16C Pls Url"
+        },
+        "line_16i_translated": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Line 16I Translated"
+        },
+        "line_18_ecas_permitted": {
+          "items": {
+            "enum": [
+              "credit_report",
+              "sell_debt",
+              "defer_deny_care",
+              "legal_process",
+              "other",
+              "none"
+            ],
+            "type": "string"
+          },
+          "title": "Line 18 Ecas Permitted",
+          "type": "array"
+        },
+        "line_22_agb_method": {
+          "anyOf": [
+            {
+              "enum": [
+                "lookback_medicare",
+                "lookback_medicare_private",
+                "lookback_medicaid",
+                "prospective"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Line 22 Agb Method"
+        },
+        "narrative_urls_recovered": {
+          "description": "URLs found in Part V Section C text",
+          "items": {
+            "type": "string"
+          },
+          "title": "Narrative Urls Recovered",
+          "type": "array"
+        },
+        "object_id": {
+          "description": "IRS e-file object id of the return",
+          "title": "Object Id",
+          "type": "string"
+        },
+        "org_name": {
+          "title": "Org Name",
+          "type": "string"
+        },
+        "section_c_text": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Section C Text",
+          "type": "array"
+        },
+        "tax_period_begin": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tax Period Begin"
+        },
+        "tax_period_end": {
+          "format": "date",
+          "title": "Tax Period End",
+          "type": "string"
+        },
+        "tax_year": {
+          "title": "Tax Year",
+          "type": "integer"
+        },
+        "xpaths": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "line -> xpath the value came from",
+          "title": "Xpaths",
+          "type": "object"
+        }
+      },
+      "required": [
+        "id",
+        "ein",
+        "org_name",
+        "object_id",
+        "tax_year",
+        "tax_period_end"
+      ],
+      "title": "ScheduleHFacility",
+      "type": "object"
+    }
+  },
+  "$id": "https://charitycarecommons.org/schemas/open-fap-schema/0.1.json",
+  "$ref": "#/$defs/CompiledPolicy",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Machine-readable, clause-cited hospital financial-assistance policies (IRS 501(r)) with verification status and IRS Schedule H cross-checks. CC BY 4.0.",
+  "title": "Open FAP Schema",
+  "version": "0.1.0"
+}

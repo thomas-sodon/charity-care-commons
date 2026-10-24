@@ -1,0 +1,19 @@
+# Frozen test hospitals (section 12: "test"). Release-gated only: never tune on these.
+name: test
+description: Frozen test split with the naive-agent baseline; results go in the dataset release notes.
+kind: compile
+dataset: demo
+split: test
+naive_baseline: true
+release_gated: true
+targets:
+  numeric_threshold_exact: {min: 0.97}
+  threshold_abstention_rate: {max: 0.10}
+  categorical_macro_f1: {min: 0.90}
+  list_item_f1: {min: 0.85}
+  citation_validity: {min: 1.0, hard: true}
+  schedule_h_free_pct_agreement: {min: 0.85}
+  disagreement_triage_rate: {min: 1.0}
+  calibration_ece: {max: 0.05}
+  cost_per_hospital_usd: {max: 0.50}
+  naive_baseline_gap_points: {min: 20}

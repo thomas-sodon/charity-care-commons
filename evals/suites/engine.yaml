@@ -1,0 +1,9 @@
+# Deterministic eligibility engine vs the oracle on the synthetic households
+# (section 12: 300 households from gold rules, target 100%). No LLM, no cost.
+name: engine
+description: Engine agreement with the independent oracle on synthetic households.
+kind: engine
+dataset: demo
+modes: [replay, live, record]
+targets:
+  engine_agreement: {min: 1.0, hard: true}

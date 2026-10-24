@@ -1,0 +1,413 @@
+{
+  "checksum": "70a269d61e21ab3f0ff2e12f8cf40276911c34072ec6372dd1a411388d40af12",
+  "cms": "cms/Hospital_General_Information.csv",
+  "corpus_version": "demo-2026.10",
+  "files": 75,
+  "fixtures": "fixtures/llm",
+  "hospitals": [
+    {
+      "documents": {
+        "application_en": {
+          "kind": "application",
+          "language": "en",
+          "path": "docs/example-methodist/application_en.pdf",
+          "sha256": "02e6197914baf401e7c2aa648af6abd25905334433bd1c98e3a7027f508db0bc",
+          "url": "https://www.examplemethodist.example/financial-assistance/application.pdf"
+        },
+        "fap": {
+          "kind": "fap",
+          "language": "en",
+          "path": "docs/example-methodist/fap.pdf",
+          "sha256": "029f1ec4ac87f3a5d64ebda5e3952bcf893889cfc43299051a71509fa29216ec",
+          "url": "https://www.examplemethodist.example/financial-assistance/fap.pdf"
+        },
+        "pls_en": {
+          "kind": "pls",
+          "language": "en",
+          "path": "docs/example-methodist/pls_en.pdf",
+          "sha256": "2ec87d0de511a2c19b0a0e91f0abd1442608905756c18541ebdf897edd5a64fd",
+          "url": "https://www.examplemethodist.example/financial-assistance/summary.pdf"
+        }
+      },
+      "domain": "examplemethodist.example",
+      "ein": "990100101",
+      "facilities": [
+        {
+          "address": "7700 Medical Example Drive",
+          "ccn": "459901",
+          "city": "San Antonio",
+          "cms_type": "Acute Care Hospitals",
+          "county": "Bexar",
+          "facility_id": "tx-459901",
+          "license_no": "000101",
+          "name": "Example Methodist Hospital",
+          "zip": "78229"
+        }
+      ],
+      "gold": "gold/example-methodist.json",
+      "id": "example-methodist",
+      "name": "Example Methodist Hospital",
+      "schedule_h_object_id": "202601999349300101",
+      "system_name": null
+    },
+    {
+      "documents": {
+        "application_en": {
+          "kind": "application",
+          "language": "en",
+          "path": "docs/lone-star-health/application_en.pdf",
+          "sha256": "6716d534b5aefba2a1277ab25d51f3b9dc63c8a836c36b09985fc3b0a97947c8",
+          "url": "https://www.lonestarexamplehealth.example/financial-assistance/application.pdf"
+        },
+        "fap": {
+          "kind": "fap",
+          "language": "en",
+          "path": "docs/lone-star-health/fap.pdf",
+          "sha256": "5d6f0fde3c2d2762575230d0b768ecb47a1076294a75ae85897bcf7fb144fa08",
+          "url": "https://www.lonestarexamplehealth.example/financial-assistance/fap.pdf"
+        },
+        "pls_en": {
+          "kind": "pls",
+          "language": "en",
+          "path": "docs/lone-star-health/pls_en.pdf",
+          "sha256": "3ee0f616b8859f7a50fbd3ab77960844d79e0fa2c1948ecdebdfebec0519e0e8",
+          "url": "https://www.lonestarexamplehealth.example/financial-assistance/summary.pdf"
+        }
+      },
+      "domain": "lonestarexamplehealth.example",
+      "ein": "990100202",
+      "facilities": [
+        {
+          "address": "1200 Example Parkway",
+          "ccn": "459902",
+          "city": "Dallas",
+          "cms_type": "Acute Care Hospitals",
+          "county": "Dallas",
+          "facility_id": "tx-459902",
+          "license_no": "000202",
+          "name": "Lone Star Example Medical Center Dallas",
+          "zip": "75201"
+        },
+        {
+          "address": "4500 Example Ridge Road",
+          "ccn": "459903",
+          "city": "Plano",
+          "cms_type": "Acute Care Hospitals",
+          "county": "Collin",
+          "facility_id": "tx-459903",
+          "license_no": "000203",
+          "name": "Lone Star Example Medical Center Plano",
+          "zip": "75093"
+        },
+        {
+          "address": "800 Example Town East Blvd",
+          "ccn": "459904",
+          "city": "Mesquite",
+          "cms_type": "Acute Care Hospitals",
+          "county": "Dallas",
+          "facility_id": "tx-459904",
+          "license_no": "000204",
+          "name": "Lone Star Example Medical Center Mesquite",
+          "zip": "75150"
+        }
+      ],
+      "gold": "gold/lone-star-health.json",
+      "id": "lone-star-health",
+      "name": "Lone Star Example Health System",
+      "schedule_h_object_id": "202601999349300202",
+      "system_name": "Lone Star Example Health System"
+    },
+    {
+      "documents": {
+        "application_en": {
+          "kind": "application",
+          "language": "en",
+          "path": "docs/valley-childrens/application_en.pdf",
+          "sha256": "3ae0679870d94ab0e17287076532c862ab858c2958de472d1d36ae81e22cfa2f",
+          "url": "https://www.examplevalleychildrens.example/financial-assistance/application.pdf"
+        },
+        "application_es": {
+          "kind": "application",
+          "language": "es",
+          "path": "docs/valley-childrens/application_es.pdf",
+          "sha256": "2a46127a3ac2d90d34ff92113d270032beeb874b9dcb6921fa9f38a15de89a9b",
+          "url": "https://www.examplevalleychildrens.example/financial-assistance/application-es.pdf"
+        },
+        "fap": {
+          "kind": "fap",
+          "language": "en",
+          "path": "docs/valley-childrens/fap.pdf",
+          "sha256": "f8bcc43e356a2827e74b96c412732ab5404993ebcafe8fc030b27a70d512a77e",
+          "url": "https://www.examplevalleychildrens.example/financial-assistance/fap.pdf"
+        },
+        "pls_en": {
+          "kind": "pls",
+          "language": "en",
+          "path": "docs/valley-childrens/pls_en.pdf",
+          "sha256": "ef3a5c81188716f273e47f0e1a444d733e1b9719eafda11f63a55d6df59e4d05",
+          "url": "https://www.examplevalleychildrens.example/financial-assistance/summary.pdf"
+        },
+        "pls_es": {
+          "kind": "pls",
+          "language": "es",
+          "path": "docs/valley-childrens/pls_es.pdf",
+          "sha256": "d078a0b52c2f3660e9e6775ba5384adc0fc431b182e5395b1b6e12535e9c3626",
+          "url": "https://www.examplevalleychildrens.example/financial-assistance/summary-es.pdf"
+        }
+      },
+      "domain": "examplevalleychildrens.example",
+      "ein": "990100303",
+      "facilities": [
+        {
+          "address": "2100 Example Children's Way",
+          "ccn": "459905",
+          "city": "McAllen",
+          "cms_type": "Childrens",
+          "county": "Hidalgo",
+          "facility_id": "tx-459905",
+          "license_no": "000303",
+          "name": "Example Valley Children's Hospital",
+          "zip": "78503"
+        }
+      ],
+      "gold": "gold/valley-childrens.json",
+      "id": "valley-childrens",
+      "name": "Example Valley Children's Hospital",
+      "schedule_h_object_id": "202601999349300303",
+      "system_name": null
+    },
+    {
+      "documents": {
+        "application_en": {
+          "kind": "application",
+          "language": "en",
+          "path": "docs/pineywoods-regional/application_en.pdf",
+          "sha256": "18ade97bfbf237e929c1d6422e0cf5e51b5177660ac02e41b12c6e535ad8fcbb",
+          "url": "https://www.examplepineywoods.example/financial-assistance/application.pdf"
+        },
+        "fap": {
+          "kind": "fap",
+          "language": "en",
+          "path": "docs/pineywoods-regional/fap.pdf",
+          "sha256": "41c13eb806c742f1de0612bbdb822399d18c3a1dde1b2a17adebfb958640ce07",
+          "url": "https://www.examplepineywoods.example/financial-assistance/fap.pdf"
+        },
+        "pls_en": {
+          "kind": "pls",
+          "language": "en",
+          "path": "docs/pineywoods-regional/pls_en.pdf",
+          "sha256": "90ed91c425e024f39d5f8c2a4460abdd20faa5f511998ced03f5da61adf9218f",
+          "url": "https://www.examplepineywoods.example/financial-assistance/summary.pdf"
+        }
+      },
+      "domain": "examplepineywoods.example",
+      "ein": "990100404",
+      "facilities": [
+        {
+          "address": "1500 Example Timberland Drive",
+          "ccn": "459906",
+          "city": "Lufkin",
+          "cms_type": "Acute Care Hospitals",
+          "county": "Angelina",
+          "facility_id": "tx-459906",
+          "license_no": "000404",
+          "name": "Example Pineywoods Regional Medical Center",
+          "zip": "75904"
+        }
+      ],
+      "gold": "gold/pineywoods-regional.json",
+      "id": "pineywoods-regional",
+      "name": "Example Pineywoods Regional Medical Center",
+      "schedule_h_object_id": "202601999349300404",
+      "system_name": null
+    },
+    {
+      "documents": {
+        "application_en": {
+          "kind": "application",
+          "language": "en",
+          "path": "docs/gulf-coast-baptist/application_en.pdf",
+          "sha256": "a3f314bc7c06e07c51be11924064249115b1254ae0fd6110a563883830f0a256",
+          "url": "https://www.examplegulfcoastbaptist.example/financial-assistance/application.pdf"
+        },
+        "fap": {
+          "kind": "fap",
+          "language": "en",
+          "path": "docs/gulf-coast-baptist/fap.pdf",
+          "sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+          "url": "https://www.examplegulfcoastbaptist.example/financial-assistance/fap.pdf"
+        },
+        "pls_en": {
+          "kind": "pls",
+          "language": "en",
+          "path": "docs/gulf-coast-baptist/pls_en.pdf",
+          "sha256": "b75e90ea2025c6120320476a8c7196ad8475cec75edbe1a326980ef9de17da68",
+          "url": "https://www.examplegulfcoastbaptist.example/financial-assistance/summary.pdf"
+        }
+      },
+      "domain": "examplegulfcoastbaptist.example",
+      "ein": "990100505",
+      "facilities": [
+        {
+          "address": "3080 Example College Street",
+          "ccn": "459907",
+          "city": "Beaumont",
+          "cms_type": "Acute Care Hospitals",
+          "county": "Jefferson",
+          "facility_id": "tx-459907",
+          "license_no": "000505",
+          "name": "Example Gulf Coast Baptist Hospital",
+          "zip": "77701"
+        }
+      ],
+      "gold": "gold/gulf-coast-baptist.json",
+      "id": "gulf-coast-baptist",
+      "name": "Example Gulf Coast Baptist Hospital",
+      "schedule_h_object_id": "202601999349300505",
+      "system_name": null
+    },
+    {
+      "documents": {
+        "application_en": {
+          "kind": "application",
+          "language": "en",
+          "path": "docs/hill-country-community/application_en.pdf",
+          "sha256": "5ed818af789ba3f8eb4b166e2411f908ec61faaa4c40b22547c5adddda35c3f0",
+          "url": "https://www.examplehillcountry.example/financial-assistance/application.pdf"
+        },
+        "fap": {
+          "kind": "fap",
+          "language": "en",
+          "path": "docs/hill-country-community/fap.pdf",
+          "sha256": "3dd4f0c65119f975fe0d634e07ad90ff25ed53d4018423e39b2bdb5e66eee7b1",
+          "url": "https://www.examplehillcountry.example/financial-assistance/fap.pdf"
+        },
+        "pls_en": {
+          "kind": "pls",
+          "language": "en",
+          "path": "docs/hill-country-community/pls_en.pdf",
+          "sha256": "c666e8549217cf5e19cb3b39abe392c33e7253222edb3fadc5fb66122d515a58",
+          "url": "https://www.examplehillcountry.example/financial-assistance/summary.pdf"
+        }
+      },
+      "domain": "examplehillcountry.example",
+      "ein": "990100606",
+      "facilities": [
+        {
+          "address": "1020 Example Main Street",
+          "ccn": "459908",
+          "city": "Fredericksburg",
+          "cms_type": "Critical Access Hospitals",
+          "county": "Gillespie",
+          "facility_id": "tx-459908",
+          "license_no": "000606",
+          "name": "Example Hill Country Community Hospital",
+          "zip": "78624"
+        }
+      ],
+      "gold": "gold/hill-country-community.json",
+      "id": "hill-country-community",
+      "name": "Example Hill Country Community Hospital",
+      "schedule_h_object_id": "202601999349300606",
+      "system_name": null
+    },
+    {
+      "documents": {
+        "application_en": {
+          "kind": "application",
+          "language": "en",
+          "path": "docs/panhandle-university/application_en.pdf",
+          "sha256": "8f3968e89494643470ae1f34d7fa91aac20b1c98dcf1687ac30e5591bb79816d",
+          "url": "https://www.examplepanhandleumc.example/financial-assistance/application.pdf"
+        },
+        "fap": {
+          "kind": "fap",
+          "language": "en",
+          "path": "docs/panhandle-university/fap.pdf",
+          "sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "url": "https://www.examplepanhandleumc.example/financial-assistance/fap.pdf"
+        },
+        "pls_en": {
+          "kind": "pls",
+          "language": "en",
+          "path": "docs/panhandle-university/pls_en.pdf",
+          "sha256": "e00bd2503b7cb0730b0c54acf788ec23c9d54519e934cb5fa5e3dc2ddccf397c",
+          "url": "https://www.examplepanhandleumc.example/financial-assistance/summary.pdf"
+        }
+      },
+      "domain": "examplepanhandleumc.example",
+      "ein": "990100707",
+      "facilities": [
+        {
+          "address": "1600 Example Wallace Blvd",
+          "ccn": "459909",
+          "city": "Amarillo",
+          "cms_type": "Acute Care Hospitals",
+          "county": "Potter",
+          "facility_id": "tx-459909",
+          "license_no": "000707",
+          "name": "Example Panhandle University Medical Center",
+          "zip": "79106"
+        }
+      ],
+      "gold": "gold/panhandle-university.json",
+      "id": "panhandle-university",
+      "name": "Example Panhandle University Medical Center",
+      "schedule_h_object_id": "202601999349300707",
+      "system_name": null
+    },
+    {
+      "documents": {
+        "application_en": {
+          "kind": "application",
+          "language": "en",
+          "path": "docs/brazos-valley/application_en.pdf",
+          "sha256": "4a192cbd6bf980dd9c43ffa12653d988570feb18d8237527171dad7676ee3a21",
+          "url": "https://www.examplebrazosvalley.example/financial-assistance/application.pdf"
+        },
+        "fap": {
+          "kind": "fap",
+          "language": "en",
+          "path": "docs/brazos-valley/fap.pdf",
+          "sha256": "0b1b609de5ac377e7afaf98b7032b936eb1f4bc95499754474428f0def1d39ea",
+          "url": "https://www.examplebrazosvalley.example/financial-assistance/fap.pdf"
+        },
+        "pls_en": {
+          "kind": "pls",
+          "language": "en",
+          "path": "docs/brazos-valley/pls_en.pdf",
+          "sha256": "c402318ef22411a8c389b69ddce14f867ef18dd743d085b9f069c24f7bac6319",
+          "url": "https://www.examplebrazosvalley.example/financial-assistance/summary.pdf"
+        }
+      },
+      "domain": "examplebrazosvalley.example",
+      "ein": "990100808",
+      "facilities": [
+        {
+          "address": "2900 Example Briarcrest Drive",
+          "ccn": "459910",
+          "city": "Bryan",
+          "cms_type": "Acute Care Hospitals",
+          "county": "Brazos",
+          "facility_id": "tx-459910",
+          "license_no": "000808",
+          "name": "Example Brazos Valley Medical Center",
+          "zip": "77802"
+        }
+      ],
+      "gold": "gold/brazos-valley.json",
+      "id": "brazos-valley",
+      "name": "Example Brazos Valley Medical Center",
+      "schedule_h_object_id": "202601999349300808",
+      "system_name": null
+    }
+  ],
+  "irs": {
+    "index": "irs/index_2026_demo.csv",
+    "xml_dir": "irs/xml",
+    "zip": "irs/2026_TEOS_XML_DEMO.zip"
+  },
+  "notice": "All hospitals, people, identifiers and URLs in this corpus are fictional.",
+  "synthetic": true,
+  "web_url_map": "web/url_map.json"
+}

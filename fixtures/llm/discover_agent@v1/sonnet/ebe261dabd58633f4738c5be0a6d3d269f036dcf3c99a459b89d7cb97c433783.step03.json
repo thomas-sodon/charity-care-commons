@@ -1,0 +1,25 @@
+{
+  "key": {
+    "doc_sha256": "ebe261dabd58633f4738c5be0a6d3d269f036dcf3c99a459b89d7cb97c433783",
+    "model_tier": "sonnet",
+    "prompt_version": "discover_agent@v1",
+    "variant": "step03"
+  },
+  "model": "claude-sonnet-5-5",
+  "notes": "Synthetic agent trajectory for ein:990100505 (charitycare.discover.demo_fixtures)",
+  "output": {
+    "anchor_text": "Financial Assistance Policy (PDF)",
+    "found_on": "https://www.examplegulfcoastbaptist.example/financial-assistance/",
+    "rationale": "Linked from the financial-assistance page.",
+    "tool": "record_candidate",
+    "url": "https://www.examplegulfcoastbaptist.example/financial-assistance/fap.pdf"
+  },
+  "recorded_at": null,
+  "synthetic": true,
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 4200,
+    "input_tokens": 600,
+    "output_tokens": 60
+  }
+}

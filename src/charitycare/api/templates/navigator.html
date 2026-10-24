@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Packet compiler · Charity Care Commons{% endblock %}
+{% block main %}
+<h1>Packet compiler</h1>
+<ol class="steps" aria-label="Steps"><li>1 Household</li><li>▶ 2 Determination</li><li>▶ 3 Packet</li></ol>
+<p class="lede">For navigators. Nothing you enter is stored: facts live in this request only. Leave SSNs, dates of birth and account numbers off; the packet marks those “write by hand”.</p>
+<form class="card" method="post" action="/navigator/extract" enctype="multipart/form-data" autocomplete="off">
+  <h2>Step 0 · Read a bill and pay stubs (optional)</h2>
+  <p class="muted">Photos are read in memory, location data is stripped, and nothing is kept. You confirm every uncertain value before it is used.</p>
+  <input type="hidden" name="facility_id" value="{{ form.facility_id or '' }}">
+  <div class="grid">
+    <div><label for="bill">Hospital bill (image)</label><input id="bill" name="bill" type="file" accept="image/*"></div>
+    <div><label for="stubs">Pay stubs (images)</label><input id="stubs" name="stubs" type="file" accept="image/*" multiple></div>
+  </div>
+  <div class="actions"><button class="secondary">Read documents</button></div>
+</form>
+{% if confirmed_from_documents %}<p class="flash" role="status">Filled from your confirmed documents: {{ confirmed_from_documents|join(', ')|replace('_', ' ') }}.</p>{% endif %}
+<div class="split">
+<form class="card" method="post" action="/navigator/screen" autocomplete="off">
+  <h2>Step 1 · Household</h2>
+  <label for="facility_id">Hospital</label>
+  <select id="facility_id" name="facility_id" required>
+    {% for f in facilities %}<option value="{{ f.id }}" {% if f.id == form.facility_id %}selected{% endif %}>{{ f.name }} ({{ f.city }}){% if f.coverage != 'verified' %} · {{ f.coverage|replace('_', ' ') }}{% endif %}</option>{% endfor %}
+  </select>
+  <div class="grid">
+    <div><label for="household_size">Household size</label><input id="household_size" name="household_size" type="number" min="1" max="20" required value="{{ form.household_size or '' }}" inputmode="numeric"></div>
+    <div><label for="annual_income">Annual income ($)</label><input id="annual_income" name="annual_income" type="number" min="0" step="0.01" required value="{{ form.annual_income or '' }}" inputmode="decimal"></div>
+    <div><label for="liquid_assets">Liquid assets ($, optional)</label><input id="liquid_assets" name="liquid_assets" type="number" min="0" step="0.01" value="{{ form.liquid_assets or '' }}" inputmode="decimal"></div>
+    <div><label for="county">County</label><input id="county" name="county" value="{{ form.county or '' }}"></div>
+    <div><label for="insured">Insured</label><select id="insured" name="insured">
+      <option value="" {% if not form.insured %}selected{% endif %}>Unknown</option><option value="yes" {% if form.insured == 'yes' %}selected{% endif %}>Yes</option><option value="no" {% if form.insured == 'no' %}selected{% endif %}>No</option></select></div>
+    <div><label for="first_statement_date">First statement date</label><input id="first_statement_date" name="first_statement_date" type="date" value="{{ form.first_statement_date or '' }}"></div>
+    <div><label for="service_date">Date of service</label><input id="service_date" name="service_date" type="date" value="{{ form.service_date or '' }}"></div>
+  </div>
+  <label><input type="checkbox" name="emergency_care" value="1" {% if form.emergency_care %}checked{% endif %}> Emergency care</label>
+  <h3>Contact for the form (optional)</h3>
+  <div class="grid">
+    <div><label for="patient_name">Patient name</label><input id="patient_name" name="patient_name" value="{{ form.patient_name or '' }}"></div>
+    <div><label for="address">Street address</label><input id="address" name="address" value="{{ form.address or '' }}"></div>
+    <div><label for="city">City</label><input id="city" name="city" value="{{ form.city or '' }}"></div>
+    <div><label for="zip">ZIP</label><input id="zip" name="zip" value="{{ form.zip or '' }}" inputmode="numeric"></div>
+    <div><label for="phone">Phone</label><input id="phone" name="phone" value="{{ form.phone or '' }}" inputmode="tel"></div>
+  </div>
+  <div class="actions">
+    <button hx-post="/navigator/screen" hx-target="#result">Step 2 · Screen</button>
+    <button class="secondary" formaction="/packet" formmethod="post">Step 3 · Download packet PDF</button>
+    <a class="button secondary" href="/navigator">Start over (wipe)</a>
+  </div>
+</form>
+<section id="result" aria-live="polite">{% if result %}{% include "_determination.html" %}{% endif %}</section>
+</div>
+{% endblock %}

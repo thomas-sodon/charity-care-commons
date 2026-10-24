@@ -1,0 +1,25 @@
+# Synthetic demo corpus (data/demo, built by `ccc demo build`). Eight fictional
+# Texas hospitals; the splits mirror section 12 at demo scale:
+#   smoke = the cheap per-PR subset (covers all three deliberate fixture errors
+#           and the image-only page), dev = everything we may tune on,
+#   test  = frozen hospitals, scored only for releases.
+name: demo
+root: demo            # relative to CCC_DATA_DIR
+version: demo-2026.10
+synthetic: true
+splits:
+  smoke:
+    - example-methodist
+    - lone-star-health
+    - gulf-coast-baptist
+    - pineywoods-regional
+  dev:
+    - example-methodist
+    - lone-star-health
+    - gulf-coast-baptist
+    - pineywoods-regional
+    - hill-country-community
+  test:
+    - valley-childrens
+    - panhandle-university
+    - brazos-valley

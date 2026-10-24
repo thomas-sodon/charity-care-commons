@@ -1,0 +1,16 @@
+{
+  "dataset_version": "demo-2026.10+70a269d61e21",
+  "git_sha": null,
+  "metrics": {
+    "cost_per_packet_usd": 0.0324,
+    "extraction_field_exact": 1.0,
+    "packet_verified_rate": 1.0,
+    "readback_fillable_exact": 1.0,
+    "readback_flat_exact": 1.0,
+    "template_f1": 1.0,
+    "verified_packets_with_mismatch": 0.0
+  },
+  "mode": "replay",
+  "source_run": "packet-20261024T182903Z-95d8ae1f",
+  "suite": "packet"
+}

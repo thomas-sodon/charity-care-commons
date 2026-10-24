@@ -1,0 +1,22 @@
+{
+  "key": {
+    "doc_sha256": "d5a885c05c9fe6585c4dcacd5a7420bee25ed1ba71faa9dbe96514887a64b57c",
+    "model_tier": "sonnet",
+    "prompt_version": "discover_agent@v1",
+    "variant": "step05"
+  },
+  "model": "claude-sonnet-5-5",
+  "notes": "Synthetic agent trajectory for ein:990100606 (charitycare.discover.demo_fixtures)",
+  "output": {
+    "rationale": "Policy, application and summary recorded.",
+    "tool": "finish"
+  },
+  "recorded_at": null,
+  "synthetic": true,
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 6000,
+    "input_tokens": 600,
+    "output_tokens": 60
+  }
+}

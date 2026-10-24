@@ -1,0 +1,25 @@
+DRAFT: edit this letter in your own words before signing. Remove anything you do not want to share.
+
+{{ submitted }}
+
+{{ hospital_name }}
+Financial Assistance Office
+
+Re: Financial hardship statement
+Patient: {{ patient_name }}
+
+To the Financial Assistance Office:
+
+I am writing to explain my household's financial situation in support of my application for financial assistance.
+
+{% if circumstances %}{{ circumstances }}{% else %}[Describe what changed: for example a job loss, reduced hours, illness, new medical bills or other expenses. Say when it started and how it affects your ability to pay.]{% endif %}
+
+Our household has {{ household_size }} {{ "person" if household_size == 1 else "people" }}. [Add anything else the hospital should know, such as other medical bills or support you provide to family members.]
+
+Thank you for considering this statement with my application.
+
+Sincerely,
+
+
+______________________________
+{{ patient_name }}

@@ -1,0 +1,13 @@
+<ul class="queue" id="queue-list" {% if oob %}hx-swap-oob="true"{% endif %}>
+{% for t in tasks %}
+  <li><a href="/console?task={{ t.id|urlencode }}" hx-get="/console/tasks/{{ t.id|urlencode }}" hx-target="#detail" hx-push-url="/console?task={{ t.id|urlencode }}"
+         {% if detail and detail.task.id == t.id %}aria-current="true"{% endif %}>
+    <strong>{{ t.title }}</strong> · {{ t.subject }}
+    <span class="badge b-{{ 'discrepancy' if t.priority == 'high' else ('partial' if t.priority == 'medium' else 'none') }}">{{ t.priority|upper }}</span>
+    <span class="muted">impact {{ t.impact }}</span><br>
+    <span class="muted">{{ t.line }}</span>
+  </a></li>
+{% else %}
+  <li><p class="muted" style="padding:.75rem">Queue is empty.</p></li>
+{% endfor %}
+</ul>

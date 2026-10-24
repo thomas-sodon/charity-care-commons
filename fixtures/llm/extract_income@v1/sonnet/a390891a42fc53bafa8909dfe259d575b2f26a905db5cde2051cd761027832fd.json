@@ -1,0 +1,100 @@
+{
+  "key": {
+    "doc_sha256": "a390891a42fc53bafa8909dfe259d575b2f26a905db5cde2051cd761027832fd",
+    "model_tier": "sonnet",
+    "prompt_version": "extract_income@v1",
+    "variant": ""
+  },
+  "model": "claude-sonnet-5-5",
+  "notes": "synthetic pay_stub 'pay_stub' ground truth (packet/synthetic.py)",
+  "output": {
+    "employer_name": {
+      "bbox": [
+        0.4714,
+        0.18,
+        0.7524,
+        0.2233
+      ],
+      "confidence": 0.96,
+      "value": "Example Grocery Co."
+    },
+    "gross_pay_current": {
+      "bbox": [
+        0.4714,
+        0.58,
+        0.5952,
+        0.6233
+      ],
+      "confidence": 0.95,
+      "value": "1,911.54"
+    },
+    "gross_pay_ytd": {
+      "bbox": [
+        0.4714,
+        0.6467,
+        0.6095,
+        0.69
+      ],
+      "confidence": 0.93,
+      "value": "36,319.26"
+    },
+    "net_pay_current": {
+      "bbox": [
+        0.4714,
+        0.7133,
+        0.5952,
+        0.7567
+      ],
+      "confidence": 0.94,
+      "value": "1,602.17"
+    },
+    "pay_date": {
+      "bbox": [
+        0.4714,
+        0.4467,
+        0.6238,
+        0.49
+      ],
+      "confidence": 0.95,
+      "value": "2026-10-02"
+    },
+    "pay_frequency": {
+      "bbox": [
+        0.4714,
+        0.5133,
+        0.5952,
+        0.5567
+      ],
+      "confidence": 0.9,
+      "value": "biweekly"
+    },
+    "period_end": {
+      "bbox": [
+        0.4714,
+        0.38,
+        0.8095,
+        0.4233
+      ],
+      "confidence": 0.92,
+      "value": "2026-09-27"
+    },
+    "period_start": {
+      "bbox": [
+        0.4714,
+        0.38,
+        0.8095,
+        0.4233
+      ],
+      "confidence": 0.92,
+      "value": "2026-09-14"
+    }
+  },
+  "recorded_at": null,
+  "synthetic": true,
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 2400,
+    "output_tokens": 600
+  }
+}

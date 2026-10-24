@@ -1,0 +1,20 @@
+[
+  {
+    "hospital_id": "example-methodist",
+    "field": "refund_policy",
+    "kind": "quote_not_verbatim",
+    "description": "Quote paraphrases the refund clause; it does not occur verbatim on the cited page."
+  },
+  {
+    "hospital_id": "lone-star-health",
+    "field": "required_documents",
+    "kind": "wrong_page",
+    "description": "Second evidence item cites page 4; the quote is on page 5."
+  },
+  {
+    "hospital_id": "gulf-coast-baptist",
+    "field": "fpg_tiers",
+    "kind": "misread_value",
+    "description": "Free-care tier max read as 250 (quote says 200%); Schedule H line 13a says 200."
+  }
+]

@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+{% block title %}Texas charity care dashboard · Charity Care Commons{% endblock %}
+{% block main %}
+<h1>Texas · {{ stats.facilities }} facilities · as of {{ today }}</h1>
+<p class="lede">Each hospital's financial-assistance rules, compiled from its own policy with verbatim quotes, checked against its IRS Schedule H filing, and verified by a reviewer.</p>
+<div class="grid" role="list" aria-label="Headline numbers">
+  <div class="stat" role="listitem"><span class="n">{{ stats.coverage_pct }}%</span><span class="l">policy found (coverage)</span></div>
+  <div class="stat" role="listitem"><span class="n">{{ stats.fields_verified_pct }}%</span><span class="l">fields verified by a reviewer</span></div>
+  <div class="stat" role="listitem"><span class="n">{{ stats.discrepancies_for_review }}</span><span class="l"><a href="#discrepancies">discrepancies for review</a>{% if stats.differences_under_review %} <span class="muted">({{ stats.differences_under_review }} more under review or awaiting the hospital's reply)</span>{% endif %}</span></div>
+  <div class="stat" role="listitem"><span class="n">{{ stats.changes_recent }}</span><span class="l">changes in the last {{ stats.since_days }} days</span></div>
+</div>
+
+<h2 id="map-h">Map</h2>
+<figure class="card map" aria-labelledby="map-h">
+<svg viewBox="0 0 {{ map_w|int }} {{ map_h|int }}" role="img" aria-labelledby="map-title map-desc">
+  <title id="map-title">Texas facilities by verification status</title>
+  <desc id="map-desc">{{ stats.by_coverage.verified }} verified, {{ stats.by_coverage.partial }} partial, {{ stats.by_coverage.not_found }} policy not found. The table below lists every facility.</desc>
+  <path class="state-outline" d="{{ outline }}"/>
+  {% for d in dots %}
+  <a href="hospitals/{{ d.f.id }}.html" aria-label="{{ d.f.name }}: {{ d.f.coverage|replace('_', ' ') }}">
+    {% if d.f.coverage == 'verified' %}<circle class="dot-verified" cx="{{ d.x }}" cy="{{ d.y }}" r="6"><title>{{ d.f.name }} · verified</title></circle>
+    {% elif d.f.coverage == 'partial' %}<rect class="dot-partial" x="{{ d.x - 5 }}" y="{{ d.y - 5 }}" width="10" height="10"><title>{{ d.f.name }} · partial</title></rect>
+    {% else %}<path class="dot-not_found" d="M{{ d.x - 5 }},{{ d.y - 5 }} L{{ d.x + 5 }},{{ d.y + 5 }} M{{ d.x + 5 }},{{ d.y - 5 }} L{{ d.x - 5 }},{{ d.y + 5 }}" stroke-width="3" style="stroke: var(--bad)"><title>{{ d.f.name }} · policy not found</title></path>{% endif %}
+  </a>
+  {% endfor %}
+</svg>
+<figcaption class="legend">
+  <span><svg width="14" height="14" aria-hidden="true"><circle class="dot-verified" cx="7" cy="7" r="6"/></svg> ✓ verified</span>
+  <span><svg width="14" height="14" aria-hidden="true"><rect class="dot-partial" x="2" y="2" width="10" height="10"/></svg> ○ partial (some fields provisional)</span>
+  <span><svg width="14" height="14" aria-hidden="true"><path d="M2,2 L12,12 M12,2 L2,12" stroke-width="3" style="stroke: var(--bad)"/></svg> ✗ policy not found</span>
+  {% if unmapped %}<span>{{ unmapped|length }} facilities not placed on the map (county location unknown); all are in the table.</span>{% endif %}
+</figcaption>
+</figure>
+
+<h2 id="table-h">All facilities</h2>
+<form class="filters" id="filters" hidden aria-label="Filter facilities">
+  <div><label for="f-free">Free-care cutoff</label>
+    <select id="f-free" data-filter="free"><option value="">any</option><option value="lt200">below 200% FPL</option><option value="eq200">200% FPL</option><option value="gt200">above 200% FPL</option></select></div>
+  <div><label for="f-asset">Asset test</label>
+    <select id="f-asset" data-filter="asset"><option value="">any</option><option value="yes">yes</option><option value="no">no</option></select></div>
+  <div><label for="f-screen">Screening</label>
+    <select id="f-screen" data-filter="screening"><option value="">any</option><option value="before_billing">before billing</option><option value="after_billing_before_collections">after billing, before collections</option><option value="before_writeoff">before write-off</option><option value="unspecified">unspecified</option></select></div>
+  <div><label for="f-cov">Status</label>
+    <select id="f-cov" data-filter="coverage"><option value="">any</option><option value="verified">verified</option><option value="partial">partial</option><option value="not_found">not found</option></select></div>
+  <div><label for="f-q">Search</label><input id="f-q" type="search" data-filter="q" placeholder="name, city or county"></div>
+  <p class="muted" aria-live="polite" id="filter-count"></p>
+</form>
+<div class="table-wrap">
+<table id="facilities">
+  <caption>Hospital rules at a glance. “Free ≤” and “Disc ≤” are percent of the federal poverty guideline (FPL).</caption>
+  <thead><tr><th scope="col">Hospital</th><th scope="col">Free ≤</th><th scope="col">Disc ≤</th><th scope="col">Asset</th><th scope="col">Residency</th><th scope="col">Docs</th><th scope="col">IRS check</th><th scope="col">Δ 30d</th><th scope="col">Status</th></tr></thead>
+  <tbody>
+  {% for f in facilities %}
+  <tr data-free="{{ f.free_max_pct if f.free_max_pct is not none else '' }}" data-asset="{{ '' if f.asset_test is none else ('yes' if f.asset_test else 'no') }}" data-screening="{{ f.screening_timing or '' }}" data-coverage="{{ f.coverage }}" data-q="{{ (f.name ~ ' ' ~ (f.city or '') ~ ' ' ~ (f.county or ''))|lower }}">
+    <th scope="row"><a href="hospitals/{{ f.id }}.html">{{ f.name }}</a><br><span class="muted">{{ f.city }}, {{ f.county }} County</span></th>
+    <td>{{ f.free_max_pct|pct }}</td>
+    <td>{{ f.discount_max_pct|pct }}</td>
+    <td>{% if f.asset_test is none %}—{% elif f.asset_test %}Yes{% if f.asset_threshold_usd %}, &gt; {{ f.asset_threshold_usd|usd }}{% endif %}{% else %}No{% endif %}</td>
+    <td>{{ f.residency }}</td>
+    <td>{{ f.documents }}</td>
+    <td>{% if f.irs_check == 'discrepancy' %}<span class="badge b-discrepancy">⚠ {{ discrepancy_label }}</span>{% elif f.irs_check == 'agree' %}<span class="badge b-agree">✓ matches</span>{% elif f.irs_check == 'context' %}<span class="badge b-context">ⓘ policy newer</span>{% else %}<span class="badge b-none">–</span>{% endif %}</td>
+    <td>{{ f.recent_changes }}</td>
+    <td><span class="badge b-{{ f.coverage }}">{% if f.coverage == 'verified' %}✓ verified{% elif f.coverage == 'partial' %}○ partial{% else %}✗ not found{% endif %}</span></td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+
+<h2 id="discrepancies">{{ discrepancy_label }}s</h2>
+<p class="muted">A policy value that differs from the hospital's IRS Schedule H filing for a reason the filing period does not explain. These are prompts for review, not findings; each hospital can reply, and replies are shown.</p>
+{% for d in discrepancies %}
+<div class="discrepancy">
+  <strong>{{ d.field_label }}</strong> · {% for fid in d.facility_ids %}<a href="hospitals/{{ fid }}.html">{{ fid }}</a>{% if not loop.last %}, {% endif %}{% endfor %}<br>
+  IRS filing: {{ d.external_text }} · filing period ended {{ d.filing_period_end or 'unknown' }}; policy dated {{ d.policy_date or 'unknown' }}
+  {% for r in d.hospital_responses %}<blockquote class="q">Hospital response ({{ r.received_at[:10] }}): “{{ r.statement }}”</blockquote>{% endfor %}
+</div>
+{% else %}<p>None at this time.</p>{% endfor %}
+{% endblock %}

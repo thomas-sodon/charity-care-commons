@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Return xmlns="http://www.irs.gov/efile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" returnVersion="2024v5.0">
+  <ReturnHeader binaryAttachmentCnt="0">
+    <ReturnTs>2026-05-15T10:15:00-05:00</ReturnTs>
+    <TaxPeriodEndDt>2025-06-30</TaxPeriodEndDt>
+    <TaxPeriodBeginDt>2024-07-01</TaxPeriodBeginDt>
+    <Filer>
+      <EIN>990100404</EIN>
+      <BusinessName>
+        <BusinessNameLine1Txt>EXAMPLE PINEYWOODS REGIONAL MEDICAL CENTER</BusinessNameLine1Txt>
+      </BusinessName>
+      <BusinessNameControlTxt>EXAM</BusinessNameControlTxt>
+      <PhoneNum>9365550400</PhoneNum>
+      <USAddress>
+        <AddressLine1Txt>1500 EXAMPLE TIMBERLAND DRIVE</AddressLine1Txt>
+        <CityNm>LUFKIN</CityNm>
+        <StateAbbreviationCd>TX</StateAbbreviationCd>
+        <ZIPCd>75904</ZIPCd>
+      </USAddress>
+    </Filer>
+    <ReturnTypeCd>990</ReturnTypeCd>
+    <TaxYr>2024</TaxYr>
+  </ReturnHeader>
+  <ReturnData documentCnt="2">
+    <IRS990 documentId="IRS990-01">
+      <PrincipalOfficerNm>SYNTHETIC OFFICER</PrincipalOfficerNm>
+      <WebsiteAddressTxt>www.examplepineywoods.example</WebsiteAddressTxt>
+      <Organization501c3Ind>X</Organization501c3Ind>
+      <ActivityOrMissionDesc>SYNTHETIC DEMO RETURN FOR A FICTIONAL TEXAS NONPROFIT HOSPITAL</ActivityOrMissionDesc>
+    </IRS990>
+    <IRS990ScheduleH documentId="IRS990ScheduleH-01">
+      <FinancialAssistancePolicyInd>true</FinancialAssistancePolicyInd>
+      <WrittenPolicyInd>true</WrittenPolicyInd>
+      <IndivHospitalTailoredPolicyInd>X</IndivHospitalTailoredPolicyInd>
+      <FPGReferenceFreeCareInd>true</FPGReferenceFreeCareInd>
+      <FreeCareOthPercentageGrp>
+        <OtherInd>X</OtherInd>
+        <FreeCareOtherPct>125</FreeCareOtherPct>
+      </FreeCareOthPercentageGrp>
+      <FPGReferenceDiscountedCareInd>true</FPGReferenceDiscountedCareInd>
+      <Percent250Ind>X</Percent250Ind>
+      <FreeCareMedicallyIndigentInd>false</FreeCareMedicallyIndigentInd>
+      <HospitalFacilitiesCnt>1</HospitalFacilitiesCnt>
+      <HospitalFacilitiesGrp>
+        <FacilityNum>1</FacilityNum>
+        <BusinessName>
+          <BusinessNameLine1Txt>EXAMPLE PINEYWOODS REGIONAL MEDICAL CENTER</BusinessNameLine1Txt>
+        </BusinessName>
+        <USAddress>
+          <AddressLine1Txt>1500 EXAMPLE TIMBERLAND DRIVE</AddressLine1Txt>
+          <CityNm>LUFKIN</CityNm>
+          <StateAbbreviationCd>TX</StateAbbreviationCd>
+          <ZIPCd>75904</ZIPCd>
+        </USAddress>
+        <WebsiteAddressTxt>www.examplepineywoods.example</WebsiteAddressTxt>
+        <StateLicenseNum>000404</StateLicenseNum>
+        <LicensedHospitalInd>X</LicensedHospitalInd>
+        <GeneralMedicalAndSurgicalInd>X</GeneralMedicalAndSurgicalInd>
+        <EmergencyRoom24HrsInd>X</EmergencyRoom24HrsInd>
+      </HospitalFacilitiesGrp>
+      <HospitalFcltyPoliciesPrctcGrp>
+        <HospitalFacilityName>
+          <BusinessNameLine1Txt>EXAMPLE PINEYWOODS REGIONAL MEDICAL CENTER</BusinessNameLine1Txt>
+        </HospitalFacilityName>
+        <FacilityNum>1</FacilityNum>
+        <FirstLicensedCYOrPYInd>false</FirstLicensedCYOrPYInd>
+        <TaxExemptHospitalCYOrPYInd>false</TaxExemptHospitalCYOrPYInd>
+        <CHNAConductedInd>true</CHNAConductedInd>
+        <CHNAConductedYr>2024</CHNAConductedYr>
+        <ImplementationStrategyAdoptInd>true</ImplementationStrategyAdoptInd>
+        <EligCriteriaExplainedInd>true</EligCriteriaExplainedInd>
+        <FPGFamilyIncmLmtFreeDscntInd>X</FPGFamilyIncmLmtFreeDscntInd>
+        <FPGFamilyIncmLmtFreeCarePct>125</FPGFamilyIncmLmtFreeCarePct>
+        <FPGFamilyIncmLmtDscntCarePct>250</FPGFamilyIncmLmtDscntCarePct>
+        <IncomeLevelCriteriaInd>X</IncomeLevelCriteriaInd>
+        <InsuranceStatusCriteriaInd>X</InsuranceStatusCriteriaInd>
+        <ResidencyCriteriaInd>X</ResidencyCriteriaInd>
+        <ExplainedBasisInd>true</ExplainedBasisInd>
+        <AppFinancialAsstExplnInd>true</AppFinancialAsstExplnInd>
+        <DescribedInfoInd>X</DescribedInfoInd>
+        <DescribedSuprtDocInd>X</DescribedSuprtDocInd>
+        <ProvidedHospitalContactInd>X</ProvidedHospitalContactInd>
+        <IncludesPublicityMeasuresInd>true</IncludesPublicityMeasuresInd>
+        <FAPAvailableOnWebsiteInd>X</FAPAvailableOnWebsiteInd>
+        <FAPAvailableOnWebsiteURLTxt>https://www.examplepineywoods.example/financial-assistance/fap.pdf</FAPAvailableOnWebsiteURLTxt>
+        <FAPAppAvailableOnWebsiteInd>X</FAPAppAvailableOnWebsiteInd>
+        <FAPAppAvailableOnWebsiteURLTxt>https://www.examplepineywoods.example/financial-assistance/application.pdf</FAPAppAvailableOnWebsiteURLTxt>
+        <FAPSummaryOnWebsiteInd>X</FAPSummaryOnWebsiteInd>
+        <FAPSummaryOnWebsiteURLTxt>https://www.examplepineywoods.example/financial-assistance/summary.pdf</FAPSummaryOnWebsiteURLTxt>
+        <FAPAvlblOnRequestNoChargeInd>X</FAPAvlblOnRequestNoChargeInd>
+        <FAPAppAvlblOnRequestNoChrgInd>X</FAPAppAvlblOnRequestNoChrgInd>
+        <FAPSumAvlblOnRequestNoChrgInd>X</FAPSumAvlblOnRequestNoChrgInd>
+        <NotifiedFAPCopyBillDisplayInd>X</NotifiedFAPCopyBillDisplayInd>
+        <FAPActionsOnNonpaymentInd>true</FAPActionsOnNonpaymentInd>
+        <PermitNoActionsInd>X</PermitNoActionsInd>
+        <CollectionActivitiesInd>false</CollectionActivitiesInd>
+        <ProvidedWrittenNoticeInd>X</ProvidedWrittenNoticeInd>
+        <ProcessedFAPApplicationInd>X</ProcessedFAPApplicationInd>
+        <NondisEmergencyCarePolicyInd>true</NondisEmergencyCarePolicyInd>
+        <LookBackMedicareInd>X</LookBackMedicareInd>
+        <AmountsGenerallyBilledInd>false</AmountsGenerallyBilledInd>
+        <GrossChargesInd>false</GrossChargesInd>
+      </HospitalFcltyPoliciesPrctcGrp>
+      <SupplementalInformationGrp>
+        <FormAndLineReferenceDesc>PART V, SECTION B, LINE 13H</FormAndLineReferenceDesc>
+        <ExplanationTxt>THE ORGANIZATION CONSIDERS FAMILY SIZE AND HOUSEHOLD INCOME AS DESCRIBED IN ITS FINANCIAL ASSISTANCE POLICY.</ExplanationTxt>
+      </SupplementalInformationGrp>
+    </IRS990ScheduleH>
+  </ReturnData>
+</Return>

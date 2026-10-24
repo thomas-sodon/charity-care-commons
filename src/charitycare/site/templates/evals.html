@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block title %}Evaluation report · Charity Care Commons{% endblock %}
+{% block main %}
+<h1>Evaluation report</h1>
+<p class="lede">Accuracy, citation validity, Schedule H agreement, coverage and cost, measured against a hand-labelled gold set. Every number comes from a recorded eval run (git SHA and dataset version shown).</p>
+{% for row in latest %}
+{% set r = row.run %}
+<section class="card" aria-labelledby="suite-{{ loop.index }}">
+  <h2 id="suite-{{ loop.index }}" style="margin-top:0">Suite: {{ r.suite }}</h2>
+  <p class="muted">Run <code>{{ r.id }}</code> · {{ r.created_at.date() }} · git <code>{{ r.git_sha or 'n/a' }}</code> · dataset {{ r.dataset_version }} · cost ${{ '%.4f'|format(r.cost_usd) }}{% if r.simulated_cost %} (SIMULATED){% endif %}</p>
+  {% if r.notes %}
+  <div class="caveat" role="note"><strong>Caveats for this run:</strong>
+    <ul>{% for n in r.notes %}<li>{{ n }}</li>{% endfor %}</ul>
+  </div>
+  {% endif %}
+  <div class="table-wrap"><table>
+    <thead><tr><th scope="col">Metric</th><th scope="col">Value</th></tr></thead>
+    <tbody>{% for k, v in row.metrics|dictsort %}<tr><th scope="row"><code>{{ k }}</code></th><td>{{ '%.4g'|format(v) }}{% if k in row.simulated %} <strong>SIMULATED</strong>{% endif %}</td></tr>{% endfor %}</tbody>
+  </table></div>
+</section>
+{% else %}
+<div class="card"><p>No eval runs have been recorded yet. Runs appear here after <code>python -m charitycare.evals run --suite …</code> stores an <code>eval_run</code>.</p></div>
+{% endfor %}
+{% if runs|length > latest|length %}
+<h2>Run history</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th scope="col">Date</th><th scope="col">Suite</th><th scope="col">Run</th><th scope="col">git</th><th scope="col">Dataset</th></tr></thead>
+  <tbody>{% for r in runs %}<tr><td>{{ r.created_at.date() }}</td><td>{{ r.suite }}</td><td><code>{{ r.id }}</code></td><td><code>{{ r.git_sha or 'n/a' }}</code></td><td>{{ r.dataset_version }}</td></tr>{% endfor %}</tbody>
+</table></div>
+{% endif %}
+<p><a href="{{ root }}data/eval-runs.json">All runs as JSON</a></p>
+{% endblock %}

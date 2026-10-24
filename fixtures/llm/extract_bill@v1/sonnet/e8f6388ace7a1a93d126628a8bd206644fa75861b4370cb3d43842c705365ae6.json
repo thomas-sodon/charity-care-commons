@@ -1,0 +1,70 @@
+{
+  "key": {
+    "doc_sha256": "e8f6388ace7a1a93d126628a8bd206644fa75861b4370cb3d43842c705365ae6",
+    "model_tier": "sonnet",
+    "prompt_version": "extract_bill@v1",
+    "variant": ""
+  },
+  "model": "claude-sonnet-5-5",
+  "notes": "synthetic bill 'bill' ground truth (packet/synthetic.py)",
+  "output": {
+    "account_last4": {
+      "bbox": [
+        0.4714,
+        0.3133,
+        0.681,
+        0.3567
+      ],
+      "confidence": 0.88,
+      "value": "8842"
+    },
+    "amount_due": {
+      "bbox": [
+        0.4714,
+        0.5133,
+        0.6095,
+        0.5567
+      ],
+      "confidence": 0.94,
+      "value": "9,400.00"
+    },
+    "provider_name": {
+      "bbox": [
+        0.4714,
+        0.18,
+        0.8524,
+        0.2233
+      ],
+      "confidence": 0.97,
+      "value": "Example Methodist Hospital"
+    },
+    "service_date": {
+      "bbox": [
+        0.4714,
+        0.4467,
+        0.6238,
+        0.49
+      ],
+      "confidence": 0.93,
+      "value": "2026-09-18"
+    },
+    "statement_date": {
+      "bbox": [
+        0.4714,
+        0.38,
+        0.6238,
+        0.4233
+      ],
+      "confidence": 0.95,
+      "value": "2026-10-10"
+    }
+  },
+  "recorded_at": null,
+  "synthetic": true,
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 2400,
+    "output_tokens": 600
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "key": {
+    "doc_sha256": "c42fa288f85c76e248c52ea2c8322eddd69ec1fe7bde6e471ec31b7d800e2da7",
+    "model_tier": "sonnet",
+    "prompt_version": "discover_agent@v1",
+    "variant": "step03"
+  },
+  "model": "claude-sonnet-5-5",
+  "notes": "Synthetic agent trajectory for ein:990100101 (charitycare.discover.demo_fixtures)",
+  "output": {
+    "anchor_text": "Financial Assistance Policy (PDF)",
+    "found_on": "https://www.examplemethodist.example/financial-assistance/",
+    "rationale": "Linked from the financial-assistance page.",
+    "tool": "record_candidate",
+    "url": "https://www.examplemethodist.example/financial-assistance/fap.pdf"
+  },
+  "recorded_at": null,
+  "synthetic": true,
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 4200,
+    "input_tokens": 600,
+    "output_tokens": 60
+  }
+}

@@ -1,0 +1,770 @@
+{
+  "corpus_version": "demo-2026.10",
+  "documents": {
+    "application_en": {
+      "form_kind": "fillable",
+      "form_template": {
+        "doc_sha256": "a3f314bc7c06e07c51be11924064249115b1254ae0fd6110a563883830f0a256",
+        "field_map": [
+          {
+            "field_type": "text",
+            "key": "patient_name",
+            "label": "Patient name (first, middle, last)",
+            "page": 1,
+            "rect": [
+              60.0,
+              191.57,
+              552.0,
+              207.57
+            ],
+            "widget_name": "txtPatientName",
+            "write_by_hand": false
+          },
+          {
+            "field_type": "date",
+            "key": "date_of_birth",
+            "label": "Date of birth",
+            "page": 1,
+            "rect": [
+              60.0,
+              229.57,
+              250.0,
+              245.57
+            ],
+            "widget_name": "txtDateOfBirth",
+            "write_by_hand": true
+          },
+          {
+            "field_type": "text",
+            "key": "ssn",
+            "label": "Social Security number",
+            "page": 1,
+            "rect": [
+              270.0,
+              229.57,
+              552.0,
+              245.57
+            ],
+            "widget_name": "txtSocialSecurityNumber",
+            "write_by_hand": true
+          },
+          {
+            "field_type": "text",
+            "key": "address",
+            "label": "Street address",
+            "page": 1,
+            "rect": [
+              60.0,
+              267.57,
+              552.0,
+              283.57
+            ],
+            "widget_name": "txtStreetAddress",
+            "write_by_hand": false
+          },
+          {
+            "field_type": "text",
+            "key": "city",
+            "label": "City",
+            "page": 1,
+            "rect": [
+              60.0,
+              305.57,
+              300.0,
+              321.57
+            ],
+            "widget_name": "txtCity",
+            "write_by_hand": false
+          },
+          {
+            "field_type": "text",
+            "key": "state",
+            "label": "State",
+            "page": 1,
+            "rect": [
+              320.0,
+              305.57,
+              400.0,
+              321.57
+            ],
+            "widget_name": "txtState",
+            "write_by_hand": false
+          },
+          {
+            "field_type": "text",
+            "key": "zip",
+            "label": "ZIP code",
+            "page": 1,
+            "rect": [
+              420.0,
+              305.57,
+              552.0,
+              321.57
+            ],
+            "widget_name": "txtZipCode",
+            "write_by_hand": false
+          },
+          {
+            "field_type": "text",
+            "key": "county",
+            "label": "County",
+            "page": 1,
+            "rect": [
+              60.0,
+              343.57,
+              300.0,
+              359.57
+            ],
+            "widget_name": "txtCounty",
+            "write_by_hand": false
+          },
+          {
+            "field_type": "text",
+            "key": "phone",
+            "label": "Phone number",
+            "page": 1,
+            "rect": [
+              320.0,
+              343.57,
+              552.0,
+              359.57
+            ],
+            "widget_name": "txtPhoneNumber",
+            "write_by_hand": false
+          },
+          {
+            "field_type": "text",
+            "key": "account_number",
+            "label": "Hospital account number",
+            "page": 1,
+            "rect": [
+              60.0,
+              381.57,
+              300.0,
+              397.57
+            ],
+            "widget_name": "txtHospitalAccountNumber",
+            "write_by_hand": true
+          },
+          {
+            "field_type": "text",
+            "key": "household_size",
+            "label": "Number of people in household",
+            "page": 1,
+            "rect": [
+              60.0,
+              442.26,
+              300.0,
+              458.26
+            ],
+            "widget_name": "txtNumberOfPeopleInHousehold",
+            "write_by_hand": false
+          },
+          {
+            "field_type": "money",
+            "key": "annual_household_income",
+            "label": "Total annual household income ($)",
+            "page": 1,
+            "rect": [
+              60.0,
+              480.26,
+              300.0,
+              496.26
+            ],
+            "widget_name": "txtTotalAnnualHouseholdIncome",
+            "write_by_hand": false
+          },
+          {
+            "field_type": "text",
+            "key": "employer",
+            "label": "Employer name",
+            "page": 1,
+            "rect": [
+              60.0,
+              518.26,
+              552.0,
+              534.26
+            ],
+            "widget_name": "txtEmployerName",
+            "write_by_hand": false
+          },
+          {
+            "field_type": "checkbox",
+            "key": "insured_yes",
+            "label": "I have health insurance",
+            "page": 2,
+            "rect": [
+              60.0,
+              82.68,
+              72.0,
+              94.68
+            ],
+            "widget_name": "chkIHaveHealthInsurance",
+            "write_by_hand": false
+          },
+          {
+            "field_type": "checkbox",
+            "key": "insured_no",
+            "label": "I do not have health insurance",
+            "page": 2,
+            "rect": [
+              60.0,
+              104.68,
+              72.0,
+              116.68
+            ],
+            "widget_name": "chkIDoNotHaveHealthInsurance",
+            "write_by_hand": false
+          },
+          {
+            "field_type": "checkbox",
+            "key": "applied_medicaid",
+            "label": "I have applied for Medicaid",
+            "page": 2,
+            "rect": [
+              60.0,
+              126.68,
+              72.0,
+              138.68
+            ],
+            "widget_name": "chkIHaveAppliedForMedicaid",
+            "write_by_hand": false
+          },
+          {
+            "field_type": "signature",
+            "key": "signature",
+            "label": "Signature of patient or guarantor",
+            "page": 2,
+            "rect": [
+              60.0,
+              276.83,
+              350.0,
+              292.83
+            ],
+            "widget_name": "txtSignatureOfPatientOrGuarantor",
+            "write_by_hand": true
+          },
+          {
+            "field_type": "date",
+            "key": "signature_date",
+            "label": "Date",
+            "page": 2,
+            "rect": [
+              370.0,
+              276.83,
+              552.0,
+              292.83
+            ],
+            "widget_name": "txtDate",
+            "write_by_hand": false
+          }
+        ],
+        "kind": "fillable",
+        "language": "en",
+        "verified_at": null,
+        "verified_by": "gold:synthetic"
+      },
+      "image_only_pages": [],
+      "kind": "application",
+      "language": "en",
+      "pages": 2,
+      "path": "docs/gulf-coast-baptist/application_en.pdf",
+      "sha256": "a3f314bc7c06e07c51be11924064249115b1254ae0fd6110a563883830f0a256",
+      "url": "https://www.examplegulfcoastbaptist.example/financial-assistance/application.pdf"
+    },
+    "fap": {
+      "image_only_pages": [],
+      "kind": "fap",
+      "language": "en",
+      "pages": 6,
+      "path": "docs/gulf-coast-baptist/fap.pdf",
+      "sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+      "url": "https://www.examplegulfcoastbaptist.example/financial-assistance/fap.pdf"
+    },
+    "pls_en": {
+      "image_only_pages": [],
+      "kind": "pls",
+      "language": "en",
+      "pages": 1,
+      "path": "docs/gulf-coast-baptist/pls_en.pdf",
+      "sha256": "b75e90ea2025c6120320476a8c7196ad8475cec75edbe1a326980ef9de17da68",
+      "url": "https://www.examplegulfcoastbaptist.example/financial-assistance/summary.pdf"
+    }
+  },
+  "ein": "990100505",
+  "facility_ids": [
+    "tx-459907"
+  ],
+  "hospital_id": "gulf-coast-baptist",
+  "income_table": null,
+  "name": "Example Gulf Coast Baptist Hospital",
+  "notes": [
+    "Presumptive eligibility clause is discretionary ('may'): gold abstains with ambiguous_may_clause."
+  ],
+  "policy": {
+    "agb_method": {
+      "abstain_reason": null,
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+          "page": 6,
+          "quote": "The Hospital calculates amounts generally billed using the look-back method based on Medicare fee-for-service and all private health insurers.",
+          "section_label": "7.1"
+        }
+      ],
+      "value": "lookback_medicare_private"
+    },
+    "agb_pct": {
+      "abstain_reason": null,
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+          "page": 6,
+          "quote": "The current AGB percentage is 30.2% of gross charges.",
+          "section_label": "7.1"
+        }
+      ],
+      "value": 30.2
+    },
+    "application_window": {
+      "abstain_reason": null,
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+          "page": 5,
+          "quote": "Patients may apply at any time within 240 days after the date of the first post-discharge billing statement.",
+          "section_label": "6.1"
+        }
+      ],
+      "value": {
+        "anchor": "first_post_discharge_statement",
+        "days": 240
+      }
+    },
+    "asset_test": {
+      "abstain_reason": null,
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+          "page": 4,
+          "quote": "The Hospital does not consider assets when determining eligibility.",
+          "section_label": "5.1"
+        }
+      ],
+      "value": {
+        "applies": false,
+        "applies_to_tiers": "all",
+        "counted_assets": [],
+        "exclusions": [],
+        "threshold_usd": null
+      }
+    },
+    "award_period_months": {
+      "abstain_reason": null,
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+          "page": 5,
+          "quote": "Approved financial assistance applies to eligible care for 12 months from the date of determination.",
+          "section_label": "6.5"
+        }
+      ],
+      "value": 12
+    },
+    "determination_notice": {
+      "abstain_reason": null,
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+          "page": 5,
+          "quote": "The Hospital will notify the patient in writing of its determination and the basis for the determination.",
+          "section_label": "6.4"
+        }
+      ],
+      "value": true
+    },
+    "effective_or_revision_date": {
+      "abstain_reason": null,
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+          "page": 1,
+          "quote": "Effective date: January 1, 2025",
+          "section_label": null
+        }
+      ],
+      "value": "2025-01-01"
+    },
+    "excluded_services": {
+      "abstain_reason": null,
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+          "page": 1,
+          "quote": "This Policy does not cover services covered by a third-party liability settlement.",
+          "section_label": "2."
+        }
+      ],
+      "value": [
+        "services covered by a third-party liability settlement"
+      ]
+    },
+    "facilities_covered": {
+      "abstain_reason": null,
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+          "page": 1,
+          "quote": "This Policy applies to emergency and other medically necessary care provided by Example Gulf Coast Baptist Hospital.",
+          "section_label": "2."
+        }
+      ],
+      "value": [
+        "Example Gulf Coast Baptist Hospital"
+      ]
+    },
+    "fpg_tiers": {
+      "abstain_reason": null,
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+          "page": 3,
+          "quote": "Patients with household income at or below 200% of the Federal Poverty Guidelines qualify for free care, a 100% discount.",
+          "section_label": "4.2"
+        },
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+          "page": 3,
+          "quote": "Patients with household income above 200% and at or below 300% of the Federal Poverty Guidelines receive a 50% discount from gross charges.",
+          "section_label": "4.2"
+        }
+      ],
+      "value": [
+        {
+          "applies_to": "all",
+          "benefit": "free",
+          "discount_pct": null,
+          "max_pct_inclusive": 200.0,
+          "min_pct_exclusive": null
+        },
+        {
+          "applies_to": "all",
+          "benefit": "percent_discount",
+          "discount_pct": 50.0,
+          "max_pct_inclusive": 300.0,
+          "min_pct_exclusive": 200.0
+        }
+      ]
+    },
+    "fpg_year_rule": {
+      "abstain_reason": null,
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+          "page": 2,
+          "quote": "Eligibility is determined using the Federal Poverty Guidelines in effect on the date of service.",
+          "section_label": "3.3"
+        }
+      ],
+      "value": "current_at_service"
+    },
+    "household_definition": {
+      "abstain_reason": null,
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+          "page": 2,
+          "quote": "3.1 Household. For purposes of this Policy, the household includes the patient, spouse or domestic partner, and dependent children.",
+          "section_label": "3.1"
+        }
+      ],
+      "value": "the patient, spouse or domestic partner, and dependent children"
+    },
+    "income_definition": {
+      "abstain_reason": null,
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+          "page": 2,
+          "quote": "3.2 Income. Household income means the household's total gross annual income before taxes and deductions.",
+          "section_label": "3.2"
+        }
+      ],
+      "value": "gross"
+    },
+    "insured_patients": {
+      "abstain_reason": null,
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+          "page": 4,
+          "quote": "Insured patients are eligible for assistance with deductibles, co-insurance and other balances after insurance.",
+          "section_label": "5.3"
+        },
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+          "page": 4,
+          "quote": "Patients whose out-of-pocket medical bills for the prior 12 months exceed 20% of household income also qualify for a discount, regardless of insurance status.",
+          "section_label": "5.3"
+        }
+      ],
+      "value": {
+        "catastrophic_threshold_pct_income": 20.0,
+        "insured_eligible": true,
+        "notes": null
+      }
+    },
+    "medicaid_application_required_first": {
+      "abstain_reason": null,
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+          "page": 4,
+          "quote": "Patients who appear likely to qualify for Medicaid must apply for Medicaid before financial assistance is approved.",
+          "section_label": "5.4"
+        }
+      ],
+      "value": true
+    },
+    "policy_title": {
+      "abstain_reason": null,
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+          "page": 1,
+          "quote": "Patient Financial Assistance Policy",
+          "section_label": null
+        }
+      ],
+      "value": "Patient Financial Assistance Policy"
+    },
+    "presumptive_eligibility": {
+      "abstain_reason": "ambiguous_may_clause",
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+          "page": 6,
+          "quote": "The Hospital may, at its sole discretion, consider presumptive eligibility for patients experiencing homelessness or patients who are deceased with no estate.",
+          "section_label": "7.2"
+        }
+      ],
+      "value": null
+    },
+    "provider_list_location": {
+      "abstain_reason": null,
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+          "page": 1,
+          "quote": "A list of providers who deliver care in the Hospital, showing which providers are and are not covered by this Policy, is in Exhibit C, Provider Listing.",
+          "section_label": "2."
+        }
+      ],
+      "value": "Exhibit C, Provider Listing"
+    },
+    "refund_policy": {
+      "abstain_reason": null,
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+          "page": 6,
+          "quote": "The Hospital will refund payments that exceed the patient's responsibility after assistance is applied.",
+          "section_label": "7.4"
+        }
+      ],
+      "value": "The Hospital will refund payments that exceed the patient's responsibility after assistance is applied."
+    },
+    "required_documents": {
+      "abstain_reason": null,
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+          "page": 5,
+          "quote": "the last two pay stubs",
+          "section_label": "6.2"
+        },
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+          "page": 5,
+          "quote": "the most recent federal tax return",
+          "section_label": "6.2"
+        },
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+          "page": 5,
+          "quote": "a letter of support if the household reports no income",
+          "section_label": "6.2"
+        }
+      ],
+      "value": [
+        {
+          "count": 2,
+          "description": "the last two pay stubs",
+          "doc_type": "pay_stub",
+          "period_months": null
+        },
+        {
+          "count": 1,
+          "description": "the most recent federal tax return",
+          "doc_type": "tax_return",
+          "period_months": null
+        },
+        {
+          "count": 1,
+          "description": "a letter of support if the household reports no income",
+          "doc_type": "letter_of_support",
+          "period_months": null
+        }
+      ]
+    },
+    "residency": {
+      "abstain_reason": null,
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+          "page": 4,
+          "quote": "There is no residency requirement for financial assistance.",
+          "section_label": "5.2"
+        }
+      ],
+      "value": {
+        "area_type": "none",
+        "counties": [],
+        "emergency_exempt": false,
+        "required": false,
+        "states": []
+      }
+    },
+    "screening_timing": {
+      "abstain_reason": null,
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+          "page": 6,
+          "quote": "The Hospital screens patients for financial assistance after billing and before referring any account to collections.",
+          "section_label": "7.3"
+        }
+      ],
+      "value": "after_billing_before_collections"
+    },
+    "submission_channels": {
+      "abstain_reason": null,
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+          "page": 5,
+          "quote": "By mail to Financial Counseling, 3080 Example College Street, Beaumont, TX 77701.",
+          "section_label": "6.3"
+        },
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+          "page": 5,
+          "quote": "In person at Financial Counseling office, Monday through Friday.",
+          "section_label": "6.3"
+        }
+      ],
+      "value": [
+        {
+          "detail": "Financial Counseling, 3080 Example College Street, Beaumont, TX 77701",
+          "kind": "mail"
+        },
+        {
+          "detail": "Financial Counseling office, Monday through Friday",
+          "kind": "in_person"
+        }
+      ]
+    }
+  },
+  "schedule_h": {
+    "expected_crosschecks": {
+      "agb_method": "agree",
+      "asset_test": "agree",
+      "fpg_tiers": "agree",
+      "residency": "agree"
+    },
+    "group_letter": null,
+    "object_id": "202601999349300505",
+    "tax_period_end": "2024-12-31"
+  },
+  "synthetic": true,
+  "system_name": null
+}

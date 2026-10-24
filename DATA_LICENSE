@@ -1,0 +1,29 @@
+Charity Care Commons data license
+=================================
+
+The registry data published by Charity Care Commons (compiled policy fields,
+Schedule H cross-checks, change feeds, CSV/Parquet/JSON exports, the Open FAP
+Schema, gold labels and evaluation results) is licensed under the
+Creative Commons Attribution 4.0 International License (CC BY 4.0).
+
+  https://creativecommons.org/licenses/by/4.0/legalcode
+
+You are free to share and adapt the data for any purpose, including
+commercially, provided you give appropriate credit:
+
+  "Charity Care Commons (Texas edition), CC BY 4.0, <dataset version/DOI>"
+
+Notes
+-----
+* Short verbatim quotations from hospital financial-assistance policies are
+  included as evidence for each field. The underlying policy documents remain
+  the property of the hospitals that published them; we link to and hash them
+  rather than re-host them in bulk.
+* Federal source data (IRS Form 990 e-file XML, CMS Provider Data Catalog,
+  HHS poverty guidelines) is public-domain U.S. government data.
+* The synthetic demo corpus under data/demo/ describes fictional hospitals.
+  Any resemblance to a real institution is coincidental.
+* Nothing in the data is legal advice. "Likely eligible" is an estimate; the
+  hospital makes the final decision.
+
+The source code is licensed separately under the Apache License 2.0 (LICENSE).

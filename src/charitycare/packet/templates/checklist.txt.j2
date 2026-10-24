@@ -1,0 +1,21 @@
+Packet checklist: {{ hospital_name }}
+
+Before you send this packet
+{% for item in actions %}[ ] {{ item.text }}
+{% endfor %}
+Documents to attach{% if documents %}
+{% for item in documents %}[ ] {{ item.text }}{% if item.citation %}
+    Source: {{ item.citation }}{% endif %}
+{% endfor %}{% else %}
+[ ] {{ no_documents_note }}
+{% endif %}{% if conditions %}
+Not evaluated by the screening (the hospital will check these)
+{% for item in conditions %}[ ] {{ item.text }}
+{% endfor %}{% endif %}
+How to send it
+{% for item in channels %}- {{ item.text }}{% if item.citation %} ({{ item.citation }}){% endif %}
+{% endfor %}{% if deadline_text %}
+Deadline
+- {{ deadline_text }}
+{% endif %}
+{{ disclaimer }}

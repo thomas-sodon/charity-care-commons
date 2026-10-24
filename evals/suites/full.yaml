@@ -1,0 +1,18 @@
+# All dev policies (section 12: "full", nightly during the build, weekly after).
+name: full
+description: Compile every dev policy, score against gold, and run the naive-agent baseline.
+kind: compile
+dataset: demo
+split: dev
+naive_baseline: true
+est_live_cost_usd: 25.0
+targets:
+  numeric_threshold_exact: {min: 0.97}
+  threshold_abstention_rate: {max: 0.10}
+  categorical_macro_f1: {min: 0.90}
+  list_item_f1: {min: 0.85}
+  citation_validity: {min: 1.0, hard: true}
+  schedule_h_free_pct_agreement: {min: 0.85}
+  disagreement_triage_rate: {min: 1.0}
+  calibration_ece: {max: 0.05}
+  cost_per_hospital_usd: {max: 0.50}

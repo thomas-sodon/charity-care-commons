@@ -1,0 +1,3 @@
+# Per-run JSON written by `python -m evals run`. Only the latest run per suite is kept in git.
+*.json
+!latest-*.json

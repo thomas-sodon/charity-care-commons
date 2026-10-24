@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>{% block title %}Charity Care Commons{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('assets', path='style.css') }}">
+<script src="https://unpkg.com/htmx.org@1.9.12" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap">
+  <a class="brand" href="/">Charity Care Commons</a>
+  <nav class="main" aria-label="Main">
+    <a href="/console" {% if section == 'console' %}aria-current="page"{% endif %}>Review queue</a>
+    <a href="/navigator" {% if section == 'navigator' %}aria-current="page"{% endif %}>Packet compiler</a>
+    <a href="/docs">API</a>
+  </nav>
+</div></header>
+<main id="main" class="wrap">
+{% block main %}{% endblock %}
+</main>
+<footer class="site"><div class="wrap"><p>{{ disclaimer }}</p><p>Disclaimer version {{ disclaimer_version }}. Data CC BY 4.0.</p></div></footer>
+</body>
+</html>

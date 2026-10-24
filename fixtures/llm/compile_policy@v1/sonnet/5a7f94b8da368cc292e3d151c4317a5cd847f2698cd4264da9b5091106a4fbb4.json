@@ -1,0 +1,519 @@
+{
+  "key": {
+    "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+    "model_tier": "sonnet",
+    "prompt_version": "compile_policy@v1",
+    "variant": ""
+  },
+  "model": "claude-sonnet-5-5",
+  "notes": "Derived from gold.",
+  "output": {
+    "agb_method": {
+      "abstain_reason": null,
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 6,
+          "quote": "The Hospital calculates amounts generally billed using the look-back method based on Medicare fee-for-service and all private health insurers.",
+          "section_label": "7.1"
+        }
+      ],
+      "value": "lookback_medicare_private"
+    },
+    "agb_pct": {
+      "abstain_reason": null,
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 6,
+          "quote": "The current AGB percentage is 27.4% of gross charges.",
+          "section_label": "7.1"
+        }
+      ],
+      "value": 27.4
+    },
+    "application_window": {
+      "abstain_reason": null,
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 5,
+          "quote": "Patients may apply at any time within 240 days after the date of the first post-discharge billing statement.",
+          "section_label": "6.1"
+        }
+      ],
+      "value": {
+        "anchor": "first_post_discharge_statement",
+        "days": 240
+      }
+    },
+    "asset_test": {
+      "abstain_reason": null,
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 4,
+          "quote": "The Hospital does not consider assets when determining eligibility.",
+          "section_label": "5.1"
+        }
+      ],
+      "value": {
+        "applies": false,
+        "applies_to_tiers": "all",
+        "counted_assets": [],
+        "exclusions": [],
+        "threshold_usd": null
+      }
+    },
+    "award_period_months": {
+      "abstain_reason": null,
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 5,
+          "quote": "Approved financial assistance applies to eligible care for 12 months from the date of determination.",
+          "section_label": "6.5"
+        }
+      ],
+      "value": 12
+    },
+    "determination_notice": {
+      "abstain_reason": null,
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 5,
+          "quote": "The Hospital will notify the patient in writing of its determination and the basis for the determination.",
+          "section_label": "6.4"
+        }
+      ],
+      "value": true
+    },
+    "effective_or_revision_date": {
+      "abstain_reason": null,
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 1,
+          "quote": "Effective date: February 1, 2026",
+          "section_label": null
+        }
+      ],
+      "value": "2026-02-01"
+    },
+    "excluded_services": {
+      "abstain_reason": null,
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 1,
+          "quote": "This Policy does not cover investigational treatments.",
+          "section_label": "2."
+        }
+      ],
+      "value": [
+        "investigational treatments"
+      ]
+    },
+    "facilities_covered": {
+      "abstain_reason": null,
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 1,
+          "quote": "This Policy applies to emergency and other medically necessary care provided by Example Panhandle University Medical Center.",
+          "section_label": "2."
+        }
+      ],
+      "value": [
+        "Example Panhandle University Medical Center"
+      ]
+    },
+    "fpg_tiers": {
+      "abstain_reason": null,
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 3,
+          "quote": "Patients with household income at or below 200% of the Federal Poverty Guidelines qualify for free care, a 100% discount.",
+          "section_label": "4.2"
+        },
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 3,
+          "quote": "Household income above 200% and up to 300% of the Federal Poverty Guidelines: 80% discount (sliding scale).",
+          "section_label": "4.2"
+        },
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 3,
+          "quote": "Household income above 300% and up to 400% of the Federal Poverty Guidelines: 60% discount (sliding scale).",
+          "section_label": "4.2"
+        },
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 3,
+          "quote": "Household income above 400% and up to 500% of the Federal Poverty Guidelines: 40% discount (sliding scale).",
+          "section_label": "4.2"
+        }
+      ],
+      "value": [
+        {
+          "applies_to": "all",
+          "benefit": "free",
+          "discount_pct": null,
+          "max_pct_inclusive": 200.0,
+          "min_pct_exclusive": null
+        },
+        {
+          "applies_to": "all",
+          "benefit": "sliding_scale",
+          "discount_pct": 80.0,
+          "max_pct_inclusive": 300.0,
+          "min_pct_exclusive": 200.0
+        },
+        {
+          "applies_to": "all",
+          "benefit": "sliding_scale",
+          "discount_pct": 60.0,
+          "max_pct_inclusive": 400.0,
+          "min_pct_exclusive": 300.0
+        },
+        {
+          "applies_to": "all",
+          "benefit": "sliding_scale",
+          "discount_pct": 40.0,
+          "max_pct_inclusive": 500.0,
+          "min_pct_exclusive": 400.0
+        }
+      ]
+    },
+    "fpg_year_rule": {
+      "abstain_reason": null,
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 2,
+          "quote": "Eligibility is determined using the 2026 Federal Poverty Guidelines shown in the table in Section 4.",
+          "section_label": "3.3"
+        }
+      ],
+      "value": "stated_year"
+    },
+    "household_definition": {
+      "abstain_reason": null,
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 2,
+          "quote": "3.1 Household. For purposes of this Policy, the household includes the patient and all individuals listed on the patient's most recent federal tax return.",
+          "section_label": "3.1"
+        }
+      ],
+      "value": "the patient and all individuals listed on the patient's most recent federal tax return"
+    },
+    "income_definition": {
+      "abstain_reason": null,
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 2,
+          "quote": "3.2 Income. Household income means the household's total gross annual income before taxes and deductions.",
+          "section_label": "3.2"
+        }
+      ],
+      "value": "gross"
+    },
+    "insured_patients": {
+      "abstain_reason": null,
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 4,
+          "quote": "Insured patients are eligible for assistance with deductibles, co-insurance and other balances after insurance.",
+          "section_label": "5.3"
+        }
+      ],
+      "value": {
+        "catastrophic_threshold_pct_income": null,
+        "insured_eligible": true,
+        "notes": null
+      }
+    },
+    "medicaid_application_required_first": {
+      "abstain_reason": null,
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 4,
+          "quote": "Patients are not required to apply for Medicaid before receiving a financial assistance determination.",
+          "section_label": "5.4"
+        }
+      ],
+      "value": false
+    },
+    "policy_title": {
+      "abstain_reason": null,
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 1,
+          "quote": "Financial Assistance Program Policy",
+          "section_label": null
+        }
+      ],
+      "value": "Financial Assistance Program Policy"
+    },
+    "presumptive_eligibility": {
+      "abstain_reason": null,
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 6,
+          "quote": "The Hospital does not make presumptive eligibility determinations; an application is required.",
+          "section_label": "7.2"
+        }
+      ],
+      "value": {
+        "allowed": false,
+        "criteria": [],
+        "uses_credit_data": null
+      }
+    },
+    "provider_list_location": {
+      "abstain_reason": null,
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 1,
+          "quote": "A list of providers who deliver care in the Hospital, showing which providers are and are not covered by this Policy, is in Appendix A of this Policy.",
+          "section_label": "2."
+        }
+      ],
+      "value": "Appendix A of this Policy"
+    },
+    "refund_policy": {
+      "abstain_reason": null,
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 6,
+          "quote": "Overpayments by approved patients will be refunded within 30 days.",
+          "section_label": "7.4"
+        }
+      ],
+      "value": "Overpayments by approved patients will be refunded within 30 days."
+    },
+    "required_documents": {
+      "abstain_reason": null,
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 5,
+          "quote": "the prior year federal tax return",
+          "section_label": "6.2"
+        },
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 5,
+          "quote": "two recent pay stubs",
+          "section_label": "6.2"
+        },
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 5,
+          "quote": "Social Security benefit statements, if applicable",
+          "section_label": "6.2"
+        }
+      ],
+      "value": [
+        {
+          "count": 1,
+          "description": "the prior year federal tax return",
+          "doc_type": "tax_return",
+          "period_months": null
+        },
+        {
+          "count": 2,
+          "description": "two recent pay stubs",
+          "doc_type": "pay_stub",
+          "period_months": null
+        },
+        {
+          "count": 1,
+          "description": "Social Security benefit statements, if applicable",
+          "doc_type": "social_security_statement",
+          "period_months": null
+        }
+      ]
+    },
+    "residency": {
+      "abstain_reason": null,
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 4,
+          "quote": "Patients must be residents of the State of Texas.",
+          "section_label": "5.2"
+        },
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 4,
+          "quote": "The residency requirement does not apply to emergency care.",
+          "section_label": "5.2"
+        }
+      ],
+      "value": {
+        "area_type": "state",
+        "counties": [],
+        "emergency_exempt": true,
+        "required": true,
+        "states": [
+          "TX"
+        ]
+      }
+    },
+    "screening_timing": {
+      "abstain_reason": null,
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 6,
+          "quote": "The Hospital screens patients for financial assistance before issuing the first billing statement.",
+          "section_label": "7.3"
+        }
+      ],
+      "value": "before_billing"
+    },
+    "submission_channels": {
+      "abstain_reason": null,
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 5,
+          "quote": "By mail to Financial Assistance Program, 1600 Example Wallace Blvd, Amarillo, TX 79106.",
+          "section_label": "6.3"
+        },
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 5,
+          "quote": "By fax to (806) 555-0799.",
+          "section_label": "6.3"
+        },
+        {
+          "char_end": null,
+          "char_start": null,
+          "doc_sha256": "5a7f94b8da368cc292e3d151c4317a5cd847f2698cd4264da9b5091106a4fbb4",
+          "page": 5,
+          "quote": "Online at https://mychart.examplepanhandleumc.example/assistance.",
+          "section_label": "6.3"
+        }
+      ],
+      "value": [
+        {
+          "detail": "Financial Assistance Program, 1600 Example Wallace Blvd, Amarillo, TX 79106",
+          "kind": "mail"
+        },
+        {
+          "detail": "(806) 555-0799",
+          "kind": "fax"
+        },
+        {
+          "detail": "https://mychart.examplepanhandleumc.example/assistance",
+          "kind": "portal"
+        }
+      ]
+    }
+  },
+  "recorded_at": null,
+  "synthetic": true,
+  "usage": {
+    "cache_creation_input_tokens": 9000,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 12600,
+    "output_tokens": 5000
+  }
+}

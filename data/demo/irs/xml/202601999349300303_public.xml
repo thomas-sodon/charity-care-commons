@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Return xmlns="http://www.irs.gov/efile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" returnVersion="2024v5.0">
+  <ReturnHeader binaryAttachmentCnt="0">
+    <ReturnTs>2026-05-15T10:15:00-05:00</ReturnTs>
+    <TaxPeriodEndDt>2025-06-30</TaxPeriodEndDt>
+    <TaxPeriodBeginDt>2024-07-01</TaxPeriodBeginDt>
+    <Filer>
+      <EIN>990100303</EIN>
+      <BusinessName>
+        <BusinessNameLine1Txt>EXAMPLE VALLEY CHILDREN'S HOSPITAL</BusinessNameLine1Txt>
+      </BusinessName>
+      <BusinessNameControlTxt>EXAM</BusinessNameControlTxt>
+      <PhoneNum>9565550300</PhoneNum>
+      <USAddress>
+        <AddressLine1Txt>2100 EXAMPLE CHILDREN'S WAY</AddressLine1Txt>
+        <CityNm>MCALLEN</CityNm>
+        <StateAbbreviationCd>TX</StateAbbreviationCd>
+        <ZIPCd>78503</ZIPCd>
+      </USAddress>
+    </Filer>
+    <ReturnTypeCd>990</ReturnTypeCd>
+    <TaxYr>2024</TaxYr>
+  </ReturnHeader>
+  <ReturnData documentCnt="2">
+    <IRS990 documentId="IRS990-01">
+      <PrincipalOfficerNm>SYNTHETIC OFFICER</PrincipalOfficerNm>
+      <WebsiteAddressTxt>www.examplevalleychildrens.example</WebsiteAddressTxt>
+      <Organization501c3Ind>X</Organization501c3Ind>
+      <ActivityOrMissionDesc>SYNTHETIC DEMO RETURN FOR A FICTIONAL TEXAS NONPROFIT HOSPITAL</ActivityOrMissionDesc>
+    </IRS990>
+    <IRS990ScheduleH documentId="IRS990ScheduleH-01">
+      <FinancialAssistancePolicyInd>1</FinancialAssistancePolicyInd>
+      <WrittenPolicyInd>1</WrittenPolicyInd>
+      <IndivHospitalTailoredPolicyInd>X</IndivHospitalTailoredPolicyInd>
+      <FPGReferenceFreeCareInd>1</FPGReferenceFreeCareInd>
+      <FreeCareOthPercentageGrp>
+        <OtherInd>X</OtherInd>
+        <FreeCareOtherPct>300</FreeCareOtherPct>
+      </FreeCareOthPercentageGrp>
+      <FPGReferenceDiscountedCareInd>1</FPGReferenceDiscountedCareInd>
+      <Percent400Ind>X</Percent400Ind>
+      <FreeCareMedicallyIndigentInd>0</FreeCareMedicallyIndigentInd>
+      <HospitalFacilitiesCnt>1</HospitalFacilitiesCnt>
+      <HospitalFacilitiesGrp>
+        <FacilityNum>1</FacilityNum>
+        <BusinessName>
+          <BusinessNameLine1Txt>EXAMPLE VALLEY CHILDREN'S HOSPITAL</BusinessNameLine1Txt>
+        </BusinessName>
+        <USAddress>
+          <AddressLine1Txt>2100 EXAMPLE CHILDREN'S WAY</AddressLine1Txt>
+          <CityNm>MCALLEN</CityNm>
+          <StateAbbreviationCd>TX</StateAbbreviationCd>
+          <ZIPCd>78503</ZIPCd>
+        </USAddress>
+        <WebsiteAddressTxt>www.examplevalleychildrens.example</WebsiteAddressTxt>
+        <StateLicenseNum>000303</StateLicenseNum>
+        <LicensedHospitalInd>X</LicensedHospitalInd>
+        <ChildrensHospitalInd>X</ChildrensHospitalInd>
+        <EmergencyRoom24HrsInd>X</EmergencyRoom24HrsInd>
+      </HospitalFacilitiesGrp>
+      <HospitalFcltyPoliciesPrctcGrp>
+        <HospitalFacilityName>
+          <BusinessNameLine1Txt>EXAMPLE VALLEY CHILDREN'S HOSPITAL</BusinessNameLine1Txt>
+        </HospitalFacilityName>
+        <FacilityNum>1</FacilityNum>
+        <FirstLicensedCYOrPYInd>0</FirstLicensedCYOrPYInd>
+        <TaxExemptHospitalCYOrPYInd>0</TaxExemptHospitalCYOrPYInd>
+        <CHNAConductedInd>1</CHNAConductedInd>
+        <CHNAConductedYr>2024</CHNAConductedYr>
+        <ImplementationStrategyAdoptInd>1</ImplementationStrategyAdoptInd>
+        <EligCriteriaExplainedInd>1</EligCriteriaExplainedInd>
+        <FPGFamilyIncmLmtFreeDscntInd>X</FPGFamilyIncmLmtFreeDscntInd>
+        <FPGFamilyIncmLmtFreeCarePct>300</FPGFamilyIncmLmtFreeCarePct>
+        <FPGFamilyIncmLmtDscntCarePct>400</FPGFamilyIncmLmtDscntCarePct>
+        <IncomeLevelCriteriaInd>X</IncomeLevelCriteriaInd>
+        <InsuranceStatusCriteriaInd>X</InsuranceStatusCriteriaInd>
+        <ResidencyCriteriaInd>X</ResidencyCriteriaInd>
+        <ExplainedBasisInd>1</ExplainedBasisInd>
+        <AppFinancialAsstExplnInd>1</AppFinancialAsstExplnInd>
+        <DescribedInfoInd>X</DescribedInfoInd>
+        <DescribedSuprtDocInd>X</DescribedSuprtDocInd>
+        <ProvidedHospitalContactInd>X</ProvidedHospitalContactInd>
+        <IncludesPublicityMeasuresInd>1</IncludesPublicityMeasuresInd>
+        <FAPAvailableOnWebsiteInd>X</FAPAvailableOnWebsiteInd>
+        <FAPAvailableOnWebsiteURLTxt>https://www.examplevalleychildrens.example/financial-assistance/fap.pdf</FAPAvailableOnWebsiteURLTxt>
+        <FAPAppAvailableOnWebsiteInd>X</FAPAppAvailableOnWebsiteInd>
+        <FAPAppAvailableOnWebsiteURLTxt>https://www.examplevalleychildrens.example/financial-assistance/application.pdf</FAPAppAvailableOnWebsiteURLTxt>
+        <FAPSummaryOnWebsiteInd>X</FAPSummaryOnWebsiteInd>
+        <FAPSummaryOnWebsiteURLTxt>https://www.examplevalleychildrens.example/financial-assistance/summary.pdf</FAPSummaryOnWebsiteURLTxt>
+        <FAPAvlblOnRequestNoChargeInd>X</FAPAvlblOnRequestNoChargeInd>
+        <FAPAppAvlblOnRequestNoChrgInd>X</FAPAppAvlblOnRequestNoChrgInd>
+        <FAPSumAvlblOnRequestNoChrgInd>X</FAPSumAvlblOnRequestNoChrgInd>
+        <NotifiedFAPCopyBillDisplayInd>X</NotifiedFAPCopyBillDisplayInd>
+        <FAPTranslatedInd>X</FAPTranslatedInd>
+        <FAPActionsOnNonpaymentInd>1</FAPActionsOnNonpaymentInd>
+        <PermitNoActionsInd>X</PermitNoActionsInd>
+        <CollectionActivitiesInd>0</CollectionActivitiesInd>
+        <ProvidedWrittenNoticeInd>X</ProvidedWrittenNoticeInd>
+        <ProcessedFAPApplicationInd>X</ProcessedFAPApplicationInd>
+        <NondisEmergencyCarePolicyInd>1</NondisEmergencyCarePolicyInd>
+        <LookBackMedicaidMedcrPrvtInd>X</LookBackMedicaidMedcrPrvtInd>
+        <AmountsGenerallyBilledInd>0</AmountsGenerallyBilledInd>
+        <GrossChargesInd>0</GrossChargesInd>
+      </HospitalFcltyPoliciesPrctcGrp>
+      <SupplementalInformationGrp>
+        <FormAndLineReferenceDesc>PART V, SECTION B, LINE 13H</FormAndLineReferenceDesc>
+        <ExplanationTxt>THE ORGANIZATION CONSIDERS FAMILY SIZE AND HOUSEHOLD INCOME AS DESCRIBED IN ITS FINANCIAL ASSISTANCE POLICY.</ExplanationTxt>
+      </SupplementalInformationGrp>
+    </IRS990ScheduleH>
+  </ReturnData>
+</Return>

@@ -1,0 +1,12 @@
+# Packet compiler: form readback on every demo application form, template
+# mapping, and bill / pay-stub extraction against synthetic ground truth.
+name: packet
+description: Readback exact match, verified-packet integrity, template F1, extraction accuracy, cost per packet.
+kind: packet
+dataset: demo
+targets:
+  readback_fillable_exact: {min: 1.0}
+  readback_flat_exact: {min: 0.98}
+  verified_packets_with_mismatch: {max: 0, hard: true}
+  extraction_field_exact: {min: 0.95}
+  cost_per_packet_usd: {max: 0.10}

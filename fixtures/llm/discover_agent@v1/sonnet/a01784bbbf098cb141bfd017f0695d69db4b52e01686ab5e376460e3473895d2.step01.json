@@ -1,0 +1,23 @@
+{
+  "key": {
+    "doc_sha256": "a01784bbbf098cb141bfd017f0695d69db4b52e01686ab5e376460e3473895d2",
+    "model_tier": "sonnet",
+    "prompt_version": "discover_agent@v1",
+    "variant": "step01"
+  },
+  "model": "claude-sonnet-5-5",
+  "notes": "Synthetic agent trajectory for ein:990100404 (charitycare.discover.demo_fixtures)",
+  "output": {
+    "rationale": "Follow the financial-assistance navigation.",
+    "tool": "fetch_page",
+    "url": "https://www.examplepineywoods.example/"
+  },
+  "recorded_at": null,
+  "synthetic": true,
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 2400,
+    "input_tokens": 600,
+    "output_tokens": 60
+  }
+}

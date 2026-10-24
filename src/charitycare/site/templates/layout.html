@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Charity Care Commons{% endblock %}</title>
+<meta name="description" content="{% block description %}Cited, verified Texas hospital financial-assistance rules, cross-checked against IRS Schedule H.{% endblock %}">
+<link rel="stylesheet" href="{{ root }}assets/style.css">
+<link rel="alternate" type="application/json" href="{{ root }}data/changes.json" title="Policy changes (JSON)">
+<script src="{{ root }}assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap">
+  <a class="brand" href="{{ root }}index.html">Charity Care Commons <span class="muted">· Texas</span></a>
+  <nav class="main" aria-label="Main">
+    <a href="{{ root }}index.html" {% if page == 'index.html' %}aria-current="page"{% endif %}>Dashboard</a>
+    <a href="{{ root }}changes.html" {% if page == 'changes.html' %}aria-current="page"{% endif %}>Changes</a>
+    <a href="{{ root }}methods.html" {% if page == 'methods.html' %}aria-current="page"{% endif %}>Methods</a>
+    <a href="{{ root }}evals.html" {% if page == 'evals.html' %}aria-current="page"{% endif %}>Evals</a>
+    <a href="{{ root }}data.html" {% if page == 'data.html' %}aria-current="page"{% endif %}>Data</a>
+  </nav>
+</div></header>
+<main id="main" class="wrap">
+{% if demo_data %}
+<div class="caveat" role="note"><strong>Synthetic demo data.</strong> Every hospital, policy and filing on this site is fictional, generated for the demo corpus; nothing here describes a real hospital.</div>
+{% endif %}
+{% if fresh.stale %}
+<div class="stale" role="alert"><strong>This data may be out of date.</strong>
+  Last verified {{ fresh.last_verified or 'never' }}; our sunset policy flags anything not re-verified within {{ fresh.stale_after_days }} days. Confirm every rule with the hospital.</div>
+{% endif %}
+{% block main %}{% endblock %}
+<p class="disclaimer">{{ disclaimer }} <span class="muted">({{ disclaimer_version }})</span></p>
+</main>
+<footer class="site"><div class="wrap">
+  <p>Charity Care Commons {{ version }} · built {{ today }} · last verified {{ fresh.last_verified or 'n/a' }} · Open FAP Schema {{ schema_version }}.</p>
+  <p>Data licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>; code Apache-2.0. Not affiliated with any hospital or the IRS.
+  “Likely eligible” is an estimate, not a guarantee; the hospital makes the final decision.</p>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,112 @@
+# Weekly refresh skeleton (design sections 8 and 13): hash-diff crawl, compile
+# only changed documents, re-run the `full` eval, publish the report.
+#
+# Live steps run only when the repository variable CCC_REFRESH_ENABLED is
+# "true" and the ANTHROPIC_API_KEY secret exists; otherwise the job runs the
+# offline pipeline against the demo corpus so the workflow itself stays tested.
+# The registry (Postgres in production) and the document store are not yet
+# wired to persistent storage here: see the TODO marker.
+name: Weekly refresh
+
+on:
+  schedule:
+    - cron: "17 7 * * 1"   # Mondays 07:17 UTC
+  workflow_dispatch:
+    inputs:
+      live:
+        description: "Run live discovery and compile (needs ANTHROPIC_API_KEY)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: weekly-refresh
+  cancel-in-progress: false
+
+env:
+  PYTHONPATH: ${{ github.workspace }}
+  CCC_DAILY_SPEND_CAP_USD: "5"
+  CCC_RUN_TOKEN_CEILING: "2000000"
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      LIVE: ${{ (vars.CCC_REFRESH_ENABLED == 'true' || inputs.live) && 'true' || 'false' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Choose mode
+        id: mode
+        run: |
+          if [ "$LIVE" = "true" ] && [ -n "$ANTHROPIC_API_KEY" ]; then echo "mode=live" >> "$GITHUB_OUTPUT"; else echo "mode=replay" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Seed (CMS facility universe + IRS Schedule H)
+        run: |
+          db="$RUNNER_TEMP/registry.sqlite"
+          if [ "${{ steps.mode.outputs.mode }}" = "live" ]; then
+            # TODO: restore the production registry and add --zip for the newest IRS batch.
+            python -m charitycare.seed run --db "$db" --live-cms
+          else
+            python -m charitycare.seed demo --db "$db"
+          fi
+
+      - name: Discover (hash-diff crawl; unchanged hashes cost nothing)
+        run: |
+          db="$RUNNER_TEMP/registry.sqlite"
+          if [ "${{ steps.mode.outputs.mode }}" = "live" ]; then
+            python -m charitycare.discover run --db "$db" --store "$RUNNER_TEMP/docstore"
+            python -m charitycare.discover link-health --db "$db" --markdown > "$RUNNER_TEMP/link-health.md"
+          else
+            python -m charitycare.discover demo --db "$db" --store "$RUNNER_TEMP/docstore"
+          fi
+
+      - name: Weekly `full` eval and gate
+        run: |
+          python -m evals run --suite full --mode "${{ steps.mode.outputs.mode }}" \
+            --db "$RUNNER_TEMP/evals.sqlite" --out-dir "$RUNNER_TEMP/eval-runs" --report-dir "$RUNNER_TEMP/eval-report"
+          python -m evals gate --suite full --runs-dir "$RUNNER_TEMP/eval-runs"
+
+      - name: Compile (unchanged document hashes are skipped; replay fixtures offline)
+        env:
+          CCC_LLM: ${{ steps.mode.outputs.mode }}
+        run: |
+          ccc compile --db "$RUNNER_TEMP/registry.sqlite" all
+          ccc review --db "$RUNNER_TEMP/registry.sqlite" queue --limit 50 > "$RUNNER_TEMP/review-queue.txt"
+
+      - name: Export the CC BY snapshot and rebuild the static site
+        run: |
+          ccc export --db "$RUNNER_TEMP/registry.sqlite" --out "$RUNNER_TEMP/release"
+          ccc site build --db "$RUNNER_TEMP/registry.sqlite" --out "$RUNNER_TEMP/site" \
+            --evals "$RUNNER_TEMP/eval-runs" --release "$RUNNER_TEMP/release"
+
+      # TODO (production): restore/persist the registry (Postgres) and document store (R2) between runs,
+      # and open a PR with the refreshed data release instead of uploading an artifact.
+
+      - name: Upload refresh artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: weekly-refresh
+          path: |
+            ${{ runner.temp }}/eval-runs
+            ${{ runner.temp }}/eval-report
+            ${{ runner.temp }}/link-health.md
+            ${{ runner.temp }}/review-queue.txt
+            ${{ runner.temp }}/release
+            ${{ runner.temp }}/site
+          if-no-files-found: ignore

@@ -1,0 +1,28 @@
+<div class="card" id="extraction">
+  <h2>Step 0 · Check what we read</h2>
+  {% if error %}<p class="flash err" role="alert">{{ error }}</p>{% endif %}
+  {% if docs %}
+  <p>Boxes on each image show where a value was read. Fields marked <strong>check</strong> were read with low confidence or not found: compare each with the image, correct it or tick “checked”. Nothing here is stored.</p>
+  <form method="post" action="/navigator/confirm" autocomplete="off">
+    <input type="hidden" name="facility_id" value="{{ facility_id }}">
+    {% for d in docs %}
+    <fieldset>
+      <legend>{{ d.label }}{% if d.source == 'manual' %} (enter by hand){% endif %}</legend>
+      <input type="hidden" name="img__{{ d.key }}" value="{{ d.image }}">
+      <img src="data:image/png;base64,{{ d.overlay }}" alt="{{ d.label }} with the fields that were read outlined" style="max-width:100%">
+      {% for n in d.notes %}<p class="muted">{{ n }}</p>{% endfor %}
+      <div class="grid">
+      {% for row in d.rows %}
+        <div>
+          <label for="{{ row.input }}">{{ row.label }}{% if row.pending %} <strong>check</strong>{% endif %} <span class="muted">({{ '%.2f'|format(row.confidence) }})</span></label>
+          <input id="{{ row.input }}" name="{{ row.input }}" value="{{ row.value }}">
+          {% if row.pending %}<label><input type="checkbox" name="ok__{{ d.key }}__{{ row.name }}" value="1"> checked against the image</label>{% endif %}
+        </div>
+      {% endfor %}
+      </div>
+    </fieldset>
+    {% endfor %}
+    <div class="actions"><button>Use these values in step 1</button></div>
+  </form>
+  {% endif %}
+</div>

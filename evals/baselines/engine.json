@@ -1,0 +1,10 @@
+{
+  "dataset_version": "demo-2026.10+70a269d61e21",
+  "git_sha": null,
+  "metrics": {
+    "engine_agreement": 1.0
+  },
+  "mode": "replay",
+  "source_run": "engine-20261024T182901Z-618d9fac",
+  "suite": "engine"
+}

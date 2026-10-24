@@ -1,0 +1,15 @@
+<div class="card" id="determination">
+  {% if result.error %}
+    <p class="flash err" role="alert">{{ result.error }}</p>
+  {% else %}
+  {% set d = result.determination %}
+  <h2>Step 2 · {{ result.label }}</h2>
+  <p class="mono">{{ d.arithmetic }}</p>
+  {% for c in d.citations[:3] %}<blockquote class="q">“{{ c.quote }}”</blockquote><p class="cite">p. {{ c.page }}{% if c.section_label %} § {{ c.section_label }}{% endif %} · <span class="mono">{{ c.doc_sha256[:12] }}…</span></p>{% endfor %}
+  {% if d.unevaluated_conditions %}<h3>Not evaluated</h3><ul>{% for u in d.unevaluated_conditions %}<li>{{ u }}</li>{% endfor %}</ul>{% endif %}
+  {% if d.provisional_fields_used %}<p class="badge b-provisional">○ Preliminary: uses fields not yet verified ({{ d.provisional_fields_used|join(', ') }})</p>{% endif %}
+  {% if d.notes %}<ul>{% for n in d.notes %}<li>{{ n }}</li>{% endfor %}</ul>{% endif %}
+  <p>{% if d.federal_deadline %}Federal minimum deadline: <strong>{{ d.federal_deadline }}</strong> (240 days). {% endif %}{% if d.policy_deadline %}Policy deadline: <strong>{{ d.policy_deadline }}</strong>.{% endif %}</p>
+  <p class="disclaimer">{{ result.disclaimer }}</p>
+  {% endif %}
+</div>

@@ -1,0 +1,61 @@
+{% set t = detail.task %}
+<div class="card" id="task-detail">
+  {% if detail.flash %}<p class="flash {% if detail.flash_error %}err{% endif %}" role="status">{{ detail.flash }}</p>{% endif %}
+  <h2>{{ detail.title }}</h2>
+  <p class="muted">{{ t.kind|replace('_', ' ') }} · {{ t.priority }} priority · impact {{ detail.impact }} · task <code>{{ t.id }}</code></p>
+  {% if detail.facilities %}<p>Facilities: {{ detail.facilities|join(', ') }}</p>{% endif %}
+  {% if detail.field %}
+    {% set f = detail.field %}
+    <div class="rule">
+      <div class="k">Extracted</div>
+      <div>{{ f.display }} <span class="badge b-{{ f.badge.status }}">{{ f.badge.symbol }} {{ f.badge.label }}</span>
+        <span class="muted">conf {{ '%.2f'|format(f.field.confidence) }}</span></div>
+      <div class="k">Schedule H</div>
+      <div>{% for c in f.crosschecks %}<span class="badge b-{{ 'agree' if c.result == 'agree' else ('discrepancy' if c.is_discrepancy else 'context') }}">{{ c.summary }}</span> <span class="muted">{{ c.public_label }}</span><br>{% else %}<span class="muted">No Schedule H line for this field.</span>{% endfor %}</div>
+      <div class="k">Pipeline note</div><div>{{ detail.note or '—' }}</div>
+      {% if detail.adjudicator %}<div class="k">Adjudicator (advisory)</div><div>“{{ detail.adjudicator }}”</div>{% endif %}
+    </div>
+    {% for s in detail.sources %}
+      <h3>Source page {{ s.page }} <span class="muted mono">{{ s.doc_sha256[:12] }}…</span></h3>
+      {% if s.available %}
+        <p>Quote match: {% if s.span %}<span class="badge b-verified">exact ✓ (chars {{ s.span[0] }}–{{ s.span[1] }})</span>{% else %}<span class="badge b-discrepancy">not found ✗</span>{% endif %}</p>
+        <div class="pagetext" tabindex="0" aria-label="Text of source page {{ s.page }}">{{ s.before }}<mark>{{ s.marked }}</mark>{{ s.after }}</div>
+      {% else %}
+        <p class="muted">Source text unavailable: {{ s.reason }}.</p>
+        <blockquote class="q">“{{ s.quote }}”</blockquote>
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    <p>{{ detail.note }}</p>
+  {% endif %}
+  <form method="post" action="/console/tasks/{{ t.id|urlencode }}/decision" hx-post="/console/tasks/{{ t.id|urlencode }}/decision" hx-target="#detail">
+    <label for="reviewer">Reviewer</label>
+    <input id="reviewer" name="reviewer" value="{{ detail.reviewer }}" required maxlength="80">
+    {% if detail.field %}
+    <details>
+      <summary>Edit value / quote</summary>
+      <label for="value">Value (JSON for structured fields)</label>
+      <textarea id="value" name="value" spellcheck="false">{{ detail.value_json }}</textarea>
+      <label for="quote">Replacement quote (must appear verbatim on the page)</label>
+      <textarea id="quote" name="quote" maxlength="400"></textarea>
+      <label for="page">Page</label>
+      <input id="page" name="page" type="number" min="1" inputmode="numeric">
+    </details>
+    <label for="abstain_reason">Abstain reason</label>
+    <select id="abstain_reason" name="abstain_reason">
+      {% for r in detail.abstain_reasons %}<option value="{{ r }}">{{ r|replace('_', ' ') }}</option>{% endfor %}
+    </select>
+    {% endif %}
+    <label for="note">Note (goes to the changelog)</label>
+    <textarea id="note" name="note" maxlength="2000"></textarea>
+    <div class="actions">
+      <button name="action" value="approve">Approve</button>
+      {% if detail.field %}
+      <button name="action" value="edit" class="secondary">Save edit</button>
+      <button name="action" value="abstain" class="secondary">Abstain</button>
+      {% endif %}
+      <button name="action" value="ask_hospital" class="secondary">Ask hospital</button>
+    </div>
+  </form>
+</div>
+{% if oob_queue %}{% with oob=True %}{% include "_queue.html" %}{% endwith %}{% endif %}

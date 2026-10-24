@@ -1,0 +1,24 @@
+{
+  "key": {
+    "doc_sha256": "d86c4d49e1b9949a952231dfa50ff32a696db79b5e654deabb48ab8af8b8f1f4",
+    "model_tier": "sonnet",
+    "prompt_version": "naive_baseline@v1",
+    "variant": ""
+  },
+  "model": "claude-sonnet-5-5",
+  "notes": "SIMULATED naive-agent answer (mode: discount_tier_as_free); not a measured model output. Re-record with CCC_LLM=record.",
+  "output": {
+    "discount_max_pct_fpl": null,
+    "free_care_max_pct_fpl": 500.0,
+    "quote": null,
+    "source_url": null
+  },
+  "recorded_at": null,
+  "synthetic": true,
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 18000,
+    "output_tokens": 900
+  }
+}

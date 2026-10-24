@@ -1,0 +1,33 @@
+{{ submitted }}
+
+{{ hospital_name }}
+Financial Assistance Office
+{% if mail_address %}{{ mail_address }}
+{% endif %}{% if fax %}Fax: {{ fax }}
+{% endif %}
+Re: Application for financial assistance{% if facility_name and facility_name != hospital_name %} ({{ facility_name }}){% endif %}
+Patient: {{ patient_name }}
+
+To the Financial Assistance Office:
+
+Please find enclosed an application for financial assistance under {{ policy_title }}{% if policy_as_of %} (as published by the hospital and reviewed on {{ policy_as_of }}){% endif %}, together with the documents listed on the enclosed checklist.
+
+While this application is pending, I respectfully request that you:
+
+1. Suspend any extraordinary collection actions to obtain payment for this care, as described in 26 CFR 1.501(r)-6(c)(5)(i)(A) and (c)(6)(i)(A).
+
+2. If you consider this application incomplete, send me a written notice that describes the additional information or documents needed to complete it and how to contact you, as described in 26 CFR 1.501(r)-6(c)(5)(i)(B).
+
+3. When the application is complete, notify me in writing of your determination and the basis for it, as described in 26 CFR 1.501(r)-6(c)(6)(i)(B).
+
+This application is dated {{ submitted }}.{% if first_statement %} The first post-discharge billing statement for this care is dated {{ first_statement }}. Under 26 CFR 1.501(r)-1(b)(3), the application period ends no earlier than the 240th day after that statement is provided, which by my count is no earlier than {{ federal_deadline }}.{% elif federal_deadline %} By my count, the federal application period for this care runs at least until {{ federal_deadline }} (26 CFR 1.501(r)-1(b)(3)).{% endif %}{% if window_quote %} Your policy states: “{{ window_quote }}”{% if window_cite %} ({{ window_cite }}){% endif %}.{% endif %}
+
+The hospital makes the final decision on this application. Please contact me at the address{% if has_phone %} or telephone number{% endif %} on the enclosed application with any questions.
+
+Sincerely,
+
+
+______________________________
+{{ patient_name }} (patient or guarantor)
+
+Prepared with help from a financial navigator using Charity Care Commons, which provides legal information, not legal advice.

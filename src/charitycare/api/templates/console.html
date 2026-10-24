@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Review queue · Charity Care Commons{% endblock %}
+{% block main %}
+<h1>Review queue</h1>
+<p class="lede">{{ tasks|length }} open · sorted by impact. Approving publishes a field; nothing is published as verified without a reviewer.</p>
+{% if flash %}<p class="flash {% if flash_error %}err{% endif %}" role="status">{{ flash }}</p>{% endif %}
+<div class="split">
+  <section aria-labelledby="qhead" class="card" id="queue">
+    <h2 id="qhead" class="sr-only">Open tasks</h2>
+    {% include "_queue.html" %}
+  </section>
+  <section aria-live="polite" id="detail">
+    {% if detail %}{% include "_task_detail.html" %}{% else %}<div class="card"><p>Nothing to review.</p></div>{% endif %}
+  </section>
+</div>
+{% endblock %}

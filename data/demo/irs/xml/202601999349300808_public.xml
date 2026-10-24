@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Return xmlns="http://www.irs.gov/efile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" returnVersion="2024v5.0">
+  <ReturnHeader binaryAttachmentCnt="0">
+    <ReturnTs>2026-03-15T10:15:00-05:00</ReturnTs>
+    <TaxPeriodEndDt>2025-03-31</TaxPeriodEndDt>
+    <TaxPeriodBeginDt>2024-04-01</TaxPeriodBeginDt>
+    <Filer>
+      <EIN>990100808</EIN>
+      <BusinessName>
+        <BusinessNameLine1Txt>EXAMPLE BRAZOS VALLEY MEDICAL CENTER</BusinessNameLine1Txt>
+      </BusinessName>
+      <BusinessNameControlTxt>EXAM</BusinessNameControlTxt>
+      <PhoneNum>9795550800</PhoneNum>
+      <USAddress>
+        <AddressLine1Txt>2900 EXAMPLE BRIARCREST DRIVE</AddressLine1Txt>
+        <CityNm>BRYAN</CityNm>
+        <StateAbbreviationCd>TX</StateAbbreviationCd>
+        <ZIPCd>77802</ZIPCd>
+      </USAddress>
+    </Filer>
+    <ReturnTypeCd>990</ReturnTypeCd>
+    <TaxYr>2024</TaxYr>
+  </ReturnHeader>
+  <ReturnData documentCnt="2">
+    <IRS990 documentId="IRS990-01">
+      <PrincipalOfficerNm>SYNTHETIC OFFICER</PrincipalOfficerNm>
+      <WebsiteAddressTxt>www.examplebrazosvalley.example</WebsiteAddressTxt>
+      <Organization501c3Ind>X</Organization501c3Ind>
+      <ActivityOrMissionDesc>SYNTHETIC DEMO RETURN FOR A FICTIONAL TEXAS NONPROFIT HOSPITAL</ActivityOrMissionDesc>
+    </IRS990>
+    <IRS990ScheduleH documentId="IRS990ScheduleH-01">
+      <FinancialAssistancePolicyInd>true</FinancialAssistancePolicyInd>
+      <WrittenPolicyInd>true</WrittenPolicyInd>
+      <IndivHospitalTailoredPolicyInd>X</IndivHospitalTailoredPolicyInd>
+      <FPGReferenceFreeCareInd>true</FPGReferenceFreeCareInd>
+      <Percent200Ind>X</Percent200Ind>
+      <FPGReferenceDiscountedCareInd>true</FPGReferenceDiscountedCareInd>
+      <Percent400Ind>X</Percent400Ind>
+      <FreeCareMedicallyIndigentInd>false</FreeCareMedicallyIndigentInd>
+      <HospitalFacilitiesCnt>1</HospitalFacilitiesCnt>
+      <HospitalFacilitiesGrp>
+        <FacilityNum>1</FacilityNum>
+        <BusinessName>
+          <BusinessNameLine1Txt>EXAMPLE BRAZOS VALLEY MEDICAL CENTER</BusinessNameLine1Txt>
+        </BusinessName>
+        <USAddress>
+          <AddressLine1Txt>2900 EXAMPLE BRIARCREST DRIVE</AddressLine1Txt>
+          <CityNm>BRYAN</CityNm>
+          <StateAbbreviationCd>TX</StateAbbreviationCd>
+          <ZIPCd>77802</ZIPCd>
+        </USAddress>
+        <WebsiteAddressTxt>www.examplebrazosvalley.example</WebsiteAddressTxt>
+        <StateLicenseNum>000808</StateLicenseNum>
+        <LicensedHospitalInd>X</LicensedHospitalInd>
+        <GeneralMedicalAndSurgicalInd>X</GeneralMedicalAndSurgicalInd>
+        <EmergencyRoom24HrsInd>X</EmergencyRoom24HrsInd>
+      </HospitalFacilitiesGrp>
+      <HospitalFcltyPoliciesPrctcGrp>
+        <HospitalFacilityName>
+          <BusinessNameLine1Txt>EXAMPLE BRAZOS VALLEY MEDICAL CENTER</BusinessNameLine1Txt>
+        </HospitalFacilityName>
+        <FacilityNum>1</FacilityNum>
+        <FirstLicensedCYOrPYInd>false</FirstLicensedCYOrPYInd>
+        <TaxExemptHospitalCYOrPYInd>false</TaxExemptHospitalCYOrPYInd>
+        <CHNAConductedInd>true</CHNAConductedInd>
+        <CHNAConductedYr>2024</CHNAConductedYr>
+        <ImplementationStrategyAdoptInd>true</ImplementationStrategyAdoptInd>
+        <EligCriteriaExplainedInd>true</EligCriteriaExplainedInd>
+        <FPGFamilyIncmLmtFreeDscntInd>X</FPGFamilyIncmLmtFreeDscntInd>
+        <FPGFamilyIncmLmtFreeCarePct>200</FPGFamilyIncmLmtFreeCarePct>
+        <FPGFamilyIncmLmtDscntCarePct>400</FPGFamilyIncmLmtDscntCarePct>
+        <IncomeLevelCriteriaInd>X</IncomeLevelCriteriaInd>
+        <InsuranceStatusCriteriaInd>X</InsuranceStatusCriteriaInd>
+        <ResidencyCriteriaInd>X</ResidencyCriteriaInd>
+        <ExplainedBasisInd>true</ExplainedBasisInd>
+        <AppFinancialAsstExplnInd>true</AppFinancialAsstExplnInd>
+        <DescribedInfoInd>X</DescribedInfoInd>
+        <DescribedSuprtDocInd>X</DescribedSuprtDocInd>
+        <ProvidedHospitalContactInd>X</ProvidedHospitalContactInd>
+        <IncludesPublicityMeasuresInd>true</IncludesPublicityMeasuresInd>
+        <FAPAvailableOnWebsiteInd>X</FAPAvailableOnWebsiteInd>
+        <FAPAvailableOnWebsiteURLTxt>SEE PART V, SECTION C</FAPAvailableOnWebsiteURLTxt>
+        <FAPAppAvailableOnWebsiteInd>X</FAPAppAvailableOnWebsiteInd>
+        <FAPAppAvailableOnWebsiteURLTxt>https://www.examplebrazosvalley.example/financial-assistance/application.pdf</FAPAppAvailableOnWebsiteURLTxt>
+        <FAPSummaryOnWebsiteInd>X</FAPSummaryOnWebsiteInd>
+        <FAPSummaryOnWebsiteURLTxt>https://www.examplebrazosvalley.example/financial-assistance/summary.pdf</FAPSummaryOnWebsiteURLTxt>
+        <FAPAvlblOnRequestNoChargeInd>X</FAPAvlblOnRequestNoChargeInd>
+        <FAPAppAvlblOnRequestNoChrgInd>X</FAPAppAvlblOnRequestNoChrgInd>
+        <FAPSumAvlblOnRequestNoChrgInd>X</FAPSumAvlblOnRequestNoChrgInd>
+        <NotifiedFAPCopyBillDisplayInd>X</NotifiedFAPCopyBillDisplayInd>
+        <FAPActionsOnNonpaymentInd>true</FAPActionsOnNonpaymentInd>
+        <PermitNoActionsInd>X</PermitNoActionsInd>
+        <CollectionActivitiesInd>false</CollectionActivitiesInd>
+        <ProvidedWrittenNoticeInd>X</ProvidedWrittenNoticeInd>
+        <ProcessedFAPApplicationInd>X</ProcessedFAPApplicationInd>
+        <NondisEmergencyCarePolicyInd>true</NondisEmergencyCarePolicyInd>
+        <LookBackMedicarePrivateInd>X</LookBackMedicarePrivateInd>
+        <AmountsGenerallyBilledInd>false</AmountsGenerallyBilledInd>
+        <GrossChargesInd>false</GrossChargesInd>
+      </HospitalFcltyPoliciesPrctcGrp>
+      <SupplementalInformationGrp>
+        <FormAndLineReferenceDesc>PART V, SECTION B, LINE 16A</FormAndLineReferenceDesc>
+        <ExplanationTxt>EXAMPLE BRAZOS VALLEY MEDICAL CENTER: THE FINANCIAL ASSISTANCE POLICY IS AVAILABLE AT https://www.examplebrazosvalley.example/financial-assistance/fap.pdf AND IN PRINT AT ALL REGISTRATION AREAS.</ExplanationTxt>
+      </SupplementalInformationGrp>
+    </IRS990ScheduleH>
+  </ReturnData>
+</Return>

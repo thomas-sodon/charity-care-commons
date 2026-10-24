@@ -1,0 +1,25 @@
+{
+  "key": {
+    "doc_sha256": "f499596b90e852c0d52926a6c64c82880424af57680eb5fbea858b7a8f62289d",
+    "model_tier": "sonnet",
+    "prompt_version": "discover_agent@v1",
+    "variant": "step05"
+  },
+  "model": "claude-sonnet-5-5",
+  "notes": "Synthetic agent trajectory for ein:990100202 (charitycare.discover.demo_fixtures)",
+  "output": {
+    "anchor_text": "Plain Language Summary (PDF)",
+    "found_on": "https://www.lonestarexamplehealth.example/financial-assistance/",
+    "rationale": "Linked from the financial-assistance page.",
+    "tool": "record_candidate",
+    "url": "https://www.lonestarexamplehealth.example/financial-assistance/summary.pdf"
+  },
+  "recorded_at": null,
+  "synthetic": true,
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 6000,
+    "input_tokens": 600,
+    "output_tokens": 60
+  }
+}

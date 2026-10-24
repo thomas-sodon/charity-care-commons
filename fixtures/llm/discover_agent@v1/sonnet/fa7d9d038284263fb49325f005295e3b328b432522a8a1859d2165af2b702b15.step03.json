@@ -1,0 +1,25 @@
+{
+  "key": {
+    "doc_sha256": "fa7d9d038284263fb49325f005295e3b328b432522a8a1859d2165af2b702b15",
+    "model_tier": "sonnet",
+    "prompt_version": "discover_agent@v1",
+    "variant": "step03"
+  },
+  "model": "claude-sonnet-5-5",
+  "notes": "Synthetic agent trajectory for ein:990100808 (charitycare.discover.demo_fixtures)",
+  "output": {
+    "anchor_text": "Charity care (Financial Assistance Policy)",
+    "found_on": "https://www.examplebrazosvalley.example/financial-assistance/",
+    "rationale": "Linked from the financial-assistance page.",
+    "tool": "record_candidate",
+    "url": "https://www.examplebrazosvalley.example/financial-assistance/fap.pdf"
+  },
+  "recorded_at": null,
+  "synthetic": true,
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 4200,
+    "input_tokens": 600,
+    "output_tokens": 60
+  }
+}

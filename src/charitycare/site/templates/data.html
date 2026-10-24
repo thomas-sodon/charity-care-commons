@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block title %}Download the data · Charity Care Commons{% endblock %}
+{% block main %}
+<h1>Download the data</h1>
+<p class="lede">Everything on this site is open data under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Please credit “Charity Care Commons” and link back.</p>
+<div class="table-wrap"><table>
+  <caption>Files in this release.</caption>
+  <thead><tr><th scope="col">File</th><th scope="col">Size</th></tr></thead>
+  <tbody>{% for d in downloads %}<tr><td><a href="{{ root }}{{ d.href }}" download>{{ d.name }}</a></td><td>{{ '{:,}'.format(d.size) }} bytes</td></tr>{% endfor %}</tbody>
+</table></div>
+<h2>What is in it</h2>
+<ul>
+  <li><strong>fields</strong>: one row per compiled policy field, with its value as JSON, status (verified, provisional, abstained, disputed), quote, page and document sha256.</li>
+  <li><strong>crosschecks</strong>: each comparison with the IRS Schedule H filing and its outcome.</li>
+  <li><strong>facilities</strong> and <strong>policies</strong>: the facility universe and the policy versions that govern them.</li>
+</ul>
+<p>Provisional fields have not been checked by a reviewer. The data never contains information about patients or households.</p>
+{% if api %}<h2>API</h2><p>A read API with the same data is at <code>{{ api }}/v1/facilities?state=TX</code>, with a change feed at <code>{{ api }}/v1/changes.atom</code>.</p>{% endif %}
+{% endblock %}

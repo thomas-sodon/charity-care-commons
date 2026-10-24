@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Return xmlns="http://www.irs.gov/efile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" returnVersion="2024v5.0">
+  <ReturnHeader binaryAttachmentCnt="0">
+    <ReturnTs>2025-05-15T10:15:00-05:00</ReturnTs>
+    <TaxPeriodEndDt>2024-12-31</TaxPeriodEndDt>
+    <TaxPeriodBeginDt>2024-01-01</TaxPeriodBeginDt>
+    <Filer>
+      <EIN>990100505</EIN>
+      <BusinessName>
+        <BusinessNameLine1Txt>EXAMPLE GULF COAST BAPTIST HOSPITAL</BusinessNameLine1Txt>
+      </BusinessName>
+      <BusinessNameControlTxt>EXAM</BusinessNameControlTxt>
+      <PhoneNum>4095550500</PhoneNum>
+      <USAddress>
+        <AddressLine1Txt>3080 EXAMPLE COLLEGE STREET</AddressLine1Txt>
+        <CityNm>BEAUMONT</CityNm>
+        <StateAbbreviationCd>TX</StateAbbreviationCd>
+        <ZIPCd>77701</ZIPCd>
+      </USAddress>
+    </Filer>
+    <ReturnTypeCd>990</ReturnTypeCd>
+    <TaxYr>2024</TaxYr>
+  </ReturnHeader>
+  <ReturnData documentCnt="2">
+    <IRS990 documentId="IRS990-01">
+      <PrincipalOfficerNm>SYNTHETIC OFFICER</PrincipalOfficerNm>
+      <WebsiteAddressTxt>www.examplegulfcoastbaptist.example</WebsiteAddressTxt>
+      <Organization501c3Ind>X</Organization501c3Ind>
+      <ActivityOrMissionDesc>SYNTHETIC DEMO RETURN FOR A FICTIONAL TEXAS NONPROFIT HOSPITAL</ActivityOrMissionDesc>
+    </IRS990>
+    <IRS990ScheduleH documentId="IRS990ScheduleH-01">
+      <FinancialAssistancePolicyInd>true</FinancialAssistancePolicyInd>
+      <WrittenPolicyInd>true</WrittenPolicyInd>
+      <IndivHospitalTailoredPolicyInd>X</IndivHospitalTailoredPolicyInd>
+      <FPGReferenceFreeCareInd>true</FPGReferenceFreeCareInd>
+      <Percent200Ind>X</Percent200Ind>
+      <FPGReferenceDiscountedCareInd>true</FPGReferenceDiscountedCareInd>
+      <Percent300Ind>X</Percent300Ind>
+      <FreeCareMedicallyIndigentInd>true</FreeCareMedicallyIndigentInd>
+      <HospitalFacilitiesCnt>1</HospitalFacilitiesCnt>
+      <HospitalFacilitiesGrp>
+        <FacilityNum>1</FacilityNum>
+        <BusinessName>
+          <BusinessNameLine1Txt>EXAMPLE GULF COAST BAPTIST HOSPITAL</BusinessNameLine1Txt>
+        </BusinessName>
+        <USAddress>
+          <AddressLine1Txt>3080 EXAMPLE COLLEGE STREET</AddressLine1Txt>
+          <CityNm>BEAUMONT</CityNm>
+          <StateAbbreviationCd>TX</StateAbbreviationCd>
+          <ZIPCd>77701</ZIPCd>
+        </USAddress>
+        <WebsiteAddressTxt>www.examplegulfcoastbaptist.example</WebsiteAddressTxt>
+        <StateLicenseNum>000505</StateLicenseNum>
+        <LicensedHospitalInd>X</LicensedHospitalInd>
+        <GeneralMedicalAndSurgicalInd>X</GeneralMedicalAndSurgicalInd>
+        <EmergencyRoom24HrsInd>X</EmergencyRoom24HrsInd>
+      </HospitalFacilitiesGrp>
+      <HospitalFcltyPoliciesPrctcGrp>
+        <HospitalFacilityName>
+          <BusinessNameLine1Txt>EXAMPLE GULF COAST BAPTIST HOSPITAL</BusinessNameLine1Txt>
+        </HospitalFacilityName>
+        <FacilityNum>1</FacilityNum>
+        <FirstLicensedCYOrPYInd>false</FirstLicensedCYOrPYInd>
+        <TaxExemptHospitalCYOrPYInd>false</TaxExemptHospitalCYOrPYInd>
+        <CHNAConductedInd>true</CHNAConductedInd>
+        <CHNAConductedYr>2023</CHNAConductedYr>
+        <ImplementationStrategyAdoptInd>true</ImplementationStrategyAdoptInd>
+        <EligCriteriaExplainedInd>true</EligCriteriaExplainedInd>
+        <FPGFamilyIncmLmtFreeDscntInd>X</FPGFamilyIncmLmtFreeDscntInd>
+        <FPGFamilyIncmLmtFreeCarePct>200.00</FPGFamilyIncmLmtFreeCarePct>
+        <FPGFamilyIncmLmtDscntCarePct>300.00</FPGFamilyIncmLmtDscntCarePct>
+        <IncomeLevelCriteriaInd>X</IncomeLevelCriteriaInd>
+        <MedicalIndigencyCriteriaInd>X</MedicalIndigencyCriteriaInd>
+        <InsuranceStatusCriteriaInd>X</InsuranceStatusCriteriaInd>
+        <UnderinsuranceStatCriteriaInd>X</UnderinsuranceStatCriteriaInd>
+        <ExplainedBasisInd>true</ExplainedBasisInd>
+        <AppFinancialAsstExplnInd>true</AppFinancialAsstExplnInd>
+        <DescribedInfoInd>X</DescribedInfoInd>
+        <DescribedSuprtDocInd>X</DescribedSuprtDocInd>
+        <ProvidedHospitalContactInd>X</ProvidedHospitalContactInd>
+        <IncludesPublicityMeasuresInd>true</IncludesPublicityMeasuresInd>
+        <FAPAvailableOnWebsiteInd>X</FAPAvailableOnWebsiteInd>
+        <FAPAvailableOnWebsiteURLTxt>https://www.examplegulfcoastbaptist.example/financial-assistance/fap.pdf</FAPAvailableOnWebsiteURLTxt>
+        <FAPAppAvailableOnWebsiteInd>X</FAPAppAvailableOnWebsiteInd>
+        <FAPAppAvailableOnWebsiteURLTxt>https://www.examplegulfcoastbaptist.example/financial-assistance/application.pdf</FAPAppAvailableOnWebsiteURLTxt>
+        <FAPSummaryOnWebsiteInd>X</FAPSummaryOnWebsiteInd>
+        <FAPSummaryOnWebsiteURLTxt>https://www.examplegulfcoastbaptist.example/financial-assistance/summary.pdf</FAPSummaryOnWebsiteURLTxt>
+        <FAPAvlblOnRequestNoChargeInd>X</FAPAvlblOnRequestNoChargeInd>
+        <FAPAppAvlblOnRequestNoChrgInd>X</FAPAppAvlblOnRequestNoChrgInd>
+        <FAPSumAvlblOnRequestNoChrgInd>X</FAPSumAvlblOnRequestNoChrgInd>
+        <NotifiedFAPCopyBillDisplayInd>X</NotifiedFAPCopyBillDisplayInd>
+        <FAPActionsOnNonpaymentInd>true</FAPActionsOnNonpaymentInd>
+        <PermitLegalJudicialProcessInd>X</PermitLegalJudicialProcessInd>
+        <CollectionActivitiesInd>false</CollectionActivitiesInd>
+        <ProvidedWrittenNoticeInd>X</ProvidedWrittenNoticeInd>
+        <ProcessedFAPApplicationInd>X</ProcessedFAPApplicationInd>
+        <NondisEmergencyCarePolicyInd>true</NondisEmergencyCarePolicyInd>
+        <LookBackMedicarePrivateInd>X</LookBackMedicarePrivateInd>
+        <AmountsGenerallyBilledInd>false</AmountsGenerallyBilledInd>
+        <GrossChargesInd>false</GrossChargesInd>
+      </HospitalFcltyPoliciesPrctcGrp>
+      <SupplementalInformationGrp>
+        <FormAndLineReferenceDesc>PART V, SECTION B, LINE 13H</FormAndLineReferenceDesc>
+        <ExplanationTxt>THE ORGANIZATION CONSIDERS FAMILY SIZE AND HOUSEHOLD INCOME AS DESCRIBED IN ITS FINANCIAL ASSISTANCE POLICY.</ExplanationTxt>
+      </SupplementalInformationGrp>
+    </IRS990ScheduleH>
+  </ReturnData>
+</Return>

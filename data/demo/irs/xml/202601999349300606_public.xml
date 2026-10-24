@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Return xmlns="http://www.irs.gov/efile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" returnVersion="2024v5.0">
+  <ReturnHeader binaryAttachmentCnt="0">
+    <ReturnTs>2026-05-15T10:15:00-05:00</ReturnTs>
+    <TaxPeriodEndDt>2025-09-30</TaxPeriodEndDt>
+    <TaxPeriodBeginDt>2024-10-01</TaxPeriodBeginDt>
+    <Filer>
+      <EIN>990100606</EIN>
+      <BusinessName>
+        <BusinessNameLine1Txt>EXAMPLE HILL COUNTRY COMMUNITY HOSPITAL</BusinessNameLine1Txt>
+      </BusinessName>
+      <BusinessNameControlTxt>EXAM</BusinessNameControlTxt>
+      <PhoneNum>8305550600</PhoneNum>
+      <USAddress>
+        <AddressLine1Txt>1020 EXAMPLE MAIN STREET</AddressLine1Txt>
+        <CityNm>FREDERICKSBURG</CityNm>
+        <StateAbbreviationCd>TX</StateAbbreviationCd>
+        <ZIPCd>78624</ZIPCd>
+      </USAddress>
+    </Filer>
+    <ReturnTypeCd>990</ReturnTypeCd>
+    <TaxYr>2024</TaxYr>
+  </ReturnHeader>
+  <ReturnData documentCnt="2">
+    <IRS990 documentId="IRS990-01">
+      <PrincipalOfficerNm>SYNTHETIC OFFICER</PrincipalOfficerNm>
+      <WebsiteAddressTxt>www.examplehillcountry.example</WebsiteAddressTxt>
+      <Organization501c3Ind>X</Organization501c3Ind>
+      <ActivityOrMissionDesc>SYNTHETIC DEMO RETURN FOR A FICTIONAL TEXAS NONPROFIT HOSPITAL</ActivityOrMissionDesc>
+    </IRS990>
+    <IRS990ScheduleH documentId="IRS990ScheduleH-01">
+      <FinancialAssistancePolicyInd>1</FinancialAssistancePolicyInd>
+      <WrittenPolicyInd>1</WrittenPolicyInd>
+      <IndivHospitalTailoredPolicyInd>X</IndivHospitalTailoredPolicyInd>
+      <FPGReferenceFreeCareInd>1</FPGReferenceFreeCareInd>
+      <Percent200Ind>X</Percent200Ind>
+      <FPGReferenceDiscountedCareInd>1</FPGReferenceDiscountedCareInd>
+      <Percent300Ind>X</Percent300Ind>
+      <FreeCareMedicallyIndigentInd>0</FreeCareMedicallyIndigentInd>
+      <HospitalFacilitiesCnt>1</HospitalFacilitiesCnt>
+      <HospitalFacilitiesGrp>
+        <FacilityNum>1</FacilityNum>
+        <BusinessName>
+          <BusinessNameLine1Txt>EXAMPLE HILL COUNTRY COMMUNITY HOSPITAL</BusinessNameLine1Txt>
+        </BusinessName>
+        <USAddress>
+          <AddressLine1Txt>1020 EXAMPLE MAIN STREET</AddressLine1Txt>
+          <CityNm>FREDERICKSBURG</CityNm>
+          <StateAbbreviationCd>TX</StateAbbreviationCd>
+          <ZIPCd>78624</ZIPCd>
+        </USAddress>
+        <WebsiteAddressTxt>www.examplehillcountry.example</WebsiteAddressTxt>
+        <StateLicenseNum>000606</StateLicenseNum>
+        <LicensedHospitalInd>X</LicensedHospitalInd>
+        <CriticalAccessHospitalInd>X</CriticalAccessHospitalInd>
+        <EmergencyRoom24HrsInd>X</EmergencyRoom24HrsInd>
+      </HospitalFacilitiesGrp>
+      <HospitalFcltyPoliciesPrctcGrp>
+        <HospitalFacilityName>
+          <BusinessNameLine1Txt>EXAMPLE HILL COUNTRY COMMUNITY HOSPITAL</BusinessNameLine1Txt>
+        </HospitalFacilityName>
+        <FacilityNum>1</FacilityNum>
+        <FirstLicensedCYOrPYInd>0</FirstLicensedCYOrPYInd>
+        <TaxExemptHospitalCYOrPYInd>0</TaxExemptHospitalCYOrPYInd>
+        <CHNAConductedInd>1</CHNAConductedInd>
+        <CHNAConductedYr>2024</CHNAConductedYr>
+        <ImplementationStrategyAdoptInd>1</ImplementationStrategyAdoptInd>
+        <EligCriteriaExplainedInd>1</EligCriteriaExplainedInd>
+        <FPGFamilyIncmLmtFreeDscntInd>X</FPGFamilyIncmLmtFreeDscntInd>
+        <FPGFamilyIncmLmtFreeCarePct>200</FPGFamilyIncmLmtFreeCarePct>
+        <FPGFamilyIncmLmtDscntCarePct>300</FPGFamilyIncmLmtDscntCarePct>
+        <IncomeLevelCriteriaInd>X</IncomeLevelCriteriaInd>
+        <AssetLevelCriteriaInd>X</AssetLevelCriteriaInd>
+        <InsuranceStatusCriteriaInd>X</InsuranceStatusCriteriaInd>
+        <ResidencyCriteriaInd>X</ResidencyCriteriaInd>
+        <ExplainedBasisInd>1</ExplainedBasisInd>
+        <AppFinancialAsstExplnInd>1</AppFinancialAsstExplnInd>
+        <DescribedInfoInd>X</DescribedInfoInd>
+        <DescribedSuprtDocInd>X</DescribedSuprtDocInd>
+        <ProvidedHospitalContactInd>X</ProvidedHospitalContactInd>
+        <IncludesPublicityMeasuresInd>1</IncludesPublicityMeasuresInd>
+        <FAPAvailableOnWebsiteInd>X</FAPAvailableOnWebsiteInd>
+        <FAPAvailableOnWebsiteURLTxt>https://www.examplehillcountry.example/financial-assistance/fap.pdf</FAPAvailableOnWebsiteURLTxt>
+        <FAPAppAvailableOnWebsiteInd>X</FAPAppAvailableOnWebsiteInd>
+        <FAPAppAvailableOnWebsiteURLTxt>https://www.examplehillcountry.example/financial-assistance/application.pdf</FAPAppAvailableOnWebsiteURLTxt>
+        <FAPSummaryOnWebsiteInd>X</FAPSummaryOnWebsiteInd>
+        <FAPSummaryOnWebsiteURLTxt>https://www.examplehillcountry.example/financial-assistance/summary.pdf</FAPSummaryOnWebsiteURLTxt>
+        <FAPAvlblOnRequestNoChargeInd>X</FAPAvlblOnRequestNoChargeInd>
+        <FAPAppAvlblOnRequestNoChrgInd>X</FAPAppAvlblOnRequestNoChrgInd>
+        <FAPSumAvlblOnRequestNoChrgInd>X</FAPSumAvlblOnRequestNoChrgInd>
+        <NotifiedFAPCopyBillDisplayInd>X</NotifiedFAPCopyBillDisplayInd>
+        <FAPActionsOnNonpaymentInd>1</FAPActionsOnNonpaymentInd>
+        <PermitNoActionsInd>X</PermitNoActionsInd>
+        <CollectionActivitiesInd>0</CollectionActivitiesInd>
+        <ProvidedWrittenNoticeInd>X</ProvidedWrittenNoticeInd>
+        <ProcessedFAPApplicationInd>X</ProcessedFAPApplicationInd>
+        <NondisEmergencyCarePolicyInd>1</NondisEmergencyCarePolicyInd>
+        <ProspectiveMedicareMedicaidInd>X</ProspectiveMedicareMedicaidInd>
+        <AmountsGenerallyBilledInd>0</AmountsGenerallyBilledInd>
+        <GrossChargesInd>0</GrossChargesInd>
+      </HospitalFcltyPoliciesPrctcGrp>
+      <SupplementalInformationGrp>
+        <FormAndLineReferenceDesc>PART V, SECTION B, LINE 13H</FormAndLineReferenceDesc>
+        <ExplanationTxt>THE ORGANIZATION CONSIDERS FAMILY SIZE AND HOUSEHOLD INCOME AS DESCRIBED IN ITS FINANCIAL ASSISTANCE POLICY.</ExplanationTxt>
+      </SupplementalInformationGrp>
+    </IRS990ScheduleH>
+  </ReturnData>
+</Return>

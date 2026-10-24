@@ -1,0 +1,771 @@
+{
+  "cost_usd": 0.8666,
+  "created_at": "2026-10-24T18:38:48+00:00",
+  "dataset": "demo",
+  "dataset_version": "demo-2026.10+70a269d61e21",
+  "details": {
+    "crosscheck_reasons": {
+      "agree": 41,
+      "disagree_policy_newer_than_filing": 0,
+      "disagree_unexplained": 1,
+      "missing": 1,
+      "not_reported": 0
+    },
+    "hospitals": [
+      {
+        "citation_failures": [],
+        "cost_usd": 0.2377,
+        "crosschecks": {
+          "agb_method": "agree",
+          "asset_test": "disagree_unexplained",
+          "facilities_covered": "agree",
+          "fpg_tiers": "agree",
+          "insured_patients": "agree",
+          "required_documents": "agree",
+          "residency": "agree"
+        },
+        "error": null,
+        "expected_crosschecks": {
+          "agb_method": "agree",
+          "asset_test": "disagree_unexplained",
+          "fpg_tiers": "agree",
+          "residency": "agree"
+        },
+        "hospital_id": "example-methodist",
+        "naive_free_cutoff": 200.0,
+        "policy_version_id": "pv:example-methodist:demo",
+        "status": {
+          "abstained": 1,
+          "provisional": 22
+        },
+        "thresholds": {
+          "gold": {
+            "asset_threshold_usd": 10000.0,
+            "discount_cutoff_pct": 400.0,
+            "free_cutoff_pct": 200.0
+          },
+          "pred": {
+            "asset_threshold_usd": 10000.0,
+            "discount_cutoff_pct": 400.0,
+            "free_cutoff_pct": 200.0
+          }
+        }
+      },
+      {
+        "citation_failures": [],
+        "cost_usd": 0.1017,
+        "crosschecks": {
+          "agb_method": "agree",
+          "asset_test": "agree",
+          "facilities_covered": "agree",
+          "fpg_tiers": "agree",
+          "insured_patients": "agree",
+          "residency": "agree"
+        },
+        "error": null,
+        "expected_crosschecks": {
+          "agb_method": "agree",
+          "asset_test": "agree",
+          "fpg_tiers": "agree",
+          "residency": "agree"
+        },
+        "hospital_id": "lone-star-health",
+        "naive_free_cutoff": 400.0,
+        "policy_version_id": "pv:lone-star-health:demo",
+        "status": {
+          "abstained": 1,
+          "provisional": 22
+        },
+        "thresholds": {
+          "gold": {
+            "asset_threshold_usd": "__none__",
+            "discount_cutoff_pct": 400.0,
+            "free_cutoff_pct": 250.0
+          },
+          "pred": {
+            "asset_threshold_usd": "__none__",
+            "discount_cutoff_pct": 400.0,
+            "free_cutoff_pct": 250.0
+          }
+        }
+      },
+      {
+        "citation_failures": [],
+        "cost_usd": 0.1076,
+        "crosschecks": {
+          "agb_method": "agree",
+          "asset_test": "agree",
+          "facilities_covered": "agree",
+          "fpg_tiers": "agree",
+          "insured_patients": "agree",
+          "required_documents": "agree",
+          "residency": "agree"
+        },
+        "error": null,
+        "expected_crosschecks": {
+          "agb_method": "agree",
+          "asset_test": "agree",
+          "fpg_tiers": "agree",
+          "residency": "agree"
+        },
+        "hospital_id": "gulf-coast-baptist",
+        "naive_free_cutoff": 200.0,
+        "policy_version_id": "pv:gulf-coast-baptist:demo",
+        "status": {
+          "abstained": 1,
+          "provisional": 22
+        },
+        "thresholds": {
+          "gold": {
+            "asset_threshold_usd": "__none__",
+            "discount_cutoff_pct": 300.0,
+            "free_cutoff_pct": 200.0
+          },
+          "pred": {
+            "asset_threshold_usd": "__none__",
+            "discount_cutoff_pct": 300.0,
+            "free_cutoff_pct": 200.0
+          }
+        }
+      },
+      {
+        "citation_failures": [],
+        "cost_usd": 0.0969,
+        "crosschecks": {
+          "agb_method": "agree",
+          "asset_test": "agree",
+          "facilities_covered": "agree",
+          "fpg_tiers": "missing",
+          "insured_patients": "agree",
+          "required_documents": "agree",
+          "residency": "agree"
+        },
+        "error": null,
+        "expected_crosschecks": {
+          "agb_method": "agree",
+          "asset_test": "agree",
+          "fpg_tiers": "disagree_policy_newer_than_filing",
+          "residency": "agree"
+        },
+        "hospital_id": "pineywoods-regional",
+        "naive_free_cutoff": 125.0,
+        "policy_version_id": "pv:pineywoods-regional:demo",
+        "status": {
+          "abstained": 2,
+          "provisional": 21
+        },
+        "thresholds": {
+          "gold": {
+            "asset_threshold_usd": "__none__",
+            "discount_cutoff_pct": 250.0,
+            "free_cutoff_pct": 150.0
+          },
+          "pred": {
+            "asset_threshold_usd": "__none__",
+            "discount_cutoff_pct": "__abstain__",
+            "free_cutoff_pct": "__abstain__"
+          }
+        }
+      },
+      {
+        "citation_failures": [],
+        "cost_usd": 0.0977,
+        "crosschecks": {
+          "agb_method": "agree",
+          "asset_test": "agree",
+          "facilities_covered": "agree",
+          "fpg_tiers": "agree",
+          "insured_patients": "agree",
+          "required_documents": "agree",
+          "residency": "agree"
+        },
+        "error": null,
+        "expected_crosschecks": {
+          "agb_method": "agree",
+          "asset_test": "agree",
+          "fpg_tiers": "agree",
+          "residency": "agree"
+        },
+        "hospital_id": "hill-country-community",
+        "naive_free_cutoff": null,
+        "policy_version_id": "pv:hill-country-community:demo",
+        "status": {
+          "abstained": 3,
+          "provisional": 20
+        },
+        "thresholds": {
+          "gold": {
+            "asset_threshold_usd": 5000.0,
+            "discount_cutoff_pct": 300.0,
+            "free_cutoff_pct": 200.0
+          },
+          "pred": {
+            "asset_threshold_usd": 5000.0,
+            "discount_cutoff_pct": 300.0,
+            "free_cutoff_pct": 200.0
+          }
+        }
+      }
+    ],
+    "per_field": {
+      "agb_method": {
+        "abstentions_matched": 0,
+        "correct": 5,
+        "gold_abstained": 0,
+        "gold_answered": 5,
+        "precision": 1.0,
+        "published": 5,
+        "recall": 1.0
+      },
+      "agb_pct": {
+        "abstentions_matched": 0,
+        "correct": 5,
+        "gold_abstained": 0,
+        "gold_answered": 5,
+        "precision": 1.0,
+        "published": 5,
+        "recall": 1.0
+      },
+      "application_window": {
+        "abstentions_matched": 0,
+        "correct": 5,
+        "gold_abstained": 0,
+        "gold_answered": 5,
+        "precision": 1.0,
+        "published": 5,
+        "recall": 1.0
+      },
+      "asset_test": {
+        "abstentions_matched": 0,
+        "correct": 5,
+        "gold_abstained": 0,
+        "gold_answered": 5,
+        "precision": 1.0,
+        "published": 5,
+        "recall": 1.0
+      },
+      "award_period_months": {
+        "abstentions_matched": 0,
+        "correct": 5,
+        "gold_abstained": 0,
+        "gold_answered": 5,
+        "precision": 1.0,
+        "published": 5,
+        "recall": 1.0
+      },
+      "determination_notice": {
+        "abstentions_matched": 1,
+        "correct": 4,
+        "gold_abstained": 1,
+        "gold_answered": 4,
+        "precision": 1.0,
+        "published": 4,
+        "recall": 1.0
+      },
+      "effective_or_revision_date": {
+        "abstentions_matched": 0,
+        "correct": 5,
+        "gold_abstained": 0,
+        "gold_answered": 5,
+        "precision": 1.0,
+        "published": 5,
+        "recall": 1.0
+      },
+      "excluded_services": {
+        "abstentions_matched": 0,
+        "correct": 5,
+        "gold_abstained": 0,
+        "gold_answered": 5,
+        "precision": 1.0,
+        "published": 5,
+        "recall": 1.0
+      },
+      "facilities_covered": {
+        "abstentions_matched": 0,
+        "correct": 5,
+        "gold_abstained": 0,
+        "gold_answered": 5,
+        "precision": 1.0,
+        "published": 5,
+        "recall": 1.0
+      },
+      "fpg_tiers": {
+        "abstentions_matched": 0,
+        "correct": 4,
+        "gold_abstained": 0,
+        "gold_answered": 5,
+        "precision": 1.0,
+        "published": 4,
+        "recall": 0.8
+      },
+      "fpg_year_rule": {
+        "abstentions_matched": 0,
+        "correct": 5,
+        "gold_abstained": 0,
+        "gold_answered": 5,
+        "precision": 1.0,
+        "published": 5,
+        "recall": 1.0
+      },
+      "household_definition": {
+        "abstentions_matched": 0,
+        "correct": 5,
+        "gold_abstained": 0,
+        "gold_answered": 5,
+        "precision": 1.0,
+        "published": 5,
+        "recall": 1.0
+      },
+      "income_definition": {
+        "abstentions_matched": 0,
+        "correct": 5,
+        "gold_abstained": 0,
+        "gold_answered": 5,
+        "precision": 1.0,
+        "published": 5,
+        "recall": 1.0
+      },
+      "insured_patients": {
+        "abstentions_matched": 0,
+        "correct": 5,
+        "gold_abstained": 0,
+        "gold_answered": 5,
+        "precision": 1.0,
+        "published": 5,
+        "recall": 1.0
+      },
+      "medicaid_application_required_first": {
+        "abstentions_matched": 0,
+        "correct": 5,
+        "gold_abstained": 0,
+        "gold_answered": 5,
+        "precision": 1.0,
+        "published": 5,
+        "recall": 1.0
+      },
+      "policy_title": {
+        "abstentions_matched": 0,
+        "correct": 5,
+        "gold_abstained": 0,
+        "gold_answered": 5,
+        "precision": 1.0,
+        "published": 5,
+        "recall": 1.0
+      },
+      "presumptive_eligibility": {
+        "abstentions_matched": 1,
+        "correct": 4,
+        "gold_abstained": 1,
+        "gold_answered": 4,
+        "precision": 1.0,
+        "published": 4,
+        "recall": 1.0
+      },
+      "provider_list_location": {
+        "abstentions_matched": 0,
+        "correct": 5,
+        "gold_abstained": 0,
+        "gold_answered": 5,
+        "precision": 1.0,
+        "published": 5,
+        "recall": 1.0
+      },
+      "refund_policy": {
+        "abstentions_matched": 1,
+        "correct": 3,
+        "gold_abstained": 1,
+        "gold_answered": 4,
+        "precision": 1.0,
+        "published": 3,
+        "recall": 0.75
+      },
+      "required_documents": {
+        "abstentions_matched": 0,
+        "correct": 4,
+        "gold_abstained": 0,
+        "gold_answered": 5,
+        "precision": 1.0,
+        "published": 4,
+        "recall": 0.8
+      },
+      "residency": {
+        "abstentions_matched": 0,
+        "correct": 5,
+        "gold_abstained": 0,
+        "gold_answered": 5,
+        "precision": 1.0,
+        "published": 5,
+        "recall": 1.0
+      },
+      "screening_timing": {
+        "abstentions_matched": 2,
+        "correct": 3,
+        "gold_abstained": 2,
+        "gold_answered": 3,
+        "precision": 1.0,
+        "published": 3,
+        "recall": 1.0
+      },
+      "submission_channels": {
+        "abstentions_matched": 0,
+        "correct": 5,
+        "gold_abstained": 0,
+        "gold_answered": 5,
+        "precision": 1.0,
+        "published": 5,
+        "recall": 1.0
+      }
+    }
+  },
+  "git_sha": null,
+  "id": "full-20261024T183848Z-77ea8e93",
+  "kind": "compile",
+  "metrics": {
+    "calibration_ece": {
+      "ci_high": 0.065514,
+      "ci_low": 0.064231,
+      "description": "Expected calibration error of self-reported confidence vs correctness (10 bins).",
+      "direction": "lower",
+      "hard": false,
+      "met": false,
+      "n": 107,
+      "name": "calibration_ece",
+      "target": "<= 0.05",
+      "target_max": 0.05,
+      "target_min": null,
+      "unit": "ece",
+      "value": 0.064766
+    },
+    "categorical_macro_f1": {
+      "ci_high": 1.0,
+      "ci_low": 1.0,
+      "description": "Macro-F1 over (field, class) labels of the categorical items; abstention is a class.",
+      "direction": "higher",
+      "hard": false,
+      "met": true,
+      "n": 75,
+      "name": "categorical_macro_f1",
+      "target": ">= 0.9",
+      "target_max": null,
+      "target_min": 0.9,
+      "unit": "rate",
+      "value": 1.0
+    },
+    "citation_validity": {
+      "ci_high": 1.0,
+      "ci_low": 1.0,
+      "description": "Share of published fields whose every quote is on its cited page (hard gate: 100%).",
+      "direction": "higher",
+      "hard": true,
+      "met": true,
+      "n": 107,
+      "name": "citation_validity",
+      "target": ">= 1 (hard)",
+      "target_max": null,
+      "target_min": 1.0,
+      "unit": "rate",
+      "value": 1.0
+    },
+    "commons_free_cutoff_accuracy": {
+      "ci_high": 1.0,
+      "ci_low": 0.4,
+      "description": "Commons free-care cutoff published and correct, over all hospitals (abstention counts as wrong).",
+      "direction": "higher",
+      "hard": false,
+      "met": null,
+      "n": 5,
+      "name": "commons_free_cutoff_accuracy",
+      "target": null,
+      "target_max": null,
+      "target_min": null,
+      "unit": "rate",
+      "value": 0.8
+    },
+    "compile_error_rate": {
+      "ci_high": 0.0,
+      "ci_low": 0.0,
+      "description": "Share of hospitals whose compile failed (LLM error, missing fixture or document).",
+      "direction": "lower",
+      "hard": false,
+      "met": null,
+      "n": 5,
+      "name": "compile_error_rate",
+      "target": null,
+      "target_max": null,
+      "target_min": null,
+      "unit": "rate",
+      "value": 0.0
+    },
+    "correct_abstention_rate": {
+      "ci_high": 1.0,
+      "ci_low": 1.0,
+      "description": "Of fields where gold abstains, the share the pipeline also left unpublished.",
+      "direction": "higher",
+      "hard": false,
+      "met": null,
+      "n": 5,
+      "name": "correct_abstention_rate",
+      "target": null,
+      "target_max": null,
+      "target_min": null,
+      "unit": "rate",
+      "value": 1.0
+    },
+    "cost_per_hospital_usd": {
+      "ci_high": 0.18368,
+      "ci_low": 0.09818,
+      "description": "Mean inference cost per hospital compile (simulated at section 13 prices on replay).",
+      "direction": "lower",
+      "hard": false,
+      "met": true,
+      "n": 5,
+      "name": "cost_per_hospital_usd",
+      "target": "<= 0.5",
+      "target_max": 0.5,
+      "target_min": null,
+      "unit": "usd",
+      "value": 0.12832
+    },
+    "crosscheck_expected_match": {
+      "ci_high": 1.0,
+      "ci_low": 0.85,
+      "description": "Share of gold-expected cross-check outcomes the pipeline reproduced.",
+      "direction": "higher",
+      "hard": false,
+      "met": null,
+      "n": 20,
+      "name": "crosscheck_expected_match",
+      "target": null,
+      "target_max": null,
+      "target_min": null,
+      "unit": "rate",
+      "value": 0.95
+    },
+    "disagreement_triage_rate": {
+      "ci_high": 1.0,
+      "ci_low": 1.0,
+      "description": "Share of unexplained Schedule H disagreements that opened a review task (target 100%).",
+      "direction": "higher",
+      "hard": false,
+      "met": true,
+      "n": 1,
+      "name": "disagreement_triage_rate",
+      "target": ">= 1",
+      "target_max": null,
+      "target_min": 1.0,
+      "unit": "rate",
+      "value": 1.0
+    },
+    "field_precision": {
+      "ci_high": 1.0,
+      "ci_low": 1.0,
+      "description": "Of published fields, the share equal to gold.",
+      "direction": "higher",
+      "hard": false,
+      "met": null,
+      "n": 107,
+      "name": "field_precision",
+      "target": null,
+      "target_max": null,
+      "target_min": null,
+      "unit": "rate",
+      "value": 1.0
+    },
+    "field_recall": {
+      "ci_high": 0.990826,
+      "ci_low": 0.955752,
+      "description": "Of gold-answered fields, the share published and equal to gold.",
+      "direction": "higher",
+      "hard": false,
+      "met": null,
+      "n": 110,
+      "name": "field_recall",
+      "target": null,
+      "target_max": null,
+      "target_min": null,
+      "unit": "rate",
+      "value": 0.972727
+    },
+    "list_item_f1": {
+      "ci_high": 1.0,
+      "ci_low": 0.928,
+      "description": "Item-level (micro) F1 of required docs, channels, presumptive criteria, counties, ...",
+      "direction": "higher",
+      "hard": false,
+      "met": true,
+      "n": 60,
+      "name": "list_item_f1",
+      "target": ">= 0.85",
+      "target_max": null,
+      "target_min": 0.85,
+      "unit": "rate",
+      "value": 0.974359
+    },
+    "naive_baseline_gap_points": {
+      "ci_high": 80.0,
+      "ci_low": 0.0,
+      "description": "Commons minus naive free-cutoff accuracy, in percentage points (expect >= 20).",
+      "direction": "info",
+      "hard": false,
+      "met": null,
+      "n": 5,
+      "name": "naive_baseline_gap_points",
+      "target": null,
+      "target_max": null,
+      "target_min": null,
+      "unit": "points",
+      "value": 40.0
+    },
+    "naive_free_cutoff_accuracy": {
+      "ci_high": 0.8,
+      "ci_low": 0.0,
+      "description": "Naive agent (same tier + web search, no pipeline): free-care cutoff correct, over all hospitals.",
+      "direction": "info",
+      "hard": false,
+      "met": null,
+      "n": 5,
+      "name": "naive_free_cutoff_accuracy",
+      "target": null,
+      "target_max": null,
+      "target_min": null,
+      "unit": "rate",
+      "value": 0.4
+    },
+    "numeric_threshold_exact": {
+      "ci_high": 1.0,
+      "ci_low": 1.0,
+      "description": "Exact match of free/discount %FPG and asset $ on non-abstained predictions.",
+      "direction": "higher",
+      "hard": false,
+      "met": true,
+      "n": 13,
+      "name": "numeric_threshold_exact",
+      "target": ">= 0.97",
+      "target_max": null,
+      "target_min": 0.97,
+      "unit": "rate",
+      "value": 1.0
+    },
+    "schedule_h_agree_count": {
+      "ci_high": null,
+      "ci_low": null,
+      "description": "Count of Schedule H cross-checks resolving to agree.",
+      "direction": "info",
+      "hard": false,
+      "met": null,
+      "n": 41,
+      "name": "schedule_h_agree_count",
+      "target": null,
+      "target_max": null,
+      "target_min": null,
+      "unit": "count",
+      "value": 41.0
+    },
+    "schedule_h_disagree_policy_newer_than_filing_count": {
+      "ci_high": null,
+      "ci_low": null,
+      "description": "Count of Schedule H cross-checks resolving to disagree_policy_newer_than_filing.",
+      "direction": "info",
+      "hard": false,
+      "met": null,
+      "n": 0,
+      "name": "schedule_h_disagree_policy_newer_than_filing_count",
+      "target": null,
+      "target_max": null,
+      "target_min": null,
+      "unit": "count",
+      "value": 0.0
+    },
+    "schedule_h_disagree_unexplained_count": {
+      "ci_high": null,
+      "ci_low": null,
+      "description": "Count of Schedule H cross-checks resolving to disagree_unexplained.",
+      "direction": "info",
+      "hard": false,
+      "met": null,
+      "n": 1,
+      "name": "schedule_h_disagree_unexplained_count",
+      "target": null,
+      "target_max": null,
+      "target_min": null,
+      "unit": "count",
+      "value": 1.0
+    },
+    "schedule_h_free_pct_agreement": {
+      "ci_high": 1.0,
+      "ci_low": 1.0,
+      "description": "Agreement on free %FPG (13a) where the policy date is on or before the filing period end.",
+      "direction": "higher",
+      "hard": false,
+      "met": true,
+      "n": 2,
+      "name": "schedule_h_free_pct_agreement",
+      "target": ">= 0.85",
+      "target_max": null,
+      "target_min": 0.85,
+      "unit": "rate",
+      "value": 1.0
+    },
+    "schedule_h_missing_count": {
+      "ci_high": null,
+      "ci_low": null,
+      "description": "Count of Schedule H cross-checks resolving to missing.",
+      "direction": "info",
+      "hard": false,
+      "met": null,
+      "n": 1,
+      "name": "schedule_h_missing_count",
+      "target": null,
+      "target_max": null,
+      "target_min": null,
+      "unit": "count",
+      "value": 1.0
+    },
+    "schedule_h_not_reported_count": {
+      "ci_high": null,
+      "ci_low": null,
+      "description": "Count of Schedule H cross-checks resolving to not_reported.",
+      "direction": "info",
+      "hard": false,
+      "met": null,
+      "n": 0,
+      "name": "schedule_h_not_reported_count",
+      "target": null,
+      "target_max": null,
+      "target_min": null,
+      "unit": "count",
+      "value": 0.0
+    },
+    "threshold_abstention_rate": {
+      "ci_high": 0.4,
+      "ci_low": 0.0,
+      "description": "Share of thresholds with a gold answer on which the pipeline abstained.",
+      "direction": "lower",
+      "hard": false,
+      "met": false,
+      "n": 15,
+      "name": "threshold_abstention_rate",
+      "target": "<= 0.1",
+      "target_max": 0.1,
+      "target_min": null,
+      "unit": "rate",
+      "value": 0.133333
+    }
+  },
+  "mode": "replay",
+  "notes": [
+    "Dataset is the synthetic demo corpus (fictional hospitals, synthetic gold).",
+    "Naive-agent baseline answers are SIMULATED synthetic fixtures (documented failure modes), not measured model outputs; re-record with CCC_LLM=record.",
+    "Costs are simulated: recorded token usage priced at section 13 list prices."
+  ],
+  "simulated_cost": true,
+  "split": "dev",
+  "suite": "full",
+  "units": [
+    "example-methodist",
+    "lone-star-health",
+    "gulf-coast-baptist",
+    "pineywoods-regional",
+    "hill-country-community"
+  ]
+}

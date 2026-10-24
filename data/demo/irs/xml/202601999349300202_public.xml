@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Return xmlns="http://www.irs.gov/efile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" returnVersion="2024v5.0">
+  <ReturnHeader binaryAttachmentCnt="0">
+    <ReturnTs>2025-05-15T10:15:00-05:00</ReturnTs>
+    <TaxPeriodEndDt>2024-12-31</TaxPeriodEndDt>
+    <TaxPeriodBeginDt>2024-01-01</TaxPeriodBeginDt>
+    <Filer>
+      <EIN>990100202</EIN>
+      <BusinessName>
+        <BusinessNameLine1Txt>LONE STAR EXAMPLE HEALTH SYSTEM</BusinessNameLine1Txt>
+      </BusinessName>
+      <BusinessNameControlTxt>LONE</BusinessNameControlTxt>
+      <PhoneNum>2145550200</PhoneNum>
+      <USAddress>
+        <AddressLine1Txt>1200 EXAMPLE PARKWAY</AddressLine1Txt>
+        <CityNm>DALLAS</CityNm>
+        <StateAbbreviationCd>TX</StateAbbreviationCd>
+        <ZIPCd>75201</ZIPCd>
+      </USAddress>
+    </Filer>
+    <ReturnTypeCd>990</ReturnTypeCd>
+    <TaxYr>2024</TaxYr>
+  </ReturnHeader>
+  <ReturnData documentCnt="2">
+    <IRS990 documentId="IRS990-01">
+      <PrincipalOfficerNm>SYNTHETIC OFFICER</PrincipalOfficerNm>
+      <WebsiteAddressTxt>www.lonestarexamplehealth.example</WebsiteAddressTxt>
+      <Organization501c3Ind>X</Organization501c3Ind>
+      <ActivityOrMissionDesc>SYNTHETIC DEMO RETURN FOR A FICTIONAL TEXAS NONPROFIT HOSPITAL</ActivityOrMissionDesc>
+    </IRS990>
+    <IRS990ScheduleH documentId="IRS990ScheduleH-01">
+      <FinancialAssistancePolicyInd>true</FinancialAssistancePolicyInd>
+      <WrittenPolicyInd>true</WrittenPolicyInd>
+      <AllHospitalsPolicyInd>X</AllHospitalsPolicyInd>
+      <FPGReferenceFreeCareInd>true</FPGReferenceFreeCareInd>
+      <FreeCareOthPercentageGrp>
+        <OtherInd>X</OtherInd>
+        <FreeCareOtherPct>250</FreeCareOtherPct>
+      </FreeCareOthPercentageGrp>
+      <FPGReferenceDiscountedCareInd>true</FPGReferenceDiscountedCareInd>
+      <Percent400Ind>X</Percent400Ind>
+      <FreeCareMedicallyIndigentInd>false</FreeCareMedicallyIndigentInd>
+      <HospitalFacilitiesCnt>3</HospitalFacilitiesCnt>
+      <HospitalFacilitiesGrp>
+        <FacilityNum>1</FacilityNum>
+        <BusinessName>
+          <BusinessNameLine1Txt>LONE STAR EXAMPLE MEDICAL CENTER DALLAS</BusinessNameLine1Txt>
+        </BusinessName>
+        <USAddress>
+          <AddressLine1Txt>1200 EXAMPLE PARKWAY</AddressLine1Txt>
+          <CityNm>DALLAS</CityNm>
+          <StateAbbreviationCd>TX</StateAbbreviationCd>
+          <ZIPCd>75201</ZIPCd>
+        </USAddress>
+        <WebsiteAddressTxt>www.lonestarexamplehealth.example</WebsiteAddressTxt>
+        <StateLicenseNum>000202</StateLicenseNum>
+        <LicensedHospitalInd>X</LicensedHospitalInd>
+        <GeneralMedicalAndSurgicalInd>X</GeneralMedicalAndSurgicalInd>
+        <EmergencyRoom24HrsInd>X</EmergencyRoom24HrsInd>
+        <FacilityReportingGroupCd>A</FacilityReportingGroupCd>
+      </HospitalFacilitiesGrp>
+      <HospitalFacilitiesGrp>
+        <FacilityNum>2</FacilityNum>
+        <BusinessName>
+          <BusinessNameLine1Txt>LONE STAR EXAMPLE MEDICAL CENTER PLANO</BusinessNameLine1Txt>
+        </BusinessName>
+        <USAddress>
+          <AddressLine1Txt>4500 EXAMPLE RIDGE ROAD</AddressLine1Txt>
+          <CityNm>PLANO</CityNm>
+          <StateAbbreviationCd>TX</StateAbbreviationCd>
+          <ZIPCd>75093</ZIPCd>
+        </USAddress>
+        <WebsiteAddressTxt>www.lonestarexamplehealth.example</WebsiteAddressTxt>
+        <StateLicenseNum>000203</StateLicenseNum>
+        <LicensedHospitalInd>X</LicensedHospitalInd>
+        <GeneralMedicalAndSurgicalInd>X</GeneralMedicalAndSurgicalInd>
+        <EmergencyRoom24HrsInd>X</EmergencyRoom24HrsInd>
+        <FacilityReportingGroupCd>A</FacilityReportingGroupCd>
+      </HospitalFacilitiesGrp>
+      <HospitalFacilitiesGrp>
+        <FacilityNum>3</FacilityNum>
+        <BusinessName>
+          <BusinessNameLine1Txt>LONE STAR EXAMPLE MEDICAL CENTER MESQUITE</BusinessNameLine1Txt>
+        </BusinessName>
+        <USAddress>
+          <AddressLine1Txt>800 EXAMPLE TOWN EAST BLVD</AddressLine1Txt>
+          <CityNm>MESQUITE</CityNm>
+          <StateAbbreviationCd>TX</StateAbbreviationCd>
+          <ZIPCd>75150</ZIPCd>
+        </USAddress>
+        <WebsiteAddressTxt>www.lonestarexamplehealth.example</WebsiteAddressTxt>
+        <StateLicenseNum>000204</StateLicenseNum>
+        <LicensedHospitalInd>X</LicensedHospitalInd>
+        <GeneralMedicalAndSurgicalInd>X</GeneralMedicalAndSurgicalInd>
+        <EmergencyRoom24HrsInd>X</EmergencyRoom24HrsInd>
+        <FacilityReportingGroupCd>A</FacilityReportingGroupCd>
+      </HospitalFacilitiesGrp>
+      <HospitalFcltyPoliciesPrctcGrp>
+        <FacilityReportingGroupCd>A</FacilityReportingGroupCd>
+        <FirstLicensedCYOrPYInd>false</FirstLicensedCYOrPYInd>
+        <TaxExemptHospitalCYOrPYInd>false</TaxExemptHospitalCYOrPYInd>
+        <CHNAConductedInd>true</CHNAConductedInd>
+        <CHNAConductedYr>2023</CHNAConductedYr>
+        <ImplementationStrategyAdoptInd>true</ImplementationStrategyAdoptInd>
+        <EligCriteriaExplainedInd>true</EligCriteriaExplainedInd>
+        <FPGFamilyIncmLmtFreeDscntInd>X</FPGFamilyIncmLmtFreeDscntInd>
+        <FPGFamilyIncmLmtFreeCarePct>250</FPGFamilyIncmLmtFreeCarePct>
+        <FPGFamilyIncmLmtDscntCarePct>400</FPGFamilyIncmLmtDscntCarePct>
+        <IncomeLevelCriteriaInd>X</IncomeLevelCriteriaInd>
+        <InsuranceStatusCriteriaInd>X</InsuranceStatusCriteriaInd>
+        <ExplainedBasisInd>true</ExplainedBasisInd>
+        <AppFinancialAsstExplnInd>true</AppFinancialAsstExplnInd>
+        <DescribedInfoInd>X</DescribedInfoInd>
+        <DescribedSuprtDocInd>X</DescribedSuprtDocInd>
+        <ProvidedHospitalContactInd>X</ProvidedHospitalContactInd>
+        <IncludesPublicityMeasuresInd>true</IncludesPublicityMeasuresInd>
+        <FAPAvailableOnWebsiteInd>X</FAPAvailableOnWebsiteInd>
+        <FAPAvailableOnWebsiteURLTxt>https://www.lonestarexamplehealth.example/financial-assistance/fap.pdf</FAPAvailableOnWebsiteURLTxt>
+        <FAPAppAvailableOnWebsiteInd>X</FAPAppAvailableOnWebsiteInd>
+        <FAPAppAvailableOnWebsiteURLTxt>https://www.lonestarexamplehealth.example/financial-assistance/application.pdf</FAPAppAvailableOnWebsiteURLTxt>
+        <FAPSummaryOnWebsiteInd>X</FAPSummaryOnWebsiteInd>
+        <FAPSummaryOnWebsiteURLTxt>https://www.lonestarexamplehealth.example/financial-assistance/summary.pdf</FAPSummaryOnWebsiteURLTxt>
+        <FAPAvlblOnRequestNoChargeInd>X</FAPAvlblOnRequestNoChargeInd>
+        <FAPAppAvlblOnRequestNoChrgInd>X</FAPAppAvlblOnRequestNoChrgInd>
+        <FAPSumAvlblOnRequestNoChrgInd>X</FAPSumAvlblOnRequestNoChrgInd>
+        <NotifiedFAPCopyBillDisplayInd>X</NotifiedFAPCopyBillDisplayInd>
+        <FAPTranslatedInd>X</FAPTranslatedInd>
+        <FAPActionsOnNonpaymentInd>true</FAPActionsOnNonpaymentInd>
+        <PermitReportToCreditAgencyInd>X</PermitReportToCreditAgencyInd>
+        <PermitSellingDebtInd>X</PermitSellingDebtInd>
+        <CollectionActivitiesInd>false</CollectionActivitiesInd>
+        <ProvidedWrittenNoticeInd>X</ProvidedWrittenNoticeInd>
+        <ProcessedFAPApplicationInd>X</ProcessedFAPApplicationInd>
+        <NondisEmergencyCarePolicyInd>true</NondisEmergencyCarePolicyInd>
+        <LookBackMedicarePrivateInd>X</LookBackMedicarePrivateInd>
+        <AmountsGenerallyBilledInd>false</AmountsGenerallyBilledInd>
+        <GrossChargesInd>false</GrossChargesInd>
+      </HospitalFcltyPoliciesPrctcGrp>
+      <SupplementalInformationGrp>
+        <FormAndLineReferenceDesc>PART V, SECTION B, LINE 13H</FormAndLineReferenceDesc>
+        <ExplanationTxt>THE ORGANIZATION CONSIDERS FAMILY SIZE AND HOUSEHOLD INCOME AS DESCRIBED IN ITS FINANCIAL ASSISTANCE POLICY.</ExplanationTxt>
+      </SupplementalInformationGrp>
+    </IRS990ScheduleH>
+  </ReturnData>
+</Return>

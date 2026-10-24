@@ -1,0 +1,56 @@
+{
+  "key": {
+    "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+    "model_tier": "sonnet",
+    "prompt_version": "reask_field@v1",
+    "variant": "fpg_tiers"
+  },
+  "model": "claude-sonnet-5-5",
+  "notes": "Targeted re-ask returns the corrected value (output is a Field JSON object).",
+  "output": {
+    "abstain_reason": null,
+    "confidence": 0.97,
+    "evidence": [
+      {
+        "char_end": null,
+        "char_start": null,
+        "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+        "page": 3,
+        "quote": "Patients with household income at or below 200% of the Federal Poverty Guidelines qualify for free care, a 100% discount.",
+        "section_label": "4.2"
+      },
+      {
+        "char_end": null,
+        "char_start": null,
+        "doc_sha256": "f9553a5ecc92e53e0f615a15834d159529d8461ae09530c9fe7351c68bf986ec",
+        "page": 3,
+        "quote": "Patients with household income above 200% and at or below 300% of the Federal Poverty Guidelines receive a 50% discount from gross charges.",
+        "section_label": "4.2"
+      }
+    ],
+    "value": [
+      {
+        "applies_to": "all",
+        "benefit": "free",
+        "discount_pct": null,
+        "max_pct_inclusive": 200.0,
+        "min_pct_exclusive": null
+      },
+      {
+        "applies_to": "all",
+        "benefit": "percent_discount",
+        "discount_pct": 50.0,
+        "max_pct_inclusive": 300.0,
+        "min_pct_exclusive": 200.0
+      }
+    ]
+  },
+  "recorded_at": null,
+  "synthetic": true,
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 15000,
+    "input_tokens": 1200,
+    "output_tokens": 600
+  }
+}

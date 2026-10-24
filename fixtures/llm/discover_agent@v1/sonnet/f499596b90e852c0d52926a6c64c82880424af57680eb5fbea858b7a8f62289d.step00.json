@@ -1,0 +1,23 @@
+{
+  "key": {
+    "doc_sha256": "f499596b90e852c0d52926a6c64c82880424af57680eb5fbea858b7a8f62289d",
+    "model_tier": "sonnet",
+    "prompt_version": "discover_agent@v1",
+    "variant": "step00"
+  },
+  "model": "claude-sonnet-5-5",
+  "notes": "Synthetic agent trajectory for ein:990100202 (charitycare.discover.demo_fixtures)",
+  "output": {
+    "ein": "990100202",
+    "rationale": "Start from the URLs the hospital reported on Schedule H.",
+    "tool": "schedule_h_context"
+  },
+  "recorded_at": null,
+  "synthetic": true,
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 1500,
+    "input_tokens": 600,
+    "output_tokens": 60
+  }
+}

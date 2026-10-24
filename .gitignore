@@ -1,0 +1,33 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.hypothesis/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.env
+.DS_Store
+
+# Runtime state (the demo corpus under data/demo/ is committed; it is deterministic)
+data/*.sqlite
+data/*.sqlite-*
+data/cache/
+data/tmp/
+data/llm_spend.json
+data/raw/
+site/dist/
+node_modules/
+data/demo-run/
+data/release/
+data/discover/
+packet-demo-out/
+*.sqlite
+# Committed on purpose: data/demo/ (deterministic synthetic corpus), data/seed/cms_tx_hospitals.csv
+# (live CMS pull), data/packet-demo/*.jpg, fixtures/llm/, evals/baselines/ and evals/reports/latest.*

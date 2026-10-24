@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+{% block title %}{{ f.name }} financial assistance · Charity Care Commons{% endblock %}
+{% block description %}{{ f.name }} ({{ f.city }}, TX): financial-assistance rules with quotes from the hospital's policy and IRS Schedule H checks.{% endblock %}
+{% block main %}
+<p><a href="{{ root }}index.html">← All Texas facilities</a></p>
+<h1>{{ f.name }} · {{ f.city }}, TX</h1>
+<p class="muted">CCN {{ f.ccn or 'n/a' }} · {{ f.type or 'Hospital' }} · {{ f.ownership or '' }} · <a href="#report">Report a fix</a></p>
+
+{% if policy %}
+<section class="card" aria-labelledby="gov">
+  <h2 id="gov" style="margin-top:0">Governing policy</h2>
+  <p>“{{ policy.title or 'Financial Assistance Policy' }}”{% if policy.effective_date %} rev. {{ policy.effective_date }}{% endif %}
+    · version <code>{{ policy.id }}</code> · <span class="badge b-{{ 'verified' if policy.status == 'current' else 'none' }}">{{ policy.status }}</span>
+    · {{ bundle.mapping.method|replace('_', ' ') if bundle.mapping else 'mapping unknown' }}</p>
+  {% for d in bundle.documents %}
+  <p class="cite">{{ d.name|replace('_', ' ') }}: {% if d.url %}<a href="{{ d.url }}" rel="nofollow noopener">{{ d.url }}</a>{% else %}source URL unknown{% endif %}
+    · sha256 <code title="{{ d.sha256 }}">{{ d.sha256|short(12) }}</code> · fetched {{ (d.fetched_at or '')[:10] }}{% if d.language %} · {{ d.language }}{% endif %}</p>
+  {% endfor %}
+</section>
+
+<h2>Rules</h2>
+<div class="card">
+{% for r in rules %}
+  <div class="rule" id="field-{{ r.key }}">
+    <div class="k">{{ r.label }}</div>
+    <div>
+      <div>{{ r.display }}</div>
+      <div class="meta">
+        <span class="badge b-{{ r.badge.status }}">{{ r.badge.symbol }} {{ r.badge.label }}</span>
+        {% for c in r.crosschecks %}<span class="badge b-{{ 'agree' if c.result == 'agree' else ('discrepancy' if c.is_discrepancy else 'context') }}" title="{{ c.public_label }}">{{ c.summary }}</span>{% endfor %}
+      </div>
+      {% for e in r.field.evidence %}
+        <blockquote class="q">“{{ e.quote }}”</blockquote>
+        <p class="cite">p. {{ e.page }}{% if e.section_label %} § {{ e.section_label }}{% endif %} · sha256 <code title="{{ e.doc_sha256 }}">{{ e.doc_sha256|short(12) }}</code></p>
+      {% endfor %}
+      {% for c in r.crosschecks if c.is_discrepancy %}
+      <div class="discrepancy">⚠ <strong>{{ discrepancy_label }}</strong>: the IRS filing for the period ending {{ c.filing_period_end or 'unknown' }} lists {{ r.label|lower }} as {{ c.external_text }};
+        the policy is dated {{ c.policy_date or 'unknown' }}.
+        {% for resp in r.responses %}<blockquote class="q">Hospital response ({{ resp.received_at[:10] }}): “{{ resp.statement }}”</blockquote>{% else %}<span class="muted">No hospital response yet.</span>{% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endfor %}
+</div>
+<p class="muted">Legend: ✓ verified by a reviewer · ○ provisional (auto-extracted, not used in screening) · – no published value · ⚠ {{ discrepancy_label|lower }} · ⓘ policy newer than the IRS filing period.</p>
+{% else %}
+<div class="card"><p><span class="badge b-not_found">✗ policy not found</span> We have not yet found and verified this facility's financial-assistance policy.</p></div>
+{% endif %}
+
+{% if f.schedule_h %}
+<h2>IRS Schedule H (Part V)</h2>
+<div class="table-wrap"><table>
+  <caption>What the hospital reported on its Form 990 Schedule H.</caption>
+  <thead><tr><th scope="col">Filing</th><th scope="col">Period end</th><th scope="col">Free ≤</th><th scope="col">Disc ≤</th><th scope="col">Asset test (13c)</th><th scope="col">Residency (13g)</th></tr></thead>
+  <tbody>{% for s in f.schedule_h %}<tr><td><code>{{ s.object_id }}</code>{% if s.group_letter %} group {{ s.group_letter }}{% endif %}</td><td>{{ s.tax_period_end }}</td><td>{{ s.line_13a_free_pct|pct }}</td><td>{{ s.line_13a_discount_pct|pct }}</td><td>{{ 'checked' if s.line_13c_asset_level else 'not checked' }}</td><td>{{ 'checked' if s.line_13g_residency else 'not checked' }}</td></tr>{% endfor %}</tbody>
+</table></div>
+{% endif %}
+
+<h2>Version history</h2>
+{% for v in f.versions %}
+<div class="card">
+  <p><code>{{ v.id }}</code> · {{ v.title or '' }} · as of {{ v.as_of }}{% if v.effective_date %} · effective {{ v.effective_date }}{% endif %} · {{ v.status }}</p>
+  <ul>{% for c in v.changes %}<li>{{ (c.published_at or '')[:10] }} · {{ c.triage|replace('_', ' ') }}: {{ c.diff_summary.split('\n---\n')[0] }}</li>{% else %}<li class="muted">No changes recorded.</li>{% endfor %}</ul>
+</div>
+{% else %}<p class="muted">No versions on file.</p>{% endfor %}
+
+<div class="actions">
+  <a class="button secondary" href="{{ root }}data/hospitals/{{ f.id }}.json" download>Download JSON</a>
+  {% if api %}<a class="button secondary" href="{{ api }}/navigator?facility_id={{ f.id }}">Screen a household</a>{% endif %}
+</div>
+<h2 id="report">Report a fix</h2>
+<p>Hospitals and navigators can send a correction or a response to a {{ discrepancy_label|lower }} with <code>POST {{ api or '' }}/v1/corrections</code>
+  (fields: <code>facility_id</code> = <code>{{ f.id }}</code>, optional <code>field_key</code>, <code>statement</code>). A reviewer checks every correction before anything is published, and hospital responses are shown beside the item they answer.</p>
+<p class="muted">As of {{ today }}.</p>
+{% endblock %}

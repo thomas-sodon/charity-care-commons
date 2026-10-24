@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block title %}Methods · Charity Care Commons{% endblock %}
+{% block main %}
+<h1>Methods</h1>
+<p class="lede">How a hospital's financial-assistance policy becomes the rules on this site. The model extracts; code computes; people verify.</p>
+<h2>1. Find the hospitals and their filings</h2>
+<p>We start from the CMS list of Texas hospitals and each nonprofit's IRS Form 990 Schedule H (Part V), which reports the free-care and discount cutoffs, whether an asset test, insurance status or residency is used, and the web addresses of the policy, application and plain-language summary.</p>
+<h2>2. Fetch and hash every document</h2>
+<p>Each PDF is stored with its sha256 hash, the date we fetched it, and a Wayback copy where one exists. The hash is the document's identity: if a single byte changes, it is a new version and goes through review again.</p>
+<h2>3. Compile the policy, with quotes</h2>
+<p>A language model reads the policy and returns 23 structured fields (income tiers, asset test, residency, documents, deadlines and more). Every value must come with a verbatim quote and page number. Our own verifier then looks for each quote on the cited page of the hashed document. <strong>No quote, no publish.</strong> Values whose quote cannot be found are dropped and sent to a reviewer.</p>
+<h2>4. Abstain when the policy does not say</h2>
+<p>Publishing nothing is a valid answer. Fields abstain when:</p>
+<ul>{% for k, v in abstain.items() %}<li><code>{{ k }}</code>: {{ v }}</li>{% endfor %}</ul>
+<h2>5. Check against the IRS filing</h2>
+<p>Values are compared with the same hospital's Schedule H. The comparison accounts for filing lag (a policy adopted after the filing period is context, not a disagreement) and for facility reporting groups. Outcomes:</p>
+<ul>{% for k, v in labels.items() %}<li><code>{{ k }}</code>: {{ v }}</li>{% endfor %}</ul>
+<p>Only unexplained disagreements can be listed as discrepancies for review, and only after a reviewer has verified the policy value and the hospital has had a right of reply: an item is shown once the hospital's response is published or 10 business days after the reviewer's confirmation started the reply window. Replies appear next to the item. Disagreements on superseded policy versions are withdrawn. A notice record is kept for each item; sending it to the hospital is a maintainer step outside this software.</p>
+<h2>6. Human review</h2>
+<p>Every field starts as <span class="badge b-provisional">○ provisional</span>. A reviewer looks at the source page next to the extracted value and the IRS value, then approves, corrects, abstains or asks the hospital. Only <span class="badge b-verified">✓ verified</span> fields are used when screening a household; a screening that would rely on provisional fields is labelled preliminary.</p>
+<h2>7. Screening is plain code</h2>
+<p>Household income is divided by the HHS poverty guideline for the household size and year the policy specifies, and compared with the verified tiers using exact arithmetic. Results are worded as “likely eligible” estimates with the policy quote and the arithmetic shown, never as a decision. The hospital decides.</p>
+<h2>8. Privacy</h2>
+<p>We never store household facts, bills or pay stubs. Screening requests are processed in memory and are not logged; logs keep only the route, status and timing.</p>
+<h2>9. Freshness and sunset policy</h2>
+<p>Every page and API response carries the date the data was last verified. If nothing has been re-verified for {{ stale_after }} days (for example, if maintenance stops), the site shows a warning and the API returns <code>stale: true</code>.</p>
+{% endblock %}
