@@ -29,7 +29,7 @@ env:
 jobs:
   test:
     name: Tests, offline evals and schema check
-    runs-on: ubuntu-latest
+    runs-on: ${{ github.event.pull_request.head.repo.fork && 'ubuntu-latest' || 'metronome' }}
     timeout-minutes: 30
     env:
       CCC_LLM: replay
@@ -104,7 +104,7 @@ jobs:
     name: Live smoke eval (prompts, schemas, compiler)
     if: github.event_name == 'pull_request'
     needs: test
-    runs-on: ubuntu-latest
+    runs-on: ${{ github.event.pull_request.head.repo.fork && 'ubuntu-latest' || 'metronome-light' }}
     timeout-minutes: 30
     env:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
